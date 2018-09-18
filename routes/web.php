@@ -12,6 +12,7 @@
 */
 Route::group(['prefix'=>'','namespace'=>'Home'],function (){
     Route::get('/', 'IndexController@index'); // 武志祥
+    Route::resource('loosegoods','LooseGoodsController');//武志祥
 });
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
