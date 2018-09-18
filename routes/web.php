@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix'=>'','namespace'=>'Home'],function (){
+    Route::get('/', 'IndexController@index'); // 武志祥
+});
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
+    Route::get('index', 'IndexController@index'); // 武志祥
 });

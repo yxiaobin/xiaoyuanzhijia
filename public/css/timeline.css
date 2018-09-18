@@ -1,0 +1,99 @@
+ .nearsite-message {
+   display: inline-block;
+   clear: both;
+   margin: 10px;
+   border-left: 1px solid #ccc;
+ }
+
+ .nearsite-message .avatar {
+   float: left;
+   margin-left: -13px;
+   margin-top: -5px;
+ }
+
+ .nearsite-message .avatar img {
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+ }
+
+ .nearsite-message .content {
+   float: left;
+   background: #fff;
+   margin: 0 10px 10px 10px;
+   padding: 10px;
+   border-radius: 7px;
+   max-width: 90%;
+   position: relative;
+   min-height: 20px;
+   font-size: 15px;
+ }
+
+ .nearsite-message .content img {
+   width: 100%;
+ }
+
+ .nearsite-message .triangle {
+   height: 0px;
+   width: 0px;
+   border-width: 8px;
+   border-style: solid;
+   position: absolute;
+   top: 6px;
+   border-color: transparent #fff transparent transparent;
+   left: -16px;
+ }
+
+ .vertbar {
+   width: 1px;
+   height: 70px;
+   background-color: #a2a2a2;
+   margin: -80px 25px -8px;
+ }
+
+ .header {
+   background-color: #FFFFFF;
+   margin-bottom: 10px;
+   height: 220px;
+ }
+
+ .header .info {
+   text-align: center;
+ }
+
+ .header .info img {
+   margin-top: 20px;
+   width: 80px;
+   height: 80px;
+   border-radius: 50%;
+   margin-bottom: 10px;
+ }
+
+ .header .info .name {
+   font-size: 20px;
+   margin-bottom: 10px;
+ }
+
+ .header .info .ins {
+   font-size: 18px;
+   margin-bottom: 10px;
+ }
+
+ .header .other {
+   text-align: center;
+   margin-bottom: 10px;
+ }
+
+ .timeline {
+   margin-left: 20px;
+   margin-top: 20px;
+ }
+
+ .timeline .nearsite-message .content img {
+   width: 100%;
+ }
+
+ .nearsite-message .content {
+   margin-left: 50px;
+   margin-top: -30px;
+ }
