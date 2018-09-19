@@ -1,0 +1,126 @@
+html,body,div,p,a,span,h1,h2,h3,h4,h5,h6,table,th,td,ul,ol,li,dl,dt,dd,img,em,b,strong,input,button,label,section,nav,time{
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 100px;
+}
+body{
+    font-size: .14rem;
+    color: #333;
+    font-family: 'Microsoft YaHei';
+    background: #f4f4f4;
+}
+fieldset, img {
+    border: 0;
+}
+
+a {
+    color: #333;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+address, caption, cite, code, dfn,
+em, i, strong, th, var, optgroup {
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+input, button, textarea,
+select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    font-family: 'Microsoft YaHei';
+}
+
+input[type="button"], input[type="submit"] {
+    -webkit-appearance: none;
+}
+
+code, kbd, samp, tt {
+    font-size: 100%;
+}
+
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input, button, textarea, select {
+    *font-size: 100%;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:link, :visited, ins {
+    text-decoration: none;
+}
+
+.common_w{
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+/* css 重置 */
+body, p, input, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle; font-weight:normal; }
+img { border:0; margin: 0; padding: 0;   }
+body { color: #000; -webkit-user-select: none; -webkit-text-size-adjust: none; font:normal 16px/200% "微软雅黑", helvetica, arial; text-align:left;   }
+header, section, footer { display: block; margin: 0; padding: 0 }
+a{text-decoration:none;color:#000;}
+
+body{ background:#f4f4f4;  }
+/* 头部 */
+/* header{  background:#F5AB38; padding-bottom:10px; border-bottom:3px solid #CF7F21;  } */
+header .logo{ padding:10px 0 5px 10px;  color:#fff;  font-style:italic; font-weight:bold; text-shadow:1px 1px 1px #965e18; font-size:12px; }
+header .logo a{ font-size:30px; line-height:30px; color:#fff;  }
+
+/* 尾部 */
+footer{ text-align:center; padding:10px 0; line-height:18px; font-size:14px; }
+
+/* 内容 */
+#content{ padding:0px 0; background:#fff;  }
+.path{ padding:0 0 5px 5px;   }
+/* 本例子css -------------------------------------- */
+.slideBox{ position:relative; overflow:hidden; margin:0px auto;  max-width:560px;/* 设置焦点图最大宽度 */ }
+.slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; z-index:1; }
+.slideBox .hd li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+.slideBox .hd li.on{ background:#fff;  }
+.slideBox .bd{ position:relative; z-index:0; }
+.slideBox .bd li{ position:relative; text-align:center;  }
+.slideBox .bd li img{ background:url(images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+.slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }  /* 去掉链接触摸高亮 */
+.slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(images/focusBg.png) repeat-x; color:#fff;  text-align:left;  }

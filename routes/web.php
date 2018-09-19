@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix'=>'','namespace'=>'Home'],function (){
+    Route::get('/', 'IndexController@index'); // 武志祥
+    Route::resource('loosegoods','LooseGoodsController');//武志祥
 });
+
 /*    --------------yxb ---------------- ******************************************************************************/
 //登陆模块
 Route::get('/login',['as'=>"login",'uses'=>"YXBController@login"]);
@@ -23,3 +24,4 @@ Route::post('/register',['as'=>"register",'uses'=>"YXBController@registerstore"]
 
 
 /**********************************************************************************************************************/
+

@@ -1,0 +1,21 @@
+body{
+	padding-top: 49px!important;
+	padding-bottom: 10px!important;
+}
+.thing-info p{
+    font-size: 20px;
+}
+.form-group{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.give-money{
+	display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    height:30px;
+    line-height:30px;
+}
