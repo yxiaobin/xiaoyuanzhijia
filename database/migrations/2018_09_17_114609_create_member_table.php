@@ -27,7 +27,7 @@ class CreateMemberTable extends Migration
 //            手机号
             $table->string('phone')->nullable();
 //            密码
-            $table->string('password')->nullable();
+            $table->string('password','255')->nullable();
 //            积分
             $table->string('money')->nullable();
 //            状态代表审核是否通过 0未通过1通过
@@ -36,6 +36,10 @@ class CreateMemberTable extends Migration
             $table->string('image')->nullable();
 //            学生证信息
             $table->string('card_image')->nullable();
+//            访问量
+            $table->string('num')->nullable();
+//            标签
+            $table->string('tag')->nullable();
 
         });
     }
