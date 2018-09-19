@@ -45,11 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-<<<<<<< HEAD
-            'root' => public_path(),
-=======
-            'root' => public_path('uploads'),
->>>>>>> 8d263ca259755975f483d1b95cdc8f15b897bacd
+            'root' => public_path('uploads')
         ],
 
         'public' => [
