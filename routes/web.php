@@ -12,7 +12,9 @@
 */
 Route::group(['prefix'=>'','namespace'=>'Home'],function (){
     Route::get('/', 'IndexController@index'); // 武志祥
-    Route::resource('loosegoods','LooseGoodsController');//武志祥
+    Route::resource('losegoods','LoseGoodsController');//武志祥
+    Route::resource('findgoods','FindGoodsController');//武志祥
+    Route::resource('findpeople','FindPeopleController');//武志祥
 });
 
 /*    --------------yxb ---------------- ******************************************************************************/

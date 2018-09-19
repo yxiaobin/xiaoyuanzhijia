@@ -54,14 +54,14 @@
 am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }">
         <li style="text-align: center;">
           <div class="am-gallery-item">
-            <a href="{{route('loosegoods.index')}}"><img src="images/lost-find.jpg" alt="" style="width: 150px;height: 100px;" />
+            <a href="{{route('findgoods.index')}}"><img src="images/lost-find.jpg" alt="" style="width: 150px;height: 100px;" />
               <h3 class="am-gallery-title" style="text-align: center;">名字待定</h3>
             </a>
           </div>
         </li>
         <li style="text-align: center;">
           <div class="am-gallery-item">
-            <a href="searchTa.html"><img src="images/find.jpg" alt="" style="width: 150px;height: 100px;" />
+            <a href="{{route('findpeople.index')}}"><img src="images/find.jpg" alt="" style="width: 150px;height: 100px;" />
               <h3 class="am-gallery-title" style="text-align: center;">众里寻ta</h3>
             </a>
           </div>

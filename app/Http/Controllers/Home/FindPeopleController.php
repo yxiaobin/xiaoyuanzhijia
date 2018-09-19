@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Http\Model\Searching;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
-class LooseGoodsController extends Controller
+class FindPeopleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,8 @@ class LooseGoodsController extends Controller
     public function index()
     {
         //
-        return view('home.searching.losegoods');
+        $items['people'] = Searching::where('type',3)->orderBy('created_at','desc')->paginate(5);
+        return view('home.searching.searchTa',compact('items'));
     }
 
     /**
@@ -26,6 +29,7 @@ class LooseGoodsController extends Controller
     public function create()
     {
         //
+        return view('home.searching.searchTa_launch');
     }
 
     /**
@@ -37,6 +41,27 @@ class LooseGoodsController extends Controller
     public function store(Request $request)
     {
         //
+        $va = Validator::make($request->input(), [
+            'item_name' => 'required',
+            'item_detail' => 'required',
+            'phone' => 'required',
+        ], [
+            'item_name.required' => '请输入寻人特征',
+            'item_detail.required' => '请输入寻人详细描述',
+            'phone.required' => '请输入您的联系方式',
+        ]);
+        if ($va->passes()) {
+            $data = $request->except('_token');
+
+            $data['item_image'] = '';
+            $data['find_address'] = '';
+            $data['user_id'] = 1;
+            $data['type'] = 3;
+            Searching::create($data);
+            return redirect()->route('findpeople.index');
+        } else {
+            return back()->withErrors($va);
+        }
     }
 
     /**
