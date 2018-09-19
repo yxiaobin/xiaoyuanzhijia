@@ -52,5 +52,3 @@ Route::get('/myrecord',['as'=>"myrecord",'uses'=>"YXBController@myrecord"]);
 Route::get('/mynew',['as'=>"mynew",'uses'=>"YXBController@mynew"]);
 
 /**********************************************************************************************************************/
-
->>>>>>> 1330e3b2e39b8e810f75a30a8e915cab5fc9958e
