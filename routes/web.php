@@ -11,9 +11,12 @@
 |
 */
 Route::group(['prefix'=>'','namespace'=>'Home'],function (){
-
-
+    Route::get('/', 'IndexController@index'); // 武志祥
     Route::get('shop','IndexController@shop'); //胡华聘
+    Route::resource('loosegoods','LooseGoodsController');//武志祥
+});
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::get('index', 'IndexController@index'); // 武志祥
     Route::resource('goods','ShopController'); //胡华聘
     Route::resource('losegoods','LoseGoodsController');//武志祥
@@ -49,3 +52,5 @@ Route::get('/myrecord',['as'=>"myrecord",'uses'=>"YXBController@myrecord"]);
 Route::get('/mynew',['as'=>"mynew",'uses'=>"YXBController@mynew"]);
 
 /**********************************************************************************************************************/
+
+>>>>>>> 1330e3b2e39b8e810f75a30a8e915cab5fc9958e
