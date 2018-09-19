@@ -39,22 +39,31 @@
         <i class="am-icon-twitch myapp-login-logo"></i>
     </div>
     <!-- 登陆框 -->
+
     <div class="am-u-sm-11 am-u-sm-centered">
-        <form class="am-form">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form class="am-form" action="{{route('getlogin')}}" method="get">
             <fieldset class="myapp-login-form am-form-set">
                 <div class="am-form-group am-form-icon">
                     <i class="am-icon-user"></i>
-                    <input type="text" class="myapp-login-input-text am-form-field" placeholder="请输入您的账号">
+                    <input type="text" class="myapp-login-input-text am-form-field" placeholder="请输入您的学号" name="stuid">
                 </div>
                 <div class="am-form-group am-form-icon">
                     <i class="am-icon-lock"></i>
-                    <input type="text" class="myapp-login-input-text am-form-field" placeholder="至少6个字符">
+                    <input type="text" class="myapp-login-input-text am-form-field" placeholder="至少6个字符" name="password">
                 </div>
             </fieldset>
-
-            <a href="#" class="myapp-login-form-submit am-btn am-btn-success am-btn-block ">登陆</a>
+            {{csrf_field()}}
+            <button class="myapp-login-form-submit am-btn am-btn-success am-btn-block ">登陆</button>
             <a href="{{route('register')}}" class="myapp-login-form-submit am-btn am-btn-success am-btn-block ">注册</a>
-
 
         </form>
     </div>
