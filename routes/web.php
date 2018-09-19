@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+/*    --------------yxb ---------------- ******************************************************************************/
+//登陆模块
+Route::get('/login',['as'=>"login",'uses'=>"YXBController@login"]);
+//注册模块
+Route::get('/register',['as'=>"register",'uses'=>"YXBController@register"]);
+Route::post('/register',['as'=>"register",'uses'=>"YXBController@registerstore"]);
+
+
+/**********************************************************************************************************************/
