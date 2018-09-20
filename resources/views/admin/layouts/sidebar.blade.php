@@ -28,6 +28,20 @@
                     <div class="icon">
                         <i class="fa fa-book"></i>
                     </div>
+                    <div class="title">用户管理</div>
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="{{url("/adminmember")}}">用户审核</a></li>
+                        {{--<li><a href="">信息发送</a></li>--}}
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown  ">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <div class="icon">
+                        <i class="fa fa-book"></i>
+                    </div>
                     <div class="title">内容管理</div>
                 </a>
                 <div class="dropdown-menu">
@@ -50,6 +64,7 @@
                     <div class="title">商品管理</div>
                 </a>
             </li>
+
         </ul>
     </div>
 </aside>

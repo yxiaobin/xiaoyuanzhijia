@@ -3,7 +3,7 @@
 <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default" id="">
     <ul class="am-navbar-nav am-cf am-avg-sm-4">
         <li data-am-navbar-share>
-            <a href="home.html">
+            <a href="{{url('/')}}">
                 <img src="images/home1.png" alt="" style="width:28px;height:28px;">
                 <span class="am-navbar-label">校园之家</span>
             </a>
@@ -15,7 +15,7 @@
             </a>
         </li>
         <li>
-            <a href="person.html">
+            <a href="{{url('/mine')}}">
                 <img src="images/my.png" alt="" style="width:28px;height:28px;">
                 <span class="am-navbar-label">我的</span>
             </a>

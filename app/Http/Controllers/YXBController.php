@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Model\Searching;
 use App\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -102,26 +103,33 @@ class YXBController extends Controller
         $p->save();
         return redirect('mine');
     }
-//个人中心
+//个人中心 (心语家园的表还没有)
     public function myspace(){
-        return view('yxb.myspace');
+        $member = Member::find(session('id'));
+        return view('yxb.myspace',compact('member'));
     }
 //    我的积分
     public function mymoney(){
         $member = Member::find(session('id'));
         return view('yxb.mymoney',compact('member'));
-
     }
+//    我的记录
     public function myrecord(){
-        return view('yxb.myrecord');
+        $id = session('id');
+        $news = Searching::where('user_id','=',$id)->orderby('id','desc')->get();
+        $member = Member::find(session('id'));
+        return view('yxb.myrecord',compact('news','member'));
     }
+    //    我的消息
     public function mynew(){
         return view('yxb.mynew');
     }
+    //积分规则
     public  function  moneyrule(){
         return view('yxb.moneyrule');
     }
-    public  function  moneyrecord(){
+//    积分馆
+    public  function  monyrecord(){
         return view('yxb.moneyrecord');
     }
 }

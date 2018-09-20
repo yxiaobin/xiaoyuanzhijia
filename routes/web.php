@@ -29,6 +29,12 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
 });
 
 /*    --------------yxb ---------------- ******************************************************************************/
+//后台审核
+Route::get('adminmember', 'YxbAdminController@adminmember'); // 杨小宾
+Route::get('adminmemberdetail/{id}', 'YxbAdminController@adminmemberdetail'); // 杨小宾
+Route::get('/memberyes/{id}', 'YxbAdminController@memberyes'); // 杨小宾
+Route::get('/memberno/{id}', 'YxbAdminController@memberno'); // 杨小宾
+
 //登陆模块
 Route::get('/login',['as'=>"login",'uses'=>"YXBController@login"]);
 Route::get('/getlogin',['as'=>"getlogin",'uses'=>"YXBController@loginstore"]);
@@ -57,6 +63,6 @@ Route::get('/mynew',['as'=>"mynew",'uses'=>"YXBController@mynew"]);
 //积分规则
 Route::get('/monyrule',['as'=>"monyrule",'uses'=>"YXBController@moneyrule"]);
 //积分馆
-Route::get('/monyrecord',['as'=>"monyrecord",'uses'=>"YXBController@monerecord"]);
+Route::get('/monyrecord',['as'=>"monyrecord",'uses'=>"YXBController@monyrecord"]);
 
 /**********************************************************************************************************************/
