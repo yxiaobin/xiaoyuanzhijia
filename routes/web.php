@@ -41,6 +41,10 @@ Route::get('/mymoney',['as'=>"mymoney",'uses'=>"YXBController@mymoney"]);
 Route::get('/myrecord',['as'=>"myrecord",'uses'=>"YXBController@myrecord"]);
 //我的消息
 Route::get('/mynew',['as'=>"mynew",'uses'=>"YXBController@mynew"]);
+//积分规则
+Route::get('/monyrule',['as'=>"monyrule",'uses'=>"YXBController@moneyrule"]);
+//积分馆
+Route::get('/monyrecord',['as'=>"monyrecord",'uses'=>"YXBController@monerecord"]);
 
 /**********************************************************************************************************************/
 

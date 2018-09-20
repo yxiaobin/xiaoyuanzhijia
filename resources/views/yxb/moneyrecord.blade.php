@@ -31,49 +31,23 @@
     </div>
     <h1 class="am-header-title">
         <a href="search.html" class="">
-            积分明细
+            兑换记录
         </a>
     </h1>
     </nav>
 </header>
 
 <!-- 内容 -->
-<div class="info_header">
-    <div class="one">
-        <h3 style="display:inline-block">我的山理积分</h3>
-        <a href="{{url("/monyrule")}}">规则？</a>
-    </div>
-    <div class="two">
-        <span> 积分：{{$member->money}}<img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px"></span>
-
-        <a href="jifen_record.html" style="float:right">山理积分馆 ></a>
-    </div>
-</div>
-
-<!-- 内容 -->
-<div class="" style="margin-top:5px;">
+<div class="">
     <ul class="mui-table-view">
         <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
-            <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
+            <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;">
             <div class="mui-media-body" style="margin-top: 12px;">
                 山理独家T恤
                 <p class='mui-ellipsis'>
-                    <span style="font-size:14px;color:#ccc">2018-09-12 0:03</span>
+                    <span style="font-size:12px;color: #999;">成功</span>
                 </p>
             </div>
-
-            <span style="float:right;margin-top:-38px;">+40</span>
-        </li>
-        <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
-            <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
-            <div class="mui-media-body" style="margin-top: 12px;">
-                发布你问我答
-                <p class='mui-ellipsis'>
-                    <span style="font-size:14px;color:#ccc">2018-09-12 0:03</span>
-                </p>
-            </div>
-
-            <span style="float:right;margin-top:-38px;">-40</span>
         </li>
 
     </ul>
@@ -81,12 +55,35 @@
 
 
 
+<!-- 底部导航栏 -->
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default" id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+        <li data-am-navbar-share>
+            <a href="{{url("/")}}">
+                <img src="images/home1.png" alt="" style="width:28px;height:28px;">
+                <span class="am-navbar-label">校园之家</span>
+            </a>
+        </li>
+        <li>
+            <a href="shop_show.html" class="">
+                <img src="images/shop1.png" alt="" style="width:28px;height:28px;">
+                <span class="am-navbar-label">商城</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{url("/mine")}}">
+                <img src="images/my.png" alt="" style="width:28px;height:28px;">
+                <span class="am-navbar-label">我的</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
 <!-- js -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/mui.min.js"></script>
-
 
 </body>
 

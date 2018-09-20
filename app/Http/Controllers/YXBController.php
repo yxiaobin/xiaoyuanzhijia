@@ -34,6 +34,7 @@ class YXBController extends Controller
         $p->phone = $request->input('phone');
         $p->password = $request->input('password');
         $p->password = encrypt($p->password);
+        $p->money = 50;
         $p->save();
         echo "<script>alert('您的账号注册成功，快去登陆吧')</script>";
         session(['name'=>'', 'id'=>'']);
@@ -107,7 +108,8 @@ class YXBController extends Controller
     }
 //    我的积分
     public function mymoney(){
-        return view('yxb.mymoney');
+        $member = Member::find(session('id'));
+        return view('yxb.mymoney',compact('member'));
 
     }
     public function myrecord(){
@@ -115,5 +117,11 @@ class YXBController extends Controller
     }
     public function mynew(){
         return view('yxb.mynew');
+    }
+    public  function  moneyrule(){
+        return view('yxb.moneyrule');
+    }
+    public  function  moneyrecord(){
+        return view('yxb.moneyrecord');
     }
 }
