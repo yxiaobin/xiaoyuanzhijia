@@ -42,7 +42,6 @@ class FindPeopleController extends Controller
     {
         //
         $va = Validator::make($request->input(), [
-            'item_name' => 'required',
             'item_detail' => 'required',
             'phone' => 'required',
         ], [
@@ -56,6 +55,7 @@ class FindPeopleController extends Controller
             $data['item_image'] = '';
             $data['find_address'] = '';
             $data['user_id'] = 1;
+            $data['item_name'] = '';
             $data['type'] = 3;
             Searching::create($data);
             return redirect()->route('findpeople.index');
