@@ -14,6 +14,8 @@ Route::group(['prefix'=>'','namespace'=>'Home'],function (){
     Route::get('/', 'IndexController@index'); // 武志祥
     Route::get('shop','IndexController@shop'); //胡华聘
     Route::resource('loosegoods','LooseGoodsController');//武志祥
+    Route::get('goods','ShopController@goods');//胡华聘
+    Route::get('good/{id}','ShopController@goodDetail'); //胡华聘
 });
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
