@@ -68,7 +68,7 @@ am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }"
         </li>
         <li style="text-align: center;">
           <div class="am-gallery-item">
-           <a href="questionshow.html"><img src="images/question.jpg" alt="" style="width: 150px;height: 100px;" />
+           <a href="{{route('question.index')}}"><img src="images/question.jpg" alt="" style="width: 150px;height: 100px;" />
               <h3 class="am-gallery-title" style="text-align: center;">你问我答</h3>
             </a>
           </div>
