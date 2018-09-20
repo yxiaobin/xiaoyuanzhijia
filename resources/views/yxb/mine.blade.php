@@ -127,29 +127,7 @@
 </div>
 
 
-<!-- 底部导航栏 -->
-<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default" id="">
-    <ul class="am-navbar-nav am-cf am-avg-sm-4">
-        <li data-am-navbar-share>
-            <a href="{{url("/")}}">
-                <img src="images/home1.png" alt="" style="width:28px;height:28px;">
-                <span class="am-navbar-label">校园之家</span>
-            </a>
-        </li>
-        <li>
-            <a href="shop_show.html" class="">
-                <img src="images/shop1.png" alt="" style="width:28px;height:28px;">
-                <span class="am-navbar-label">商城</span>
-            </a>
-        </li>
-        <li>
-            <a href="{{url("/mine")}}">
-                <img src="images/my.png" alt="" style="width:28px;height:28px;">
-                <span class="am-navbar-label">我的</span>
-            </a>
-        </li>
-    </ul>
-</div>
+@include('home.layouts.bottom')
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>

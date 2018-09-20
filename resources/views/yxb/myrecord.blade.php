@@ -22,13 +22,13 @@
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="home.html">
+        <a href="{{url('/')}}">
             <span class="am-icon-home"></span>
             <span  class="am-navbar-label"></span>
         </a>
     </div>
     <h1 class="am-header-title">
-        <a href="search.html" class="">
+        <a href="#" class="">
             我的记录
         </a>
     </h1>
@@ -37,36 +37,39 @@
 
 <!-- 我的记录 -->
 <div class="row" style="padding: 15px;">
-    <div class="col-sm-6 col-md-3">
-        <div class="thumbnail">
-            <img src="images/2b.jpg" alt="通用的占位符缩略图">
-            <div class="caption">
-                <h3>校园卡——计科1602小猪</h3>
-                <p>捡到地点where+when+特征</p>
-                <p>
-                    <a href="losepeople_detail.html" class="btn btn-success" role="button">
-                        查看详情
-                    </a>
-                    <a href="#" class="btn btn-default" role="button" style="float: right;">
-                        已归还
-                    </a>
-                    <!-- <a href="losepeople_get.html" class="btn btn-default" role="button">
-                                认领
-                    </a> -->
-                </p>
+    @foreach($news as $new)
+        @if($new->type==2)
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="{{asset("uploads/$new->item_image")}}" alt="通用的占位符缩略图">
+                    <div class="caption">
+                        <h3>{{$new->item_name}}</h3>
+                        <p>{{$new->item_detail}}</p>
+                        <p>
+                            <a href="#" class="btn btn-success" role="button">
+                                查看详情
+                            </a>
+                            <a href="#" class="btn btn-default" role="button" style="float: right;">
+                                已归还
+                            </a>
+                            <!-- <a href="losepeople_get.html" class="btn btn-default" role="button">
+                                        认领
+                            </a> -->
+                        </p>
+                    </div>
+                 </div>
             </div>
-        </div>
-    </div>
-    <div class="am-g">
+        @else
+            <div class="am-g">
         <div class="am-u-sm-12">
             <div class="am-thumbnail">
-                <img src="assets\i\examples\admin-ie.png" alt="" class="am-comment-avatar" width="48" height="48" />
+                <img src="{{asset("uploads/$new->item_image")}}" alt="" class="am-comment-avatar" width="48" height="48" />
                 <div class="am-thumbnail-caption">
-                    <p>双木子</p>
-                    <p>找啥物呢？学习资料？还是找丢的东西</p>
+                    <p>{{$member->name}}</p>
+                    <p>{{$new->item_detail}}</p>
                     <p>2018.8.23</p>
                     <p>
-                        <a href="losepeople_detail.html" class="btn btn-success" role="button">
+                        <a href="#" class="btn btn-success" role="button">
                             查看详情
                         </a>
                         <a href="#" class="btn btn-default" role="button" style="float: right;">
@@ -78,10 +81,14 @@
             </div>
         </div>
     </div>
+        @endif
+    @endforeach
 </div>
+
+
 <!-- 发布按钮 -->
-<a href="losepeople_launch.html" style="background-color:#">
-    <img src="images/add.png" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
+<a href="{{url("/")}}" style="background-color:#">
+    <img src="{{asset("images/add.png")}}" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
 </a>
 
 <!-- js -->
