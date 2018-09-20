@@ -42,17 +42,17 @@
                                 <tr>
                                     <td>{{$good->id}}</td>
                                     <td>{{$good->name}}</td>
-                                    <td>{{asset("$good->img")}}</td>
+                                    <td><img src="{{asset("uploads/$good->img")}}" alt="" width="100" height="50"></td>
                                     <td>{{$good->price}}</td>
                                     <td>{{$good->address}}</td>
                                     <td>{{$good->num}}</td>
                                     <td>
-                                        <form action="{{url('admin/good')}}/{{$good->id}}" style="display: inline" method="post">
+                                        <form action="{{url('admin/goods')}}/{{$good->id}}" style="display: inline" method="post">
                                             {{method_field('DELETE')}}
                                             {{csrf_field()}}
                                             <input type="submit" value="删除" class="btn btn-xs btn-danger" onclick="return confirm('您确定要删除吗？')">
                                         </form>
-                                        <a href="{{url('admin/good')}}/{{$good->id}}/edit">
+                                        <a href="{{url('admin/goods')}}/{{$good->id}}/edit">
                                             <input type="button" value="修改" class="btn btn-xs btn-primary">
                                         </a>
                                         @if($good->show == 0)
