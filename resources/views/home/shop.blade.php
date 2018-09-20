@@ -23,7 +23,7 @@
         </div>
         <div class="two">
             <span> 积分：@if($user){{$user->money}}@else 登陆后查看 @endif <img src="images/jifen.png" alt="" style="width:25px;height:25px"></span>
-            <a href="jifen_record.html" style="float:right">兑换记录 ></a>
+            <a href="{{url('exchange/record')}}" style="float:right">兑换记录 ></a>
         </div>
     </div>
 

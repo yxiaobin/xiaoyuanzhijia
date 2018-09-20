@@ -47,14 +47,23 @@
                                     <td>{{$good->address}}</td>
                                     <td>{{$good->num}}</td>
                                     <td>
-                                        <form action="{{url('good')}}/{{$good->id}}" style="display: inline" method="post">
+                                        <form action="{{url('admin/good')}}/{{$good->id}}" style="display: inline" method="post">
                                             {{method_field('DELETE')}}
                                             {{csrf_field()}}
                                             <input type="submit" value="删除" class="btn btn-xs btn-danger" onclick="return confirm('您确定要删除吗？')">
                                         </form>
-                                        <a href="{{url('good')}}/{{$good->id}}/edit">
+                                        <a href="{{url('admin/good')}}/{{$good->id}}/edit">
                                             <input type="button" value="修改" class="btn btn-xs btn-primary">
                                         </a>
+                                        @if($good->show == 0)
+                                            <a href="{{url('admin/good')}}/{{$good->id}}/change">
+                                                <input type="button" value="设为推荐" class="btn btn-xs btn-success">
+                                            </a>
+                                        @else
+                                            <a href="{{url('admin/good')}}/{{$good->id}}/change">
+                                                <input type="button" value="取消推荐" class="btn btn-xs btn-warning">
+                                            </a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

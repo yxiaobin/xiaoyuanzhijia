@@ -18,7 +18,7 @@ class CreateUserGoodsTable extends Migration
             $table->integer('user_id');  //用户id
             $table->integer('good_id');  //商品id
             $table->integer('price');    //兑换商品消耗的积分
-            $table->integer('status');   //兑换状态
+            $table->integer('status')->default(0);   //兑换状态
             $table->timestamps();
         });
     }

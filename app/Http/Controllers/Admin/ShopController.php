@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Good;
+use App\Models\UserGood;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
@@ -130,6 +131,20 @@ class ShopController extends Controller
     {
         $good->user_goods()->delete();
         $good->delete();
+        return back();
+    }
+    public function goodChange(Good $good){
+        $good ->show = $good->show ? 0 : 1;
+        $good->save();
+        return back();
+    }
+    public function record(){
+        $records =  UserGood::orderBy('status','ASC')->orderBy('updated_at','DESC')->get();
+        return view('admin.goods.record')->with(['records'=>$records]);
+    }
+    public function recordChange(UserGood $record){
+        $record ->status = $record->status ? 0 : 1;
+        $record->save();
         return back();
     }
 }

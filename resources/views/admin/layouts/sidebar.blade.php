@@ -32,23 +32,22 @@
                 </a>
                 <div class="dropdown-menu">
                     <ul>
-                        {{--<li><a href="{{route('newType.index')}}">新闻分类管理</a></li>--}}
-                        {{--<li><a href="{{route('new.index')}}">新闻管理</a></li>--}}
-                        {{--<li><a href="{{route('productType.index')}}">产品分类管理</a></li>--}}
-                        {{--<li><a href="{{route('product.index')}}">产品管理</a></li>--}}
-                        {{--<li><a href="{{route('page.index')}}">页面管理</a></li>--}}
-                        {{--<li><a href="{{route('image.index')}}">友情链接管理</a></li>--}}
-                        {{--<li><a href="{{route('service.index')}}">服务项目管理</a></li>--}}
                     </ul>
                 </div>
             </li>
-            <li class="">
-                <a href="{{url('admin/goods')}}">
+            <li class="dropdown">
+                <a href="{{url('admin/goods')}}" class="dropdown-toggle" data-toggle="dropdown">
                     <div class="icon">
                         <i class="fa fa-link"  aria-hidden="true"></i>
                     </div>
                     <div class="title">商品管理</div>
                 </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="{{url('admin/goods')}}">商品管理</a></li>
+                        <li><a href="{{url('admin/record')}}">商品兑换管理</a></li>
+                    </ul>
+                </div>
             </li>
         </ul>
     </div>
