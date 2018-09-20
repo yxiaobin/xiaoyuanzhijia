@@ -19,10 +19,10 @@
     <div class="info_header">
         <div class="one">
             <h3 style="display:inline-block">山理积分馆</h3>
-            <a href="rule.html">规则</a>
+            <a href="{{url('rule')}}">规则</a>
         </div>
         <div class="two">
-            <span> 积分：8888 <img src="images/jifen.png" alt="" style="width:25px;height:25px"></span>
+            <span> 积分：@if($user){{$user->money}}@else 登陆后查看 @endif <img src="images/jifen.png" alt="" style="width:25px;height:25px"></span>
             <a href="jifen_record.html" style="float:right">兑换记录 ></a>
         </div>
     </div>
@@ -33,19 +33,21 @@
         <div id="slideBox" class="slideBox">
             <div class="bd">
                 <ul>
+                    @foreach($good_banners as $good_banner)
+
                     <li>
-                        <a class="pic" href="#"><img src="images/1b.jpg" /></a>
-                        <!-- <a class="tit" href="#">墨西哥教师罢工 与警察激烈冲突</a> -->
+                        <a class="pic" href="{{url("good/{$good_banner->id}")}}"><img src="{{$good_banner->img}}" /></a>
                     </li>
-                    <li>
-                        <a class="pic" href="#"><img src="images/2b.jpg"/></a>
-                    </li>
-                    <li>
-                        <a class="pic" href="#"><img src="images/3b.jpg"/></a>
-                    </li>
-                    <li>
-                        <a class="pic" href="#"><img src="images/4b.jpg"/></a>
-                    </li>
+                    @endforeach
+                    {{--<li>--}}
+                        {{--<a class="pic" href="#"><img src="images/2b.jpg"/></a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a class="pic" href="#"><img src="images/3b.jpg"/></a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a class="pic" href="#"><img src="images/4b.jpg"/></a>--}}
+                    {{--</li>--}}
                 </ul>
             </div>
             <div class="hd">
@@ -59,47 +61,20 @@
     <div class="goods">
         <div class="title">
             <h3 style="display:inline-block">山理好物限时兑换</h3>
-            <a href="allgoods.html" style="float:right;color:#ccc">全部商品 ></a>
+            <a href="{{url('goods')}}" style="float:right;color:#ccc">全部商品 ></a>
         </div>
         <ul class="mui-table-view mui-grid-view">
+            @foreach($goods as $good)
             <li class="mui-table-view-cell mui-media mui-col-xs-6" id="moviegoTo">
-                <a href="goods_detail.html">
-                    <img class="mui-media-object" src="images/find.jpg">
-                    <div class="mui-media-body">山理独家T恤</div>
+                <a href="{{url("good/{$good->id}")}}">
+                    <img class="mui-media-object" src="{{$good->img}}">
+                    <div class="mui-media-body">{{$good->name}}</div>
                     <div class="mui-media-body">
-                        积分:500
+                        积分:{{$good->price}}
                     </div>
                 </a>
             </li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-6" id="moviegoTo1">
-                <a href="goods_detail.html">
-                    <img class="mui-media-object" src="images/find.jpg">
-                    <div class="mui-media-body">山理独家T恤</div>
-                    <div class="mui-media-body">
-                        积分:500
-                    </div>
-                </a>
-            </li>
-        </ul>
-        <ul class="mui-table-view mui-grid-view">
-            <li class="mui-table-view-cell mui-media mui-col-xs-6" id="moviegoTo">
-                <a href="#">
-                    <img class="mui-media-object" src="images/find.jpg">
-                    <div class="mui-media-body">山理独家T恤</div>
-                    <div class="mui-media-body">
-                        积分:500
-                    </div>
-                </a>
-            </li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-6" id="moviegoTo1">
-                <a href="#">
-                    <img class="mui-media-object" src="images/find.jpg">
-                    <div class="mui-media-body">山理独家T恤</div>
-                    <div class="mui-media-body">
-                        积分:500
-                    </div>
-                </a>
-            </li>
+            @endforeach
         </ul>
     </div>
 

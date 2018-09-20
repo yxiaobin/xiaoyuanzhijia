@@ -16,11 +16,16 @@ Route::group(['prefix'=>'','namespace'=>'Home'],function (){
     Route::resource('loosegoods','LooseGoodsController');//武志祥
     Route::get('goods','ShopController@goods'); //胡华聘
     Route::get('good/{id}','ShopController@goodDetail'); //胡华聘
+    Route::get('rule','ShopController@rule');//胡华聘
     Route::resource('findgoods','FindGoodsController');//武志祥
     Route::resource('losegoods','LoseGoodsController');//武志祥
     Route::resource('findpeople','FindPeopleController');//武志祥
     Route::resource('question','QuestionController');//武志祥
 });
+
+//需要登录后操作
+Route::get('exchange','ShopController@exchange');
+
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::get('index', 'IndexController@index'); // 武志祥

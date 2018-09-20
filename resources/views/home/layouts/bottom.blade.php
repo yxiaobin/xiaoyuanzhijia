@@ -9,7 +9,7 @@
             </a>
         </li>
         <li>
-            <a href="shop_show.html" class="">
+            <a href="{{url('shop')}}" class="">
                 <img src="images/shop1.png" alt="" style="width:28px;height:28px;">
                 <span class="am-navbar-label">商城</span>
             </a>
