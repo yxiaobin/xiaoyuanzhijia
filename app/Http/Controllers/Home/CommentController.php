@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Model\Comment;
-use App\Http\Model\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
-class QuestionController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,6 @@ class QuestionController extends Controller
     public function index()
     {
         //
-        $items = Question::orderBy('created_at')->get();
-        return view('home.question.question_list',compact('items'));
     }
 
     /**
@@ -27,10 +24,12 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
-        return view('home.question.askquestion');
+        $question_id = $request->input('question_id');
+        $comment_id = $request->input('comment_id');
+        return view('home.question.comment',compact('question_id','comment_id'));
     }
 
     /**
@@ -43,17 +42,23 @@ class QuestionController extends Controller
     {
         //
         $va = Validator::make($request->input(),[
-            'title'=>'required',
-            'detail'=>'required',
+            'content'=>'required',
         ],[
-            'title.required'=>'请输入问题详细描述',
-            'detail.required'=>'请输入一句话概括'
+            'content.required'=>'请输入回复的内容！'
         ]);
         if ($va->passes()){
-            $data = $request->except('_token');
+            $data = $request->except('_token','comment_id');
             $data['user_id'] = 1;
-            Question::create($data);
-            return redirect()->route('question.index');
+            if ($request->input('comment_id')){
+                $data['father_id'] = $request->input('comment_id');
+            }else{
+                $data['father_id'] = 0;
+            }
+            $data['question_id'] = $request->input('question_id');
+            Comment::create($data);
+            return redirect()->route('question.show',$request->input('question_id'));
+        }else{
+            return back()->withErrors($va);
         }
     }
 
@@ -66,9 +71,6 @@ class QuestionController extends Controller
     public function show($id)
     {
         //
-        $comments = Comment::where('question_id',$id)->orderBy('created_at','asc')->get();
-        $question = Question::find($id);
-        return view('home.question.detail',compact('question','comments'));
     }
 
     /**

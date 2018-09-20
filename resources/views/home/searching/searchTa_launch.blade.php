@@ -16,10 +16,6 @@
     <!-- 填写表单 -->
     <form action="{{route('findpeople.store')}}" method="post">
         @include('admin.layouts.errors')
-        <div class="form-group">
-            <label for="exampleInputPassword1">待寻人的特征</label>
-            <input name="item_name" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-        </div>
         {{csrf_field()}}
         <div class="form-group">
             <label for="exampleInputPassword1">待寻人的详细描述</label>

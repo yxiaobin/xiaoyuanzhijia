@@ -20,6 +20,7 @@ Route::group(['prefix'=>'','namespace'=>'Home'],function (){
     Route::resource('losegoods','LoseGoodsController');//武志祥
     Route::resource('findpeople','FindPeopleController');//武志祥
     Route::resource('question','QuestionController');//武志祥
+    Route::resource('comment','CommentController');//武志祥
 });
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
