@@ -12,7 +12,18 @@
 */
 Route::group(['prefix'=>'','namespace'=>'Home'],function (){
     Route::get('/', 'IndexController@index'); // 武志祥
+    Route::get('shop','IndexController@shop'); //胡华聘
     Route::resource('loosegoods','LooseGoodsController');//武志祥
+    Route::get('goods','ShopController@goods');//胡华聘
+    Route::get('good/{id}','ShopController@goodDetail'); //胡华聘
+});
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
+    Route::get('index', 'IndexController@index'); // 武志祥
+    Route::resource('goods','ShopController'); //胡华聘
+    Route::resource('losegoods','LoseGoodsController');//武志祥
+    Route::resource('findgoods','FindGoodsController');//武志祥
+    Route::resource('findpeople','FindPeopleController');//武志祥
 });
 
 /*    --------------yxb ---------------- ******************************************************************************/
@@ -47,4 +58,3 @@ Route::get('/monyrule',['as'=>"monyrule",'uses'=>"YXBController@moneyrule"]);
 Route::get('/monyrecord',['as'=>"monyrecord",'uses'=>"YXBController@monerecord"]);
 
 /**********************************************************************************************************************/
-

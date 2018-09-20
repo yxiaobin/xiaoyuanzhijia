@@ -42,6 +42,14 @@
                     </ul>
                 </div>
             </li>
+            <li class="">
+                <a href="{{url('admin/goods')}}">
+                    <div class="icon">
+                        <i class="fa fa-link"  aria-hidden="true"></i>
+                    </div>
+                    <div class="title">商品管理</div>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>
