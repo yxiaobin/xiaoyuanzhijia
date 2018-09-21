@@ -17,6 +17,7 @@ Route::group(['prefix'=>'','namespace'=>'Home'],function (){
     Route::get('goods','ShopController@goods'); //胡华聘
     Route::get('good/{good}','ShopController@goodDetail'); //胡华聘
     Route::get('rule','ShopController@rule');//胡华聘
+    Route::get('repair','RepairController@index');//胡华聘
     Route::resource('findgoods','FindGoodsController');//武志祥
     Route::resource('losegoods','LoseGoodsController');//武志祥
     Route::resource('findpeople','FindPeopleController');//武志祥
@@ -29,6 +30,7 @@ Route::group(['prefix'=>'','namespace'=>'Home'],function (){
 
     Route::get('exchange/record','ShopController@exchange_record');
     Route::get('exchange/{good}','ShopController@exchange');
+    Route::post('repair','RepairController@store');
 });
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
@@ -37,6 +39,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::get('record','ShopController@record');//胡华聘
     Route::get('good/{good}/change','ShopController@goodChange');//胡华聘
     Route::get('record/{record}/change','ShopController@recordChange');//胡华聘
+    Route::get('repair','RepairController@index');//胡华聘
+    Route::get('repair/{repair}/{status}','RepairController@status');  //胡华聘
+
 });
 
 /*    --------------yxb ---------------- ******************************************************************************/

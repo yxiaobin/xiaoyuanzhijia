@@ -33,7 +33,6 @@
                 <div class="dropdown-menu">
                     <ul>
                         <li><a href="{{url("/adminmember")}}">用户审核</a></li>
-                        {{--<li><a href="">信息发送</a></li>--}}
                     </ul>
                 </div>
             </li>
@@ -42,7 +41,7 @@
                     <div class="icon">
                         <i class="fa fa-book"></i>
                     </div>
-                    <div class="title">内容管理</div>
+                    <div class="title">报修管理</div>
                 </a>
                 <div class="dropdown-menu">
                     <ul>

@@ -83,7 +83,7 @@ am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }"
 am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }">
         <li style="text-align: center;">
           <div class="am-gallery-item">
-            <a href="protect.html"><img src="images/safe.jpg" alt="" style="width: 150px;height: 100px;" />
+            <a href="{{url('repair')}}"><img src="images/safe.jpg" alt="" style="width: 150px;height: 100px;" />
               <h3 class="am-gallery-title" style="text-align: center;">安全卫士</h3>
             </a>
           </div>
