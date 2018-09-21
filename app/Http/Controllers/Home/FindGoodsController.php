@@ -59,7 +59,7 @@ class FindGoodsController extends Controller
             if ($image){
                 $data['item_image'] = $image->store('image');
             }
-            $data['user_id'] = 1;
+            $data['user_id'] = session('id');
             $data['type'] = 2;
             Searching::create($data);
             return redirect()->route('findgoods.index');
@@ -77,6 +77,8 @@ class FindGoodsController extends Controller
     public function show($id)
     {
         //
+        $item = Searching::find($id);
+        return view('home.searching.detail',compact('item'));
     }
 
     /**

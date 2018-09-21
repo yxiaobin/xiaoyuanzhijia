@@ -54,7 +54,7 @@ class FindPeopleController extends Controller
 
             $data['item_image'] = '';
             $data['find_address'] = '';
-            $data['user_id'] = 1;
+            $data['user_id'] = session('id');
             $data['item_name'] = '';
             $data['type'] = 3;
             Searching::create($data);
@@ -73,6 +73,8 @@ class FindPeopleController extends Controller
     public function show($id)
     {
         //
+        $item = Searching::find($id);
+        return view('home.searching.detail',compact('item'));
     }
 
     /**

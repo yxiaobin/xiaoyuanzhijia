@@ -6,6 +6,7 @@ use App\Http\Model\Comment;
 use App\Http\Model\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class QuestionController extends Controller
@@ -51,7 +52,7 @@ class QuestionController extends Controller
         ]);
         if ($va->passes()){
             $data = $request->except('_token');
-            $data['user_id'] = 1;
+            $data['user_id'] = \session('id');
             Question::create($data);
             return redirect()->route('question.index');
         }

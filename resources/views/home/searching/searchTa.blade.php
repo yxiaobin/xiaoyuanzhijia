@@ -20,18 +20,17 @@
         <div class="am-g">
             <div class="am-u-sm-12">
                 <div class="am-thumbnail">
-                    <img src="assets\i\examples\admin-ie.png" alt="" class="am-comment-avatar" width="48"
+                    <img src="{{'uploads/' . \App\Member::find($item->user_id)->image}}" alt="" class="am-comment-avatar" width="48"
                          height="48"/>
                     <div class="am-thumbnail-caption">
-                        <p>小红</p>
+                        <p>{{\App\Member::find($item->user_id)->name}}</p>
                         <p>{{$item->item_name}}</p>
                         <p>{{$item->item_detail}}</p>
                         <p>{{date('Y.m.d',strtotime($item->created_at))}}</p>
                         <p>
-                            <a href="searchTa_detail.html" class="btn btn-success" role="button">
+                            <a href="{{route('findpeople.show',$item->id)}}" class="btn btn-success" role="button">
                                 查看详情
                             </a>
-
                         </p>
                     </div>
                 </div>

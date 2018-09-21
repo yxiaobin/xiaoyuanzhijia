@@ -54,9 +54,13 @@
                 @foreach($comments as $comment)
                     <li class="mui-table-view-cell mui-media">
                         <a href="timeline.html">
-                            <img class="mui-media-object mui-pull-left" src="{{asset('images/my.png')}}">
+                            <img class="mui-media-object mui-pull-left" src="{{asset('uploads/'.\App\Member::find($comment->user_id)->image)}}">
                             <div class="mui-media-body">
-                                网名
+                                {{\App\Member::find($comment->user_id)->name}}
+                                @if($comment->father_id!=0)
+                                    回复
+                                    {{\App\Member::find($comment->father_id)->name}}
+                                @endif
                                 <p class='mui-ellipsis'>
                                     {{$comment->content}}
                                 </p>
@@ -82,7 +86,7 @@
              class="mui-popover mui-popover-action mui-popover-bottom">
             <ul class="mui-table-view">
                 <li class="mui-table-view-cell">
-                    <a href="{{route('comment.create')}}?question_id={{$question->id}}&commnet_id={{$comment->id}}" id="applyBtn">回复</a>
+                    <a href="{{route('comment.create')}}?question_id={{$question->id}}&comment_id={{$comment->id}}" id="applyBtn">回复</a>
                 </li>
                 <li class="mui-table-view-cell">
                     <a href="#gmoney">打赏</a>

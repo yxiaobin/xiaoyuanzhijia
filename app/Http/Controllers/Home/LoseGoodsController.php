@@ -54,7 +54,7 @@ class LoseGoodsController extends Controller
 
             $data['item_image'] = '';
             $data['find_address'] = '';
-            $data['user_id'] = 1;
+            $data['user_id'] = session('id');
             $data['type'] = 1;
             Searching::create($data);
             return redirect()->route('findgoods.index');

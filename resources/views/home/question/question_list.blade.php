@@ -18,7 +18,7 @@
             <li class="am-comment">
                 <article class="am-comment">
                     <a href="#link-to-user-home">
-                        <img src="images/1b.jpg" alt="" class="am-comment-avatar" width="48" height="48"/>
+                        <img src="{{asset('uploads/'.\App\Member::find($item->user_id)->image)}}" alt="" class="am-comment-avatar" width="48" height="48"/>
                     </a>
 
                     <div class="am-comment-main">
