@@ -43,7 +43,7 @@ class StoryController extends Controller
         $data['user_id'] = session('id');
         Story::create($data);
         session()->flash('success','发表成功！');
-        return back();
+        return redirect('story');
     }
     public function comment($story_id,$id = 0){
         return view('home.story.comment',compact('story_id','id'));
