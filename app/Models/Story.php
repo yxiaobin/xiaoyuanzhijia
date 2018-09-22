@@ -11,7 +11,7 @@ class Story extends Model
     public function user(){
         return $this->belongsTo('App\Member','user_id','id');
     }
-    public function commemnts(){
+    public function comments(){
         return $this->hasMany('App\Models\StoryComment','story_id','id');
     }
 }

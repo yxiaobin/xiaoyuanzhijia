@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/detail.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset("css/article.css")}}" />
+    <link href="{{asset('css/mui.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 @endsection
 
 @section('title')
@@ -23,7 +25,7 @@
                 <h2>{{$story->title}}</h2>
             </div>
             <div class="info">
-                @if($story->user->image)<img src="{{$story->user->image}}" /> {{$story->user->name}}
+                @if($story->user->image)<img src="{{$story->user->image}}" /> @endif{{$story->user->name}}
             </div>
         </div>
         <!--文章内容-->
@@ -38,16 +40,13 @@
             <h5>关于作者</h5>
             <a>
                 <div class="author_info">
-                    <a href="timeline.html" id="timelinegoTo"> @if($story->user->image)<img src="{{$story->user->image}}" />@endif
-                    <div class="author_name">
-                        菜鸟卡比兽
-                    </div>
+                    <a href="{{url('myspace')}}/{{$story->user->id}}" id="timelinegoTo"> @if($story->user->image)<img src="{{$story->user->image}}" />@endif
+                    <div class="author_name">{{$story->user->name}}</div>
                     </a>
-                    <a href="timeline.html"><button id="alertBtn" class="mui-pull-right mui-btn-green">看他</button></a>
+                    <a href="{{url('myspace')}}/{{$story->user->id}}"><button id="alertBtn" class="mui-pull-right mui-btn-green">看他</button></a>
                 </div>
             </a>
         </div>
-
     </div>
 
     <!-- 评论展示 -->
@@ -55,7 +54,7 @@
         <div class="mui-scroll">
             <!--全部评论-->
             <ul class="mui-table-view" style="margin-top: 20px;">
-                @foreach($comments as $comment)
+                @foreach($story->comments as $comment)
                 <li class="mui-table-view-cell mui-media">
                     <a href="timeline.html">
                        @if($comment->user->image) <img class="mui-media-object mui-pull-left" src="{{asset("uploads")}}/{{$comment->user->image}}">@endif
