@@ -42,9 +42,7 @@ class YXBController extends Controller
         $p->image = "uploads/title3.png";
         $p->money = 50;
         $p->save();
-        echo "<script>alert('您的账号注册成功，快去登陆吧')</script>";
         session(['name'=>'', 'id'=>'']);
-        echo "<script>var t = setTimeout(function(){parent.history.back()},2);</script>";
         return  redirect('login');
     }
 //    登陆逻辑
@@ -97,6 +95,9 @@ class YXBController extends Controller
     }
     //    修改信息逻辑
     public  function  editinfostore(Request $request){
+        $this->validate($request,[
+            'tag'=>'max:12'
+        ]);
         $p = Member::find(session('id'));
         $p->name = $request->input('name');
         $p->class = $request->input('class');

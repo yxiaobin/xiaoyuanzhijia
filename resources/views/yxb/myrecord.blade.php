@@ -46,7 +46,7 @@
                         <h3>{{$new->item_name}}</h3>
                         <p>{{$new->item_detail}}</p>
                         <p>
-                            <a href="#" class="btn btn-success" role="button">
+                            <a href="{{url("findgoods/$new->id")}}" class="btn btn-success" role="button">
                                 查看详情
                             </a>
                             <a href="{{url("change/$new->id")}}" class="btn btn-default" role="button" style="float: right;">

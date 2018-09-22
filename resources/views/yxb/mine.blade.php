@@ -62,7 +62,7 @@
         </a>
         <div class="add" style="text-align: center;margin-bottom: 10px;font-size: 18px;">
             <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：###</span> &nbsp;&nbsp;
-            <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">来访：###</span>
+            <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">标签：###</span>
         </div>
         @else
             <img src="{{asset("uploads/$member->image")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 5px;position: relative;left: 50%;margin-left: -25px">
@@ -71,7 +71,7 @@
             </a>
             <div class="add" style="text-align: center;margin-bottom: 10px;font-size: 18px;">
                 <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：{{$member->money}}</span> &nbsp;&nbsp;
-                <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">来访：111</span>
+                <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">标签：{{$member->tag}}</span>
             </div>
         @endif
 

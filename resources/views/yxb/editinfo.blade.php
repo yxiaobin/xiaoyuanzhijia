@@ -38,6 +38,15 @@
 <!-- 填写表单 -->
 <form method="post" action="{{url("/editinfo")}}" enctype="multipart/form-data" >
     {{csrf_field()}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="form-group">
         <label for="exampleInputPassword1">学号</label>
         <input type="number" class="form-control" readonly id="exampleInputPassword1" placeholder="请输入真实学号" name="stuid" value="{{$member->stuid}}">
