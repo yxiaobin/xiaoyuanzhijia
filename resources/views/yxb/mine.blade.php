@@ -85,7 +85,7 @@
             $id = 1;
             }
             @endphp
-            <a href="{{url("myspace/$id")}}">
+            <a href="{{url("myspace/$id")}}" style="vertical-align: middle;">
                 个人中心
             </a>
         </div>
@@ -93,7 +93,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="{{asset("images/edit.png")}}" alt="" style="width:25px;height:25px;">
-            <a href="{{url('editinfo')}}">
+            <a href="{{url('editinfo')}}" style="vertical-align: middle;">
                 修改信息
             </a>
         </div>
@@ -101,7 +101,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/jinbi.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("mymoney")}}">
+            <a href="{{url("mymoney")}}" style="vertical-align: middle;">
                 我的积分
             </a>
         </div>
@@ -109,7 +109,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/send.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("myrecord")}}">
+            <a href="{{url("myrecord")}}" style="vertical-align: middle;">
                 发布记录
             </a>
         </div>
@@ -117,7 +117,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/news.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("mynew")}}">
+            <a href="{{url("mynew")}}" style="vertical-align: middle;">
                 我的消息
             </a>
         </div>
@@ -125,7 +125,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/quit.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("/logout")}}">
+            <a href="{{url("/logout")}}" style="vertical-align: middle;">
                 退出
             </a>
         </div>

@@ -50,21 +50,21 @@
 am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }">
         <li style="text-align: center;">
           <div class="am-gallery-item">
-            <a href="{{route('findgoods.index')}}"><img src="images/lost-find.jpg" alt="" style="width: 150px;height: 100px;" />
-              <h3 class="am-gallery-title" style="text-align: center;">名字待定</h3>
+            <a href="{{route('findgoods.index')}}"><img src="images/main1.jpg" alt="" style="width: 150px;height: 100px;" />
+              <h3 class="am-gallery-title" style="text-align: center;">失物招领</h3>
             </a>
           </div>
         </li>
         <li style="text-align: center;">
           <div class="am-gallery-item">
-            <a href="{{route('findpeople.index')}}"><img src="images/find.jpg" alt="" style="width: 150px;height: 100px;" />
-              <h3 class="am-gallery-title" style="text-align: center;">众里寻ta</h3>
+            <a href="{{route('findpeople.index')}}"><img src="images/main2.jpg" alt="" style="width: 150px;height: 100px;" />
+              <h3 class="am-gallery-title" style="text-align: center;">众里寻人</h3>
             </a>
           </div>
         </li>
         <li style="text-align: center;">
           <div class="am-gallery-item">
-           <a href="{{route('question.index')}}"><img src="images/question.jpg" alt="" style="width: 150px;height: 100px;" />
+           <a href="{{route('question.index')}}"><img src="images/main3.jpg" alt="" style="width: 150px;height: 100px;" />
               <h3 class="am-gallery-title" style="text-align: center;">你问我答</h3>
             </a>
           </div>
@@ -79,7 +79,7 @@ am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }"
 am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }">
         <li style="text-align: center;">
           <div class="am-gallery-item">
-            <a href="{{url('repair')}}"><img src="images/safe.jpg" alt="" style="width: 150px;height: 100px;" />
+            <a href="{{url('repair')}}"><img src="images/main4.jpg" alt="" style="width: 150px;height: 100px;" />
               <h3 class="am-gallery-title" style="text-align: center;">安全卫士</h3>
             </a>
           </div>
@@ -94,7 +94,7 @@ am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }"
 am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }">
         <li style="text-align:center">
           <div class="am-gallery-item">
-            <a href="{{url('story')}}"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt="" style="width: 150px;height: 100px;"/>
+            <a href="{{url('story')}}"><img src="images/main5.jpg" alt="" style="width: 150px;height: 100px;"/>
               <h3 class="am-gallery-title" style="text-align: center;">家园心语</h3>
             </a>
           </div>
