@@ -17,7 +17,7 @@
     </style>
 @endsection
 @section('content')
-    @include('home.layouts.header',['header'=>'失物招领'])
+    @include('home.layouts.header',['header'=>'详情'])
 
     <!-- 详情展示 -->
     @if($item->type==2)
@@ -26,14 +26,13 @@
         <div class="content">
             <br>
             <div class="thing-info">
-                <p><strong>物品名称：</strong><span>{{$item->item_name}}</span></p>
-                <p><strong>物品详情：</strong><span>{{$item->item_detail}}</span></p>
-                <p><strong>发现物品的地址：</strong><span>{{$item->find_address}}</span></p>
-                <h1>发现者信息：</h1>
-                <p><strong>姓名：</strong><span>{{\App\Member::find($item->user_id)->name}}</span></p>
-                <p><strong>学号：</strong><span>{{\App\Member::find($item->user_id)->stuid}}</span></p>
-                <p><strong>班级：</strong><span>{{\App\Member::find($item->user_id)->class}}</span></p>
-                <p><strong>发现者联系方式：</strong><span>电话：{{$item->phone}}</span></p>
+                <p><strong>拾获物品名称：</strong><span>{{$item->item_name}}</span></p>
+                <p><strong>拾获物品详情：</strong><p><span>{{$item->item_detail}}</span></p></p>
+                <p><strong>拾获物品的地址：</strong><p><span>{{$item->find_address}}</span></p></p>
+                {{--<p><strong>姓名：</strong><span>{{\App\Member::find($item->user_id)->name}}</span></p>--}}
+                {{--<p><strong>学号：</strong><span>{{\App\Member::find($item->user_id)->stuid}}</span></p>--}}
+                {{--<p><strong>班级：</strong><span>{{\App\Member::find($item->user_id)->class}}</span></p>--}}
+                <p><strong>拾获者联系方式：</strong><p><span>{{$item->phone}}</span></p></p>
             </div>
 
         </div>
@@ -41,16 +40,16 @@
     @endif
     @if($item->type==1)
         <div class="detailshow" style="padding: 20px">
+            <img src="{{asset('uploads/image/main1.jpg')}}" alt="">
             <div class="content">
                 <br>
                 <div class="thing-info">
                     {{--<p><strong>待寻物的特征：</strong><span>{{$item->item_name}}</span></p>--}}
-                    <p><strong>待寻物的详细描述：</strong><span>{{$item->item_detail}}</span></p>
-                    <h1>联系人信息：</h1>
-                    <p><strong>姓名：</strong><span>{{\App\Member::find($item->user_id)->name}}</span></p>
-                    <p><strong>学号：</strong><span>{{\App\Member::find($item->user_id)->stuid}}</span></p>
-                    <p><strong>班级：</strong><span>{{\App\Member::find($item->user_id)->class}}</span></p>
-                    <p><strong>发现者联系方式：</strong><span>电话：{{$item->phone}}</span></p>
+                    <p><strong>待寻物的详细描述：</strong><p><span>{{$item->item_detail}}</span></p></p>
+                    <p><strong>待寻人姓名：</strong><span>{{\App\Member::find($item->user_id)->name}}</span></p>
+                    {{--<p><strong>学号：</strong><span>{{\App\Member::find($item->user_id)->stuid}}</span></p>--}}
+                    <p><strong>待寻人班级：</strong><span>{{\App\Member::find($item->user_id)->class}}</span></p>
+                    <p><strong>待寻人联系方式：</strong><p><span>{{$item->phone}}</span></p></p>
                 </div>
 
             </div>
@@ -58,16 +57,16 @@
     @endif
     @if($item->type==3)
         <div class="detailshow" style="padding: 20px">
+            <img src="{{asset('uploads/image/main2.jpg')}}" alt="">
             <div class="content">
                 <br>
                 <div class="thing-info">
                     {{--<p><strong>待寻人的特征：</strong><span>{{\App\Member::find($item->user_id)->name}}</span></p>--}}
-                    <p><strong>待寻人的详细描述：</strong><span>{{$item->item_detail}}</span></p>
-                    <h1>联系人信息：</h1>
-                    <p><strong>姓名：</strong><span>{{\App\Member::find($item->user_id)->name}}</span></p>
-                    <p><strong>学号：</strong><span>{{\App\Member::find($item->user_id)->stuid}}</span></p>
-                    <p><strong>班级：</strong><span>{{\App\Member::find($item->user_id)->class}}</span></p>
-                    <p><strong>发现者联系方式：</strong><span>电话：{{$item->phone}}</span></p>
+                    <p><strong>待寻人的详细描述：</strong> <p><span>{{$item->item_detail}}</span></p></p>
+                    <p><strong>待寻人姓名：</strong><span>{{\App\Member::find($item->user_id)->name}}</span></p>
+                    {{--<p><strong>学号：</strong><span>{{\App\Member::find($item->user_id)->stuid}}</span></p>--}}
+                    <p><strong>待寻人班级：</strong><span>{{\App\Member::find($item->user_id)->class}}</span></p>
+                    <p><strong>待寻人联系方式：</strong><p><span>{{$item->phone}}</span></p></p>
                 </div>
             </div>
         </div>

@@ -12,14 +12,14 @@
 
 @section('content')
 
-    @include('home.layouts.header',['header'=>'众里寻ta'])
+    @include('home.layouts.header',['header'=>'众里寻人'])
 
     <div id="myTabContent" class="tab-content">
 
         @foreach($items['people'] as $item)
         <div class="am-g">
-            <div class="am-u-sm-12" style="margin-top: 10px;">
-                <div class="am-thumbnail">
+            <div class="am-u-sm-12">
+                <div class="am-thumbnail" style="padding-top: 10px;">
                     <img src="{{'uploads/' . \App\Member::find($item->user_id)->image}}" alt="" class="am-comment-avatar" width="48"
                          height="48"/>
                     <span>{{\App\Member::find($item->user_id)->name}}</span>
@@ -42,7 +42,7 @@
     </div>
     <!-- 发布按钮 -->
     <a href="{{route('findpeople.create')}}">
-        <img src="images/add.png" alt=""
+        <img src="images/launch.png" alt=""
              style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
     </a>
 
