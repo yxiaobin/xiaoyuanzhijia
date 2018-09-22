@@ -37,7 +37,7 @@
     <!-- LOGO -->
     <div class="am-u-sm-12 am-text-center">
         {{--<i class="am-icon-twitch myapp-login-logo"></i>--}}
-        <image src="{{asset('images/logo.jpg')}}" style="width: 150px;height: 150px;border-radius: 50%;margin: 50px auto;"></image>
+        <image src="{{asset('images/logo11.png')}}" style="border-radius: 50%;margin: 50px auto;"></image>
     </div>
     <!-- 登陆框 -->
 

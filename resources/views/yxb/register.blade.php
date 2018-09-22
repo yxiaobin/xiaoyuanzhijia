@@ -35,11 +35,11 @@
 <div class="am-g" style="margin: 17px auto;">
     <!-- LOGO -->
     <div class="am-u-sm-12 am-text-center">
-        <image src="{{asset('images/logo.jpg')}}" style="width: 150px;height: 150px;border-radius: 50%;margin-top: 40px;"></image>
+        <image src="{{asset('images/logo11.png')}}" style="border-radius: 50%;margin-top: 40px;"></image>
     </div>
     <!-- 登陆框 -->
     <div class="am-u-sm-11 am-u-sm-centered">
-        <form class="am-form" action="{{url("/register")}}"method="post">
+        <form class="am-form" action="{{url("/register")}}"method="post" id="shangyi">
             {{ csrf_field() }}
             <fieldset class="myapp-login-form am-form-set">
 
@@ -89,6 +89,12 @@
 <![endif]-->
 <script src="{{asset("assets/js/amazeui.min.js")}}"></script>
 <script src="{{asset("assets/js/app.js")}}"></script>
+<script>
+    var xxx = document.getElementById('shangyi');
+    setInterval(function(){
+        xxx.scrollIntoView(false);
+    },200)
+</script>
 </body>
 
 </html>
