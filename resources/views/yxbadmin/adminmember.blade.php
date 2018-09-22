@@ -48,7 +48,11 @@
                             <div class="form-group">
                                 <label class="col-md-2">校园卡信息</label>
                                 <div class="col-md-8 col-sm-12">
+                                    @if($page->card_image != null)
                                     <img src="{{asset("uploads/$page->card_image")}}" style="width: 100px; height: 50px;">
+                                    @else
+                                    该用户还未上传学生证信息，无法通过审核
+                                    @endif
                                 </div>
 
                             </div>
@@ -57,8 +61,10 @@
                         <div class="form-footer">
                             <div class="form-group">
                                 <div class="col-md-9 col-md-offset-3">
+                                    @if($page->card_image != null)
                                     <a href="{{url("/memberyes/$page->id")}}" class="btn btn-primary">通过</a>
-                                    <a href="{{url("/memberno/$page->id")}}" class="btn btn-primary">不通过</a>
+                                    @endif
+                                        <a href="{{url("/memberno/$page->id")}}" class="btn btn-primary">不通过</a>
                                 </div>
                             </div>
                         </div>
