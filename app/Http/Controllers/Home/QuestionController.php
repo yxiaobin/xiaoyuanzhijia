@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Model\Comment;
 use App\Http\Model\Question;
+use App\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
