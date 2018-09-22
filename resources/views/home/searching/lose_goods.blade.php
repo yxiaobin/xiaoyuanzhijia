@@ -12,23 +12,23 @@
 @endsection
 @section('content')
 
-    @include('home.layouts.header',['header'=>'众里寻他'])
+    @include('home.layouts.header',['header'=>'寻物启示'])
 
     <!-- 填写表单 -->
     <form action="{{route('losegoods.store')}}" method="post">
         @include('admin.layouts.errors')
         <div class="form-group">
-            <label for="exampleInputPassword1">待寻物品</label>
+            <label for="exampleInputPassword1">待寻物品名称</label>
             {{csrf_field()}}
-            <input type="text" name="item_name" class="form-control" id="exampleInputPassword1" placeholder="">
+            <input type="text" name="item_name" class="form-control" id="exampleInputPassword1" placeholder="如：课本等">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">待寻物的详细描述</label>
-            <textarea class="form-control" name="item_detail" rows="3" placeholder=""></textarea>
+            <label for="exampleInputPassword1">待寻物品的详细描述</label>
+            <textarea class="form-control" name="item_detail" rows="3" placeholder="如：新生入学手册等"></textarea>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">找到后怎么与您联系</label>
-            <textarea name="phone" class="form-control" rows="3" placeholder="电话或者其他方式"></textarea>
+            <label for="exampleInputPassword1">您的联系方式</label>
+            <textarea name="phone" class="form-control" rows="3" placeholder="如：电话：15064655***"></textarea>
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">提交</button>

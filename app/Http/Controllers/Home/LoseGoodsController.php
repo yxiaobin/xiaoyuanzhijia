@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Model\Searching;
+use App\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -57,7 +58,8 @@ class LoseGoodsController extends Controller
             $data['type'] = 1;
             Searching::create($data);
             $member = Member::find(session('id'));
-            $member->money -= $member->money;
+            $member->money = $member->money - 20;
+            $member->update();
             return redirect()->route('findgoods.index');
         } else {
             return back()->withErrors($va);
