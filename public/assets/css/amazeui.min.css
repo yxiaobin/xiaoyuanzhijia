@@ -3060,8 +3060,8 @@ a.am-badge:focus, a.am-badge:hover {
 }
 .am-comment-avatar {
     float: left;
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     border: 1px solid transparent
 }
@@ -3116,7 +3116,8 @@ a.am-badge:focus, a.am-badge:hover {
 .am-comment-title {
     margin: 0 0 8px 0;
     font-size: 1.6rem;
-    line-height: 1.2
+    line-height: 1.2;
+    padding-left: 10px;
 }
 .am-comment-meta {
     -webkit-box-flex: 1;

@@ -24,7 +24,7 @@
                     <div class="am-comment-main">
                         <header class="am-comment-hd">
                             <a href="{{route('question.show',$item->id)}}">
-                                <h3 class="am-comment-title">{{$item->title}}</h3>
+                                <h3 class="am-comment-title" style="color: #000;">{{$item->title}}</h3>
                             </a>
                         </header>
 
@@ -47,7 +47,7 @@
 
     <!-- 发布按钮 -->
     <a href="{{route('question.create')}}">
-        <img src="images/add.png" alt=""
+        <img src="images/launch.png" alt=""
              style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
     </a>
 @endsection
