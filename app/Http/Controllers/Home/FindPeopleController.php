@@ -60,7 +60,8 @@ class FindPeopleController extends Controller
             $data['type'] = 3;
             Searching::create($data);
             $member = Member::find(session('id'));
-            $member->money -= $member->money;
+            $member->money = $member->money - 20;
+            $member->update();
             return redirect()->route('findpeople.index');
         } else {
             return back()->withErrors($va);

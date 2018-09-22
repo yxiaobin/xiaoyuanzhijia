@@ -54,6 +54,9 @@ class QuestionController extends Controller
             $data = $request->except('_token');
             $data['user_id'] = \session('id');
             Question::create($data);
+            $member = Member::find(\session('id'));
+            $member->money = $member->money - 20;
+            $member->update();
             return redirect()->route('question.index');
         }
     }
