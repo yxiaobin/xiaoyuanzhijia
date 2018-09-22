@@ -67,7 +67,8 @@
                 <div class="am-thumbnail-caption">
                     <p>{{$member->name}}</p>
                     <p>{{$new->item_detail}}</p>
-                    <p>2018.8.23</p>
+                    <p>{{$new->updated_at}}</p>
+
                     <p>
                         <a href="#" class="btn btn-success" role="button">
                             查看详情

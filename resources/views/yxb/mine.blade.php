@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="{{asset("assets/i/favicon.png")}}">
+    <link rel="stylesheet" href="{{asset("css/reset.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/amazeui.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/app.css")}}">
+    <link rel="stylesheet" href="{{asset("css/main.css")}}">
     <title>校园之家</title>
     <style media="screen">
         .content {
@@ -56,13 +56,13 @@
     <div class="info">
         {{--没有登陆--}}
         @if(session('id')=='')
-            <img src="{{asset("images/1b.jpg")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-left:164px;margin-top: 5px;">
+            <img src="{{asset("images/1b.jpg")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 5px;position: relative;left: 50%;margin-left: -25px">
         <a href="{{route('login')}}">
             <div style="text-align: center;margin-top: 5px;color:white;font-size:18px;">登陆</div>
         </a>
         <div class="add" style="text-align: center;margin-bottom: 10px;font-size: 18px;">
-            <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：666</span> &nbsp;&nbsp;
-            <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">来访：111</span>
+            <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：###</span> &nbsp;&nbsp;
+            <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">来访：###</span>
         </div>
         @else
             <img src="{{asset("uploads/$member->image")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 5px;position: relative;left: 50%;margin-left: -25px">
@@ -78,11 +78,14 @@
     </div>
     <div class="list">
         <div class="editinfo">
-            <img src="images/my.png" alt="" style="width:25px;height:25px;">
+            <img src="{{asset("images/my.png")}}" alt="" style="width:25px;height:25px;">
             @php
             $id = session('id');
+            if($id == null){
+            $id = 1;
+            }
             @endphp
-            <a href="{{url("myspace/$id")}}">
+            <a href="{{url("myspace/$id")}}" style="vertical-align: middle;">
                 个人中心
             </a>
         </div>
@@ -90,7 +93,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="{{asset("images/edit.png")}}" alt="" style="width:25px;height:25px;">
-            <a href="{{url('editinfo')}}">
+            <a href="{{url('editinfo')}}" style="vertical-align: middle;">
                 修改信息
             </a>
         </div>
@@ -98,7 +101,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/jinbi.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("mymoney")}}">
+            <a href="{{url("mymoney")}}" style="vertical-align: middle;">
                 我的积分
             </a>
         </div>
@@ -106,7 +109,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/send.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("myrecord")}}">
+            <a href="{{url("myrecord")}}" style="vertical-align: middle;">
                 发布记录
             </a>
         </div>
@@ -114,7 +117,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/news.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("mynew")}}">
+            <a href="{{url("mynew")}}" style="vertical-align: middle;">
                 我的消息
             </a>
         </div>
@@ -122,7 +125,7 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/quit.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("/logout")}}">
+            <a href="{{url("/logout")}}" style="vertical-align: middle;">
                 退出
             </a>
         </div>

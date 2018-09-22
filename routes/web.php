@@ -29,6 +29,8 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
     Route::post('story/comment/{story}/{id}','StoryController@commentStore');  //胡华聘
     Route::resource('story','StoryController'); //胡华聘
     Route::get('reward/{user_id}/{num}','StoryController@reward');//胡华聘
+
+
 });
 
 //需要登录后操作
@@ -50,7 +52,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
 
 });
 
-/*    --------------yxb ---------------- ******************************************************************************/
+/* ***************************************************************
+write by 杨小宾
+******************************************************************/
+
 //后台审核
 Route::get('adminmember', 'YxbAdminController@adminmember'); // 杨小宾
 Route::get('adminmemberdetail/{id}', 'YxbAdminController@adminmemberdetail'); // 杨小宾
@@ -65,25 +70,28 @@ Route::get('/getlogin',['as'=>"getlogin",'uses'=>"YXBController@loginstore"]);
 Route::get('/register',['as'=>"register",'uses'=>"YXBController@register"]);
 Route::post('/register',['as'=>"register",'uses'=>"YXBController@registerstore"]);
 
-//登出
-Route::get('/logout',['as'=>"logout",'uses'=>"YXBController@logout"]);
-
 //我的
-Route::get('/mine',['as'=>"mine",'uses'=>"YXBController@mine"]);
+Route::get('/mine', ['as' => "mine", 'uses' => "YXBController@mine"]);
+/************************************************************************************
+write by 杨小宾
+**************************************************************************************/
+Route::group(['prefix'=>'','middleware'=>'HomeLoginCheck'],function () {
 //修改信息
-Route::get('/editinfo',['as'=>"editinfo",'uses'=>"YXBController@editinfo"]);
-Route::post('/editinfo',['as'=>"editinfo",'uses'=>"YXBController@editinfostore"]);
-
+    Route::get('/editinfo', ['as' => "editinfo", 'uses' => "YXBController@editinfo"]);
+    Route::post('/editinfo', ['as' => "editinfo", 'uses' => "YXBController@editinfostore"]);
 //个人中心
-Route::get('/myspace/{id}',['as'=>"mycpace",'uses'=>"YXBController@myspace"]);
+    Route::get('/myspace/{id}', ['as' => "mycpace", 'uses' => "YXBController@myspace"]);
 //我的积分
-Route::get('/mymoney',['as'=>"mymoney",'uses'=>"YXBController@mymoney"]);
+    Route::get('/mymoney', ['as' => "mymoney", 'uses' => "YXBController@mymoney"]);
 //我的记录
-Route::get('/myrecord',['as'=>"myrecord",'uses'=>"YXBController@myrecord"]);
+    Route::get('/myrecord', ['as' => "myrecord", 'uses' => "YXBController@myrecord"]);
 //我的消息
-Route::get('/mynew',['as'=>"mynew",'uses'=>"YXBController@mynew"]);
+    Route::get('/mynew', ['as' => "mynew", 'uses' => "YXBController@mynew"]);
 //积分规则
-Route::get('/monyrule',['as'=>"monyrule",'uses'=>"YXBController@moneyrule"]);
+    Route::get('/monyrule', ['as' => "monyrule", 'uses' => "YXBController@moneyrule"]);
 //积分馆兑换记录
-Route::get('/monyrecord',['as'=>"monyrecord",'uses'=>"YXBController@monyrecord"]);
+    Route::get('/monyrecord', ['as' => "monyrecord", 'uses' => "YXBController@monyrecord"]);
+//登出
+    Route::get('/logout', ['as' => "logout", 'uses' => "YXBController@logout"]);
+});
 /**********************************************************************************************************************/

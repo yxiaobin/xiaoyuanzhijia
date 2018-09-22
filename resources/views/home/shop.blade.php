@@ -19,7 +19,7 @@
     <div class="info_header">
         <div class="one">
             <h3 style="display:inline-block">山理积分馆</h3>
-            <a href="{{url('rule')}}">规则</a>
+            <a href="{{url('rule')}}" style="color: #ccc">规则</a>
         </div>
         <div class="two">
             <span> 积分：@if($user){{$user->money}}@else 登陆后查看 @endif <img src="images/jifen.png" alt="" style="width:25px;height:25px"></span>

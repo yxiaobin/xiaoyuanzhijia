@@ -18,9 +18,9 @@
     <!-- 失物招领 -->
     <ul id="myTab" class="nav nav-tabs">
         <li class="active">
-            <a href="#found" data-toggle="tab">失物招领</a>
+            <a href="#found" data-toggle="tab">招领启示</a>
         </li>
-        <li><a href="#search" data-toggle="tab">众里寻它</a></li>
+        <li><a href="#search" data-toggle="tab">寻物启示</a></li>
     </ul>
     <div id="myTabContent" class="tab-content">
         @foreach($items['find'] as $item)
@@ -30,10 +30,10 @@
                     <div class="thumbnail">
                         <img src="{{asset($item->item_image)}}" alt="通用的占位符缩略图">
                         <div class="caption">
-                            <h3>校园卡——计科1602小猪</h3>
-                            <p>{{$item->find_address}}</p>
-                            <p>{{$item->item_detail}}</p>
-                            <p>{{date('Y.m.d',strtotime($item->created_at))}}</p>
+                            <h3>拾获物品：{{$item->item_name}}</h3>
+                            <p>拾获地点：{{$item->find_address}}</p>
+                            <p>物品描述：{{$item->item_detail}}</p>
+                            <p>发布时间：{{date('Y.m.d',strtotime($item->created_at))}}</p>
                             <p>
                                 <a href="{{route('findgoods.show',$item->id)}}" class="btn btn-success" role="button">
                                     查看详情
@@ -61,13 +61,16 @@
                     <div class="am-g">
                         <div class="am-u-sm-12">
                             <div class="am-thumbnail">
-                                <img src="{{asset('uploads/' . \App\Member::find($item->user_id)->image)}}" alt="" class="am-comment-avatar" width="48"
+                                <div style="height: 20px;margin-top: 5px;">
+                                    <img src="{{asset('uploads/' . \App\Member::find($item->user_id)->image)}}" alt="" class="am-comment-avatar" width="48">
+                                    <span style="vertical-align: sub;">{{\App\Member::find($item->user_id)->name}}</span>
+                                </div>
+
                                 {{--height="48"/>--}}
-                                <div class="am-thumbnail-caption">
-                                    <p>{{\App\Member::find($item->user_id)->name}}</p>
-                                    <p>{{$item->item_name}}</p>
-                                    <p>{{$item->item_detail}}</p>
-                                    <p>{{date('Y.m.d',strtotime($item->created_at))}}</p>
+                                <div class="am-thumbnail-caption" style="margin-top: 10px;">
+                                    <p>寻物名称：{{$item->item_name}}</p>
+                                    <p>物品描述：{{$item->item_detail}}</p>
+                                    <p>发布时间：{{date('Y.m.d',strtotime($item->created_at))}}</p>
                                     <p>
                                         <a href="{{route('findgoods.show',$item->id)}}" class="btn btn-success" role="button">
                                             查看详情

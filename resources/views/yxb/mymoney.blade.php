@@ -70,14 +70,14 @@
         @endforeach
         @foreach($r2 as $p)
                 @php
-                    $keymember = \App\Member::find('$p->accept_id');
+                    $keymember = \App\Member::find($p->accept_id);
                 @endphp
             <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
                 <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
                 <div class="mui-media-body" style="margin-top: 12px;">
-                    发布你问我答支付积分给{{$keymember}}
+                    发布你问我答支付积分给{{$keymember->name}}
                     <p class='mui-ellipsis'>
-                        <span style="font-size:14px;color:#ccc">{{date('Y-mk-d h:m:s',$wy->updated_at)}}</span>
+                        <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
                     </p>
                 </div>
 
