@@ -45,7 +45,7 @@
             @php
             $key = $p->good();
             @endphp
-            <img class="mui-media-object mui-pull-left" src="{{asset("uploads/$key->img")}}images/1b.jpg" style="width: 117px!important;">
+            <img class="mui-media-object mui-pull-left" src="{{asset("uploads/$key->img")}}" style="width: 117px!important;">
             <div class="mui-media-body" style="margin-top: 12px;">
                 {{$key->name}}
                 <p class='mui-ellipsis'>
