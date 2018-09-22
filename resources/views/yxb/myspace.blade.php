@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/detail.css">
-    <link href="css/mui.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/timeline.css" />
+    <link rel="stylesheet" href="{{asset("css/reset.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/amazeui.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/app.css")}}">
+    <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("css/detail.css")}}">
+    <link href="{{asset("css/mui.min.css")}}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{asset("css/timeline.css")}}" />
 
     <title>校园之家</title>
 </head>
@@ -23,13 +23,13 @@
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="home.html">
+        <a href="{{url('/')}}">
             <span class="am-icon-home"></span>
             <span  class="am-navbar-label"></span>
         </a>
     </div>
     <h1 class="am-header-title">
-        <a href="search.html" class="">
+        <a href="#" class="">
             个人主页
         </a>
     </h1>
@@ -41,71 +41,51 @@
 
     <div class="header">
         <div class="info">
-            <img src="images/title3.png" />
+            <img src="{{asset("uploads/$member->image")}}" />
             <div class="name">
-                名字
+                {{$member->name}}
             </div>
             <div class="ins">
-                个人便签
+                {{$member->tag}}
             </div>
         </div>
         <div class="other">
-            <span><img src="images/jifen.png" alt="" style="width:25px;height:25px">积分：666</span>
-            <span><img src="images/watch.png" alt="" style="width:25px;height:25px">来访：111</span>
+            <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：{{$member->money}}</span>
+            <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">来访：111</span>
         </div>
     </div>
 
     <!--时间线-->
     <div class="timeline">
-
+        @foreach($mystorys as $p)
         <div class='nearsite-message'>
             <div class='avatar'>
-                <img src="images/timeline.png" />
+                <img src="{{asset("images/timeline.png")}}" />
             </div>
             <div class='content' id="articlegoTo">
                 <div class='triangle'></div>
                 <span>
-                    	发布了一篇心语家园（必须有图片，如果他没有发图片，则是这个板块的图片！！！或者都是各自板块的图片）
-                    	<img src="images/1b.jpg" class="mui-pull-right"/>
-                    </span>
+                    	{!! $p->content !!}
+                    @if($p->img ==null)
+                        <img src="{{asset("images/1b.jpg")}}" class="mui-pull-right"/>
+                    @else
+                        <img src="{{asset("uploads/$p->img")}}" class="mui-pull-right"/>
+                    @endif
+                </span>
             </div>
         </div>
-
-
-        <div class='nearsite-message'>
-            <div class='avatar'>
-                <img src="images/timeline.png" />
-            </div>
-            <div class='content'>
-                <div class='triangle'></div>
-                <span>
-                    	同上
-                    	<img src="images/1b.jpg" class="mui-pull-right"/>
-            </div>
-        </div>
-
-        <div class='nearsite-message'>
-            <div class='avatar'>
-                <img src="images/timeline.png" />
-            </div>
-            <div class='content'>
-                <div class='triangle'></div>
-                <span>
-                    	同上
-                    	<img src="images/1b.jpg" class="mui-pull-right"/>
-            </div>
-        </div>
+        @endforeach
     </div>
 
 </div>
 
 
 <!-- js -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/mui.min.js"></script>
-<script src="js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{asset("assets/js/jquery.min.js")}}"></script>
+<script src="{{asset("assets/js/amazeui.min.js")}}"></script>
+<script src="{{asset("js/bootstrap.min.js")}}"></script>
+<script src="{{asset("js/mui.min.js")}}"></script>
+<script src="{{asset("js/iconfont.js")}}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

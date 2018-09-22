@@ -36,18 +36,18 @@
                     </ul>
                 </div>
             </li>
-            <li class="dropdown  ">
-                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <li class="">
+                <a href="{{url('admin/')}}" class="dropdown-toggle" data-toggle="dropdown">
                     <div class="icon">
                         <i class="fa fa-book"></i>
                     </div>
                     <div class="title">报修管理</div>
                 </a>
-                <div class="dropdown-menu">
-                    <ul>
-                    </ul>
-                </div>
-            </li>
+                {{--<div class="dropdown-menu">--}}
+                    {{--<ul>--}}
+                    {{--</ul>--}}
+
+            </li>                {{--</div>--}}
             <li class="dropdown">
                 <a href="{{url('admin/goods')}}" class="dropdown-toggle" data-toggle="dropdown">
                     <div class="icon">

@@ -19,7 +19,7 @@
     <div class="info_header">
         <div class="one">
             <h3 style="display:inline-block">山理积分馆</h3>
-            <a href="{{url('rule')}}">规则</a>
+            <a href="{{url('rule')}}" style="color: #ccc">规则</a>
         </div>
         <div class="two">
             <span> 积分：@if($user){{$user->money}}@else 登陆后查看 @endif <img src="images/jifen.png" alt="" style="width:25px;height:25px"></span>
@@ -34,9 +34,8 @@
             <div class="bd">
                 <ul>
                     @foreach($good_banners as $good_banner)
-
                     <li>
-                        <a class="pic" href="{{url("good/{$good_banner->id}")}}"><img src="{{$good_banner->img}}" /></a>
+                        <a class="pic" href="{{url("good/{$good_banner->id}")}}"><img src="{{asset('uploads')}}/{{$good_banner->img}}" /></a>
                     </li>
                     @endforeach
                     {{--<li>--}}
@@ -67,7 +66,7 @@
             @foreach($goods as $good)
             <li class="mui-table-view-cell mui-media mui-col-xs-6" id="moviegoTo">
                 <a href="{{url("good/{$good->id}")}}">
-                    <img class="mui-media-object" src="{{$good->img}}">
+                    <img class="mui-media-object" src="{{asset('uploads')}}/{{$good->img}}">
                     <div class="mui-media-body">{{$good->name}}</div>
                     <div class="mui-media-body">
                         积分:{{$good->price}}

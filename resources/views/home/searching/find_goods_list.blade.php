@@ -18,9 +18,9 @@
     <!-- 失物招领 -->
     <ul id="myTab" class="nav nav-tabs">
         <li class="active">
-            <a href="#found" data-toggle="tab">失物招领</a>
+            <a href="#found" data-toggle="tab">招领启示</a>
         </li>
-        <li><a href="#search" data-toggle="tab">众里寻它</a></li>
+        <li><a href="#search" data-toggle="tab">寻物启示</a></li>
     </ul>
     <div id="myTabContent" class="tab-content">
         @foreach($items['find'] as $item)

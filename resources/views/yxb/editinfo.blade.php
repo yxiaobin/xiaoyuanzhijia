@@ -9,12 +9,12 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <!-- 图标 -->
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/detail.css">
+    <link rel="icon" type="image/png" href="{{asset("assets/i/favicon.png")}}">
+    <link rel="stylesheet" href="{{asset("css/reset.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/amazeui.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/app.css")}}">
+    <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("css/detail.css")}}">
     <title>校园之家</title>
 </head>
 
@@ -22,13 +22,13 @@
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="home.html">
+        <a href="{{url("/")}}">
             <span class="am-icon-home"></span>
             <span  class="am-navbar-label"></span>
         </a>
     </div>
     <h1 class="am-header-title">
-        <a href="search.html" class="">
+        <a href="#" class="">
             修改信息
         </a>
     </h1>
@@ -61,14 +61,23 @@
         <p class="help-block"></p>
     </div>
 
+    <div class="form-group">
+        <label for="exampleInputFile">学生证上传</label>
+        @if($member->card_image == null)
+        <input type="file"  value="" name="card_image">
+        @else
+            <img src="{{asset("uploads/$member->card_image")}}" alt="" style="width: 320px; height: 150px">
+        @endif
+            <p class="help-block"></p>
+    </div>
         <input type="submit" class="btn btn-success btn-lg" value="提交">
 
 </form>
 
 <!-- js -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="{{asset("assets/js/jquery.min.js")}}"></script>
+<script src="{{asset("assets/js/amazeui.min.js")}}"></script>
+<script src="{{asset("js/bootstrap.min.js")}}"></script>
 </body>
 
 </html>

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Model\Searching;
 use App\Member;
+use App\Models\Message;
+use App\Models\Reward;
+use App\Models\Story;
+use App\Models\UserGood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -35,6 +39,7 @@ class YXBController extends Controller
         $p->phone = $request->input('phone');
         $p->password = $request->input('password');
         $p->password = encrypt($p->password);
+        $p->image = "uploads/title3.png";
         $p->money = 50;
         $p->save();
         echo "<script>alert('您的账号注册成功，快去登陆吧')</script>";
@@ -72,7 +77,8 @@ class YXBController extends Controller
 //    登出逻辑
     public function  logout(){
         session(['name'=>'', 'id'=>'']);
-        return back();
+
+        return redirect('/');
     }
     //我的界面
     public  function  mine(){
@@ -100,18 +106,25 @@ class YXBController extends Controller
             $p->image = $request->file('image')->store('uploads');
 
         }
+        if ($request->file('card_image')!=null){
+            $p->card_image = $request->file('card_image')->store('uploads');
+        }
         $p->save();
         return redirect('mine');
     }
-//个人中心 (心语家园的表还没有)
-    public function myspace(){
-        $member = Member::find(session('id'));
-        return view('yxb.myspace',compact('member'));
+//  个人中心 (心语家园的表还没有)
+    public function myspace($id){
+        $member = Member::find($id);
+        $mystorys = Story::where('user_id','=',$id)->get();
+        return view('yxb.myspace',compact('member','mystorys'));
     }
-//    我的积分
+//    我的积分消费记录
     public function mymoney(){
+        $id=session('id');
         $member = Member::find(session('id'));
-        return view('yxb.mymoney',compact('member'));
+        $r1 = UserGood::where('user_id','=',$id)->orderby('id','desc')->get();
+        $r2 = Reward::where('give_id','=',$id)->orderby('id','desc')->get();
+        return view('yxb.mymoney',compact('member','r1','r2'));
     }
 //    我的记录
     public function myrecord(){
@@ -122,14 +135,18 @@ class YXBController extends Controller
     }
     //    我的消息
     public function mynew(){
-        return view('yxb.mynew');
+        $id = session("id");
+        $ps = Message::where('user_id','=',$id)->orderby('id','desc')->get();
+        return view('yxb.mynew',compact('ps'));
     }
     //积分规则
     public  function  moneyrule(){
         return view('yxb.moneyrule');
     }
-//    积分馆
+//    积分馆兑换记录
     public  function  monyrecord(){
-        return view('yxb.moneyrecord');
+        $id = session('id');
+        $ps = UserGood::where('user_id','=',$id)->orderby('id','desc')->get();
+        return view('yxb.moneyrecord',compact('ps'));
     }
 }

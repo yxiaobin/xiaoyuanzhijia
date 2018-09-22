@@ -11,16 +11,16 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <link rel="stylesheet" href="assets/css/login-amazeui.min.css">
-    <link rel="stylesheet" href="assets/css/login-app.css">
-    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="{{asset("assets/css/login-amazeui.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/login-app.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/amazeui.min.css")}}">
 </head>
 
 <body>
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="#">
+        <a href="{{url('/')}}">
             <span class="am-icon-home"></span>
             <span  class="am-navbar-label"></span>
         </a>
@@ -36,7 +36,8 @@
 <div class="am-g" style="margin: 50px auto;">
     <!-- LOGO -->
     <div class="am-u-sm-12 am-text-center">
-        <i class="am-icon-twitch myapp-login-logo"></i>
+        {{--<i class="am-icon-twitch myapp-login-logo"></i>--}}
+        <image src="{{asset('images/logo.jpg')}}" style="width: 150px;height: 150px;border-radius: 50%;margin: 50px auto;"></image>
     </div>
     <!-- 登陆框 -->
 
@@ -53,12 +54,12 @@
         <form class="am-form" action="{{route('getlogin')}}" method="get">
             <fieldset class="myapp-login-form am-form-set">
                 <div class="am-form-group am-form-icon">
-                    <i class="am-icon-user"></i>
-                    <input type="text" class="myapp-login-input-text am-form-field" placeholder="请输入您的学号" name="stuid">
+                    {{--<i class="am-icon-user"></i>--}}
+                    <input type="number" class="myapp-login-input-text am-form-field" placeholder="请输入您的学号" name="stuid">
                 </div>
                 <div class="am-form-group am-form-icon">
-                    <i class="am-icon-lock"></i>
-                    <input type="text" class="myapp-login-input-text am-form-field" placeholder="至少6个字符" name="password">
+                    {{--<i class="am-icon-lock"></i>--}}
+                    <input type="password" class="myapp-login-input-text am-form-field" placeholder="至少6个字符" name="password">
                 </div>
             </fieldset>
             {{csrf_field()}}
@@ -72,15 +73,15 @@
 
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="assets/js/jquery.min.js"></script>
+<script src="{{asset("assets/js/jquery.min.js")}}"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="{{asset("assets/js/amazeui.ie8polyfill.min.js")}}"></script>
 <![endif]-->
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/app.js"></script>
+<script src={{asset("assets/js/amazeui.min.js")}}""></script>
+<script src="{{asset("assets/js/app.js")}}"></script>
 </body>
 
 </html>

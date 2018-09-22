@@ -9,14 +9,14 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <!-- 图标 -->
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/detail.css">
-    <link href="css/mui.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="{{asset("assets/i/favicon.png")}}">
+    <link rel="stylesheet" href="{{asset("css/reset.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/amazeui.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/app.css")}}">
+    <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("css/detail.css")}}">
+    <link href="{{asset("css/mui.min.css")}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset("css/main.css")}}">
     <title>校园之家</title>
 </head>
 
@@ -24,13 +24,13 @@
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="home.html">
+        <a href="{{url('/')}}">
             <span class="am-icon-home"></span>
             <span  class="am-navbar-label"></span>
         </a>
     </div>
     <h1 class="am-header-title">
-        <a href="search.html" class="">
+        <a href="#" class="">
             兑换记录
         </a>
     </h1>
@@ -40,50 +40,32 @@
 <!-- 内容 -->
 <div class="">
     <ul class="mui-table-view">
+        @foreach($ps as $p)
         <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
-            <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;">
+            @php
+            $key = $p->good();
+            @endphp
+            <img class="mui-media-object mui-pull-left" src="{{asset("uploads/$key->img")}}" style="width: 117px!important;">
             <div class="mui-media-body" style="margin-top: 12px;">
-                山理独家T恤
+                {{$key->name}}
                 <p class='mui-ellipsis'>
                     <span style="font-size:12px;color: #999;">成功</span>
                 </p>
             </div>
         </li>
-
+        @endforeach
     </ul>
 </div>
 
 
 
-<!-- 底部导航栏 -->
-<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default" id="">
-    <ul class="am-navbar-nav am-cf am-avg-sm-4">
-        <li data-am-navbar-share>
-            <a href="{{url("/")}}">
-                <img src="images/home1.png" alt="" style="width:28px;height:28px;">
-                <span class="am-navbar-label">校园之家</span>
-            </a>
-        </li>
-        <li>
-            <a href="shop_show.html" class="">
-                <img src="images/shop1.png" alt="" style="width:28px;height:28px;">
-                <span class="am-navbar-label">商城</span>
-            </a>
-        </li>
-        <li>
-            <a href="{{url("/mine")}}">
-                <img src="images/my.png" alt="" style="width:28px;height:28px;">
-                <span class="am-navbar-label">我的</span>
-            </a>
-        </li>
-    </ul>
-</div>
+@include('home.layouts.bottom')
 
 <!-- js -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/mui.min.js"></script>
+<script src="{{asset("assets/js/jquery.min.js")}}"></script>
+<script src="{{asset("assets/js/amazeui.min.js")}}"></script>
+<script src="{{asset("js/bootstrap.min.js")}}"></script>
+<script src="{{asset("js/mui.min.js")}}"></script>
 
 </body>
 
