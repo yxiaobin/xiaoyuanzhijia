@@ -4,7 +4,7 @@
 
 .myapp-login-logo {
     font-size: 130px;
-    color: #99FF66;
+    color: #15d4d8;
 }
 // 输入框
 .myapp-login-form {}
@@ -19,7 +19,7 @@
     margin-top: 8px;
 }
 .myapp-login-form .myapp-login-input-text:focus {
-    border-color: #ff6a4c!important;
+    border-color: #15d4d8!important;
     -webkit-box-shadow: inset 0 1px 1px rgba(225, 86, 86, .075), 0 0 5px rgba(225, 86, 86, .3)!important;
     box-shadow: inset 0 1px 1px rgba(225, 86, 86, .075), 0 0 5px rgba(225, 86, 86, .3)!important;
 }
@@ -31,9 +31,9 @@
     padding-left: 15px;
 }
 .myapp-login-form-submit {
-    background: #99FF66;
+    background:#15d4d8;
     border-radius: 30px;
-    border-color: #99FF66;
+    border-color: #15d4d8
 }
 .myapp-login-form-submit:hover {
     background: #ff8e77;

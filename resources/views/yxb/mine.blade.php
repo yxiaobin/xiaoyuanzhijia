@@ -22,7 +22,7 @@
             border-bottom: 1px solid white;
             margin: 0px auto;
             text-algin: center;
-            background-color: #99FF66;
+            background-color: #15d4d8;
             color: white;
             font-size: 14px;
 

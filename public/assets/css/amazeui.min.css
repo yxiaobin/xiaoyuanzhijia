@@ -1453,22 +1453,22 @@ a.am-btn-danger:visited {
 }
 .am-btn-success {
     color: #fff;
-    background-color: #5eb95e;
-    border-color: #5eb95e
+    background-color: #15d4d8;
+    border-color: #15d4d8
 }
 a.am-btn-success:visited {
     color: #fff
 }
 .am-btn-success.am-active, .am-btn-success:active, .am-btn-success:focus, .am-btn-success:hover, .am-dropdown.am-active .am-btn-success.am-dropdown-toggle {
     color: #fff;
-    border-color: #429842
+    border-color: #15d4d8
 }
 .am-btn-success:focus, .am-btn-success:hover {
-    background-color: #4aaa4a
+    background-color: #15d4d8
 }
 .am-btn-success.am-active, .am-btn-success:active, .am-dropdown.am-active .am-btn-success.am-dropdown-toggle {
     background-image: none;
-    background-color: #3f913f
+    background-color: #15d4d8;
 }
 .am-btn-success.am-disabled, .am-btn-success.am-disabled.am-active, .am-btn-success.am-disabled:active, .am-btn-success.am-disabled:focus, .am-btn-success.am-disabled:hover, .am-btn-success[disabled], .am-btn-success[disabled].am-active, .am-btn-success[disabled]:active, .am-btn-success[disabled]:focus, .am-btn-success[disabled]:hover, fieldset[disabled] .am-btn-success, fieldset[disabled] .am-btn-success.am-active, fieldset[disabled] .am-btn-success:active, fieldset[disabled] .am-btn-success:focus, fieldset[disabled] .am-btn-success:hover {
     background-color: #5eb95e;
@@ -1516,7 +1516,11 @@ a.am-btn-success:visited {
     display: block;
     width: 100%;
     padding-left: 0;
-    padding-right: 0
+    padding-right: 0;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 .am-btn-block+.am-btn-block {
     margin-top: 5px
@@ -9817,7 +9821,7 @@ tbody.am-collapse.am-in {
     padding-top: 49px
 }
 .am-header-default {
-    background-color: #99FF66
+    background-color: #15d4d8;
 }
 .am-header-default .am-header-title {
     color: #fff
@@ -10866,7 +10870,7 @@ tbody.am-collapse.am-in {
     color: #fff
 }
 .am-navbar-default .am-navbar-nav {
-    background-color: #99FF66
+    background-color: #15d4d8;
 }
 .am-navbar-default .am-navbar-actions {
     background-color: #0d86c4
