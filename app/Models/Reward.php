@@ -8,5 +8,4 @@ class Reward extends Model
 {
     //
     protected $guarded = ['id'];
-
 }

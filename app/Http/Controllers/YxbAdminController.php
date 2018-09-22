@@ -28,6 +28,7 @@ class YxbAdminController extends Controller
     public  function  memberno($id){
         $page = Member::find($id);
         $page->status = 0;
+        $page->card_image=null ;
         $page->save();
         return redirect('/admin/index');
 

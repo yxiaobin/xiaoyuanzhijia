@@ -9,12 +9,12 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <!-- 图标 -->
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="css/detail.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="{{asset("assets/i/favicon.png")}}">
+    <link rel="stylesheet" href="{{asset("css/reset.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/amazeui.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/app.css")}}">
+    <link rel="stylesheet" href="{{asset("css/detail.css")}}">
+    <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
     <title>校园之家</title>
 </head>
 
@@ -92,8 +92,8 @@
 </a>
 
 <!-- js -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
+<script src="{{asset("assets/js/jquery.min.js")}}"></script>
+<script src="{{asset("assets/js/amazeui.min.js")}}"></script>
 <!-- <script src="js/bootstrap.min.js"></script> -->
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

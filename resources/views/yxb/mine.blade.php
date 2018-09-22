@@ -38,13 +38,13 @@
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="home.html">
+        <a href="{{url('/')}}">
             <span class="am-icon-home"></span>
             <span  class="am-navbar-label"></span>
         </a>
     </div>
     <h1 class="am-header-title">
-        <a href="search.html" class="">
+        <a href="#" class="">
             校园之家
         </a>
     </h1>
@@ -65,7 +65,7 @@
             <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">来访：111</span>
         </div>
         @else
-            <img src="{{asset("uploads/$member->image")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-left:164px;margin-top: 5px;">
+            <img src="{{asset("uploads/$member->image")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 5px;position: relative;left: 50%;margin-left: -25px">
             <a href="{{route('login')}}">
                 <div style="text-align: center;margin-top: 5px;color:white;font-size:18px;">{{$member->name}}</div>
             </a>
@@ -78,15 +78,18 @@
     </div>
     <div class="list">
         <div class="editinfo">
-            <img src="images/person_show.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("myspace")}}">
+            <img src="images/my.png" alt="" style="width:25px;height:25px;">
+            @php
+            $id = session('id');
+            @endphp
+            <a href="{{url("myspace/$id")}}">
                 个人中心
             </a>
         </div>
     </div>
     <div class="list">
         <div class="editinfo">
-            <img src="{{asset("images/edit_info.png")}}" alt="" style="width:25px;height:25px;">
+            <img src="{{asset("images/edit.png")}}" alt="" style="width:25px;height:25px;">
             <a href="{{url('editinfo')}}">
                 修改信息
             </a>
@@ -94,7 +97,7 @@
     </div>
     <div class="list">
         <div class="editinfo">
-            <img src="images/money.png" alt="" style="width:25px;height:25px;">
+            <img src="images/jinbi.png" alt="" style="width:25px;height:25px;">
             <a href="{{url("mymoney")}}">
                 我的积分
             </a>
@@ -118,7 +121,7 @@
     </div>
     <div class="list">
         <div class="editinfo">
-            <img src="images/news.png" alt="" style="width:25px;height:25px;">
+            <img src="images/quit.png" alt="" style="width:25px;height:25px;">
             <a href="{{url("/logout")}}">
                 退出
             </a>
