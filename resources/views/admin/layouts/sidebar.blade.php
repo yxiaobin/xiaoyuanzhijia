@@ -37,7 +37,7 @@
                 </div>
             </li>
             <li class="">
-                <a href="{{url('admin/repair')}}" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="{{url('admin/repair')}}">
                     <div class="icon">
                         <i class="fa fa-book"></i>
                     </div>
