@@ -22,11 +22,9 @@
         <div id="slideBox" class="slideBox">
             <div class="bd">
                 <ul>
-                    @foreach($good_banners as $good_banner)
                         <li>
-                            <a class="pic" href="{{url("good/{$good_banner->id}")}}"><img src="{{asset('uploads')}}/{{$good_banner->img}}" /></a>
+                            <a class="pic" href="#"><img src="{{asset('uploads')}}/{{$good->img}}" /></a>
                         </li>
-                    @endforeach
                 </ul>
             </div>
             <div class="hd">
