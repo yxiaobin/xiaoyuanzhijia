@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Model\Searching;
 use App\Member;
+use App\Models\Reword;
+use App\Models\Story;
+use App\Models\UserGood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -103,15 +106,20 @@ class YXBController extends Controller
         $p->save();
         return redirect('mine');
     }
-//个人中心 (心语家园的表还没有)
+//  个人中心 (心语家园的表还没有)
     public function myspace(){
+        $id = session('id');
         $member = Member::find(session('id'));
-        return view('yxb.myspace',compact('member'));
+        $mystorys = Story::where('user_id','=',$id)->get();
+        return view('yxb.myspace',compact('member','mystorys'));
     }
-//    我的积分
+//    我的积分消费记录
     public function mymoney(){
+        $id=session('id');
         $member = Member::find(session('id'));
-        return view('yxb.mymoney',compact('member'));
+        $r1 = UserGood::where('user_id','=',$id)->orderby('id','desc')->get();
+        $r2 = Reword::where('give_id','=',$id)->orderby('id','desc')->get();
+        return view('yxb.mymoney',compact('member','r1','r2'));
     }
 //    我的记录
     public function myrecord(){
