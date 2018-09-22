@@ -36,6 +36,7 @@ class StoryController extends Controller
         return $this->index();
     }
     public function comment($story_id,$id = 0){
+        dd(123);
         return view('home.story.comment',compact('story_id','id'));
     }
     public function commentStore(Request $request,Story $story,$id ){

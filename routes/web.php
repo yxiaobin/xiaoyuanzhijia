@@ -24,9 +24,9 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
     Route::resource('question','QuestionController');//武志祥
     Route::resource('comment','CommentController');//武志祥
     Route::get('questiondashang','DaShangController@questionDsShang');//武志祥
+    Route::get('story/comment/{story_id}/{user_id}','StoryController@comment'); //胡华聘
+    Route::post('story/comment/{story_id}/{user_id}','StoryController@commentStore');  //胡华聘
     Route::resource('story','StoryController'); //胡华聘
-    Route::get('comment/{story_id}/{user_id}','StoryController@comment'); //胡华聘
-    Route::post('comment/{story_id}/{user_id}','StoryController@commentStore');  //胡华聘
     Route::get('reward/{user_id}/{num}','StoryController@reward');//胡华聘
 });
 
