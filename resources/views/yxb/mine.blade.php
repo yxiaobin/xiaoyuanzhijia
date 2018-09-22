@@ -56,7 +56,7 @@
     <div class="info">
         {{--没有登陆--}}
         @if(session('id')=='')
-            <img src="{{asset("images/1b.jpg")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 5px;position: relative;left: 50%;margin-left: -25px">
+            <img src="{{asset("images/1b.jpg")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 15px;position: relative;left: 50%;margin-left: -25px">
         <a href="{{route('login')}}">
             <div style="text-align: center;margin-top: 5px;color:white;font-size:18px;">登陆</div>
         </a>

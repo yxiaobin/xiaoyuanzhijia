@@ -49,7 +49,7 @@
             <!-- <span style="padding:20px;color:#ccc;">技术支持：烦skr人</span> -->
         </div>
         <div class="bottom" style="position:fixed;bottom:0;background-color:white;width:100%;height:60px;text-algin:center">
-            <a href="{{url("exchange/{$good->id}")}}"><button type="button" name="button" style="background-color:#99FF66;width:80%;height:40px;margin-left:35px;margin-top:10px;border-radius:5px;">马上兑换</button></a>
+            <a href="{{url("exchange/{$good->id}")}}"><button type="button" name="button" style="background-color:#15d4d8;width:80%;color:white;height:40px;margin-top:10px;border-radius:5px;position: relative;left: 10%;">马上兑换</button></a>
         </div>
 @endsection
 @section('js')

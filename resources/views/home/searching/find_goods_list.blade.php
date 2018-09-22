@@ -61,7 +61,9 @@
                         <div class="am-u-sm-12">
                             <div class="am-thumbnail">
                                 <div style="height: 20px;margin-top: 5px;">
-                                    <img src="{{asset('uploads/' . \App\Member::find($item->user_id)->image)}}" alt="" class="am-comment-avatar" width="48">
+                                    <a href="{{url("myspace/$item->user_id")}}">
+                                        <img src="{{asset('uploads/' . \App\Member::find($item->user_id)->image)}}" alt="" class="am-comment-avatar" width="48">
+                                    </a>
                                     <span style="vertical-align: sub;">{{\App\Member::find($item->user_id)->name}}</span>
                                 </div>
 

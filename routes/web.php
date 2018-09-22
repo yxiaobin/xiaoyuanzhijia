@@ -93,5 +93,8 @@ Route::group(['prefix'=>'','middleware'=>'HomeLoginCheck'],function () {
     Route::get('/monyrecord', ['as' => "monyrecord", 'uses' => "YXBController@monyrecord"]);
 //登出
     Route::get('/logout', ['as' => "logout", 'uses' => "YXBController@logout"]);
+//    状态改变
+    Route::get('/change/{id}', ['as' => "change", 'uses' => "YXBController@change"]);
+
 });
 /**********************************************************************************************************************/

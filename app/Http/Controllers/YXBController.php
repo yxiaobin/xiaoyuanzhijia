@@ -149,4 +149,12 @@ class YXBController extends Controller
         $ps = UserGood::where('user_id','=',$id)->orderby('id','desc')->get();
         return view('yxb.moneyrecord',compact('ps'));
     }
+
+    public  function  change(Searching $id){
+        $id->status +=1;
+        $id->status = $id->status%2;
+        $id->save();
+        return back();
+    }
+
 }

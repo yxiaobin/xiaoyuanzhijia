@@ -49,8 +49,12 @@
                             <a href="#" class="btn btn-success" role="button">
                                 查看详情
                             </a>
-                            <a href="#" class="btn btn-default" role="button" style="float: right;">
-                                已归还
+                            <a href="{{url("change/$new->id")}}" class="btn btn-default" role="button" style="float: right;">
+                                @if($new->status == 0)
+                                    正在解决
+                                @else
+                                    已解决
+                                    @endif
                             </a>
                             <!-- <a href="losepeople_get.html" class="btn btn-default" role="button">
                                         认领
@@ -73,8 +77,12 @@
                         <a href="#" class="btn btn-success" role="button">
                             查看详情
                         </a>
-                        <a href="#" class="btn btn-default" role="button" style="float: right;">
-                            已找到
+                        <a href="{{url("change/$new->id")}}" class="btn btn-default" role="button" style="float: right;">
+                            @if($new->status == 0)
+                                正在解决
+                            @else
+                                已解决
+                            @endif
                         </a>
                         </a>
                     </p>
@@ -88,9 +96,9 @@
 
 
 <!-- 发布按钮 -->
-<a href="{{url("/")}}" style="background-color:#">
-    <img src="{{asset("images/add.png")}}" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
-</a>
+{{--<a href="{{url("/")}}" style="background-color:#">--}}
+    {{--<img src="{{asset("images/add.png")}}" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">--}}
+{{--</a>--}}
 
 <!-- js -->
 <script src="{{asset("assets/js/jquery.min.js")}}"></script>

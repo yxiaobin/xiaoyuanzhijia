@@ -52,16 +52,20 @@ class FindPeopleController extends Controller
         ]);
         if ($va->passes()) {
             $data = $request->except('_token');
-
+            $member = Member::find(session('id'));
+            if ($member->money < 20){
+                $va->errors()->add('errors','您的积分不足20');
+                return back()->withErrors($va);
+            }
+            $member->money = $member->money - 20;
+            $member->update();
             $data['item_image'] = '';
             $data['find_address'] = '';
             $data['user_id'] = session('id');
             $data['item_name'] = '';
             $data['type'] = 3;
             Searching::create($data);
-            $member = Member::find(session('id'));
-            $member->money = $member->money - 20;
-            $member->update();
+
             return redirect()->route('findpeople.index');
         } else {
             return back()->withErrors($va);

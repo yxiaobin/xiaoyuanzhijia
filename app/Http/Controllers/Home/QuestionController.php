@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Model\Comment;
 use App\Http\Model\Question;
+use App\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
@@ -51,12 +52,18 @@ class QuestionController extends Controller
             'detail.required'=>'请输入一句话概括'
         ]);
         if ($va->passes()){
+            $member = Member::find(\session('id'));
+            if ($member->money < 20){
+                $va->errors()->add('errors','您的积分不足20');
+                return back()->withErrors($va);
+            }
+            $member->money = $member->money - 20;
+            $member->update();
+
+
             $data = $request->except('_token');
             $data['user_id'] = \session('id');
             Question::create($data);
-            $member = Member::find(\session('id'));
-            $member->money = $member->money - 20;
-            $member->update();
             return redirect()->route('question.index');
         }
     }
