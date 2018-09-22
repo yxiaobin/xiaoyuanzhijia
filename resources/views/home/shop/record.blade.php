@@ -21,7 +21,7 @@
         <ul class="mui-table-view">
             @foreach($records as $record)
             <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
-                <img class="mui-media-object mui-pull-left" src="{{$record->good->img}}" style="width: 117px!important;">
+                <img class="mui-media-object mui-pull-left" src="{{asset('uploads/').'/'.$record->good->img}}" style="width: 117px!important;">
                 <div class="mui-media-body" style="margin-top: 12px;">
                     {{$record->good->name}}
                     <p class='mui-ellipsis'>
@@ -32,7 +32,7 @@
             @endforeach
         </ul>
     </div>
-    @include('home.layouts.bottom')
+    {{--@include('home.layouts.bottom')--}}
 @endsection
 @section('js')
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>

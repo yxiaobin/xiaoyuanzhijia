@@ -13,30 +13,30 @@
 
 @section('content')
 
-    @include('home.layouts.header',['header'=>'失物招领'])
+    @include('home.layouts.header',['header'=>'发布招领启示'])
 
     <!-- 填写表单 -->
     <form action="{{route('findgoods.store')}}" method="post" enctype="multipart/form-data">
         @include('admin.layouts.errors')
         <div class="form-group">
-            <label for="exampleInputPassword1">捡到东西详细地址</label>
+            <label for="exampleInputPassword1">拾获物品的详细地址</label>
             {{csrf_field()}}
-            <input type="text" name="find_address" class="form-control" id="exampleInputPassword1" placeholder="请输入详细地址：楼层，教室等">
+            <input type="text" name="find_address" class="form-control" id="exampleInputPassword1" placeholder="请输入详细地址，如：第三教学楼，111教室等">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">捡到物品</label>
-            <input type="text" name="item_name" class="form-control" id="exampleInputPassword1" placeholder="校园卡、雨伞等">
+            <label for="exampleInputPassword1">拾获物品</label>
+            <input type="text" name="item_name" class="form-control" id="exampleInputPassword1" placeholder="如：校园卡、雨伞等">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">捡到物品的描述</label>
-            <textarea name="item_detail" class="form-control" rows="3" placeholder="如丢失人信息等等"></textarea>
+            <label for="exampleInputPassword1">拾获物品的描述</label>
+            <textarea name="item_detail" class="form-control" rows="3" placeholder="如校园卡上丢失人的姓名班级或对物品的详细描述等"></textarea>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">丢失人怎么与您联系</label>
-            <textarea name="phone" class="form-control" rows="3" placeholder="电话或者其他方式"></textarea>
+            <label for="exampleInputPassword1">您的联系方式</label>
+            <textarea name="phone" class="form-control" rows="3" placeholder="如：电话：15064655***"></textarea>
         </div>
         <div class="form-group">
-            <label for="exampleInputFile">捡到物品的图片上传</label>
+            <label for="exampleInputFile">拾获物品的图片上传</label>
             <input name="item_image" type="file" id="exampleInputFile">
             <p class="help-block"></p>
         </div>
