@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 
-    @include('home.layouts.header',['header'=>'众里寻ta'])
+    @include('home.layouts.header',['header'=>'众里寻人'])
 
 
     <!-- 填写表单 -->
@@ -19,11 +19,11 @@
         {{csrf_field()}}
         <div class="form-group">
             <label for="exampleInputPassword1">待寻人的详细描述</label>
-            <textarea name="item_detail" class="form-control" rows="3" placeholder=""></textarea>
+            <textarea name="item_detail" class="form-control" rows="3" placeholder="如：找一个会MATLAB编程的同学一起参加数学建模"></textarea>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">待寻人怎么与您联系</label>
-            <textarea class="form-control" name="phone"  rows="3" placeholder="电话或者其他方式"></textarea>
+            <label for="exampleInputPassword1">您的联系方式</label>
+            <textarea class="form-control" name="phone"  rows="3" placeholder="如：电话：15064655***"></textarea>
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">提交</button>

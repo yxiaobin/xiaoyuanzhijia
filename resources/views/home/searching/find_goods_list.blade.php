@@ -49,7 +49,7 @@
 
             <!-- 发布按钮1 -->
                 <a href="{{route('findgoods.create')}}" style="background-color:black">
-                    <img src="images/add.png" alt=""
+                    <img src="images/launch.png" alt=""
                          style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
                 </a>
 
@@ -82,7 +82,7 @@
                @endforeach
                 <!-- 发布按钮2 -->
                 <a href="{{route('losegoods.index')}}">
-                    <img src="{{asset('images/add.png')}}" alt=""
+                    <img src="{{asset('images/launch.png')}}" alt=""
                          style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
                 </a>
             </div>
