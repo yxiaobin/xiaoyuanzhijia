@@ -52,7 +52,6 @@ class LoseGoodsController extends Controller
         ]);
         if ($va->passes()) {
             $data = $request->except('_token');
-
             $data['item_image'] = '';
             $data['find_address'] = '';
             $data['user_id'] = session('id');

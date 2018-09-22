@@ -14,7 +14,7 @@
 @endsection
 @section('content')
     @include('home.layouts.header',['header'=>'物品详情'])
-
+    @include('home.layouts.message')
     <!-- 内容 -->
     <!-- 幻灯片 -->
     <div id="content">

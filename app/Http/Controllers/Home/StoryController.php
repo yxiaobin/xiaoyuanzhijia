@@ -32,7 +32,7 @@ class StoryController extends Controller
             'title.required'=>'标题必须填写',
             'title.max'=>'标题最大长度为40个字符',
             'content.required'=>'内容必须填写',
-            'img.image'='文件必须是图片格式'
+            'img.image'=>'文件必须是图片格式'
         ]);
         $data = $request->except('_token');
         $data['img'] = $request->file('img')->store('images');
@@ -62,7 +62,8 @@ class StoryController extends Controller
         $give = Member::find(session('id'));
         $accept = Member::find($user_id);
         if($give->money < $num){
-            return "<script>alert('您的积分不足！');history.go(-1)</script>";
+            session()->flash('danger', '您的积分不足！');
+            return back();
         }
         $give->money -= $num;
         $accept->money += $num;
@@ -72,6 +73,7 @@ class StoryController extends Controller
             'num'=>$num,
             'type'=>2
         ]);
-        return "<script>alert('打赏成功！');history.go(-1)</script>";
+        session()->flash('success', '打赏成功！');
+        return back();
     }
 }

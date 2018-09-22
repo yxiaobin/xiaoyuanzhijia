@@ -22,7 +22,7 @@
     <!-- 详情展示 -->
     @if($item->type==2)
     <div class="detailshow" style="padding: 20px">
-        <img src="{{asset($item->item_image)}}" alt="">
+        <img src="{{asset('uploads'.'/'.$item->item_image)}}" alt="">
         <div class="content">
             <br>
             <div class="thing-info">
