@@ -15,6 +15,7 @@
 
     <!-- 发布问题 -->
     <form role="form" action="{{route('question.store')}}" method="post">
+        @include('admin.layouts.errors')
         <div class="form-group">
             <!-- <label for="name">名称</label> -->
             <input name="title" type="text" class="form-control" id="name" placeholder="请一句话概括您的问题（最多60字）">
