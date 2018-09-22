@@ -27,7 +27,7 @@
                         <span>积分：{{$good->price}}</span>
                     </p>
                 </div>
-                <a href="{{url("good/{$good->id}")}}" style="display: inline"><button type="button" name="button" style="float:right;margin-top:-38px;">去兑现</button></a>
+                <a href="{{url("good/{$good->id}")}}" style="display: inline"><button type="button" name="button" style="float:right;margin-top:-38px;background-color: #15d4d8;color: white">去兑现</button></a>
             </li>
             @endforeach
         </ul>

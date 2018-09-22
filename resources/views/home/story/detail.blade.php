@@ -77,7 +77,7 @@
     </div>
     <!-- 发布按钮 -->
     <a href="{{url("story/comment/$story->id")}}">
-        <img src="{{asset('images/add_talk.png')}}" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
+        <img src="{{asset('images/launch.png')}}" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
     </a>
     @foreach($story->comments as $comment)
         <div id="picture{{$comment->id}}" class="mui-popover mui-popover-action mui-popover-bottom">

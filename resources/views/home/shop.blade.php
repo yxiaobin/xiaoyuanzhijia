@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="{{asset('css/detail.css')}}">
     <link href="{{asset('css/mui.min.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
+    <style>
+        a:link{text-decoration:none ;}
+        a:visited {text-decoration:none ; }
+        a:hover {text-decoration:none ;}
+        a:active {text-decoration:none ;}
+    </style>
 @endsection
 @section('title')
     <title>积分商城</title>
@@ -59,7 +64,7 @@
     <!-- 商品展示 -->
     <div class="goods">
         <div class="title">
-            <h4 style="display:inline-block">山理好物限时兑换</h4>
+            <h4 style="display:inline-block;margin-top: -10px;">山理好物限时兑换</h4>
             <a href="{{url('goods')}}" style="float:right;color:#ccc">全部商品 ></a>
         </div>
         <ul class="mui-table-view mui-grid-view">
