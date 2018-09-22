@@ -96,9 +96,9 @@
 
 
 <!-- 发布按钮 -->
-<a href="{{url("/")}}" style="background-color:#">
-    <img src="{{asset("images/add.png")}}" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
-</a>
+{{--<a href="{{url("/")}}" style="background-color:#">--}}
+    {{--<img src="{{asset("images/add.png")}}" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">--}}
+{{--</a>--}}
 
 <!-- js -->
 <script src="{{asset("assets/js/jquery.min.js")}}"></script>

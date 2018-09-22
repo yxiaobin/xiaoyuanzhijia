@@ -18,7 +18,7 @@
     <!-- 内容 -->
     <div class="info_header">
         <div class="one">
-            <h3 style="display:inline-block">山理积分馆</h3>
+            <h4 style="display:inline-block">山理积分馆</h4>
             <a href="{{url('rule')}}" style="color: #ccc">规则</a>
         </div>
         <div class="two">
@@ -59,7 +59,7 @@
     <!-- 商品展示 -->
     <div class="goods">
         <div class="title">
-            <h3 style="display:inline-block">山理好物限时兑换</h3>
+            <h4 style="display:inline-block">山理好物限时兑换</h4>
             <a href="{{url('goods')}}" style="float:right;color:#ccc">全部商品 ></a>
         </div>
         <ul class="mui-table-view mui-grid-view">
