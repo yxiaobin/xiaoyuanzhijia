@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Member;
-use App\Models\Reword;
+use App\Models\Reward;
 use App\Models\Story;
 use App\Models\StoryComment;
 use Validator;
@@ -58,7 +58,7 @@ class StoryController extends Controller
         }
         $give->money -= $num;
         $accept->money += $num;
-        Reword::create([
+        Reward::create([
             'give_id'=>$give->id,
             'accept_id'=>$accept->id,
             'num'=>$num,

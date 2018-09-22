@@ -13,7 +13,7 @@
 
 @section('content')
 
-    @include('home.layouts.header',['header'=>'家园心语'])
+    @include('home.layouts.header',['header'=>'心语家园'])
     <!-- 内容 -->
     @foreach($stories as $story)
         <div class="mui-card" style="margin-bottom:30px">
