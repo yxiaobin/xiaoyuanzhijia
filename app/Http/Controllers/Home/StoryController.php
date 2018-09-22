@@ -31,11 +31,12 @@ class StoryController extends Controller
         ]);
         $data = $request->except('_token');
         $data['img'] = $request->file('img')->store('images');
-        $data['id'] = session('id');
+        $data['user_id'] = session('id');
         Story::create($data);
-        return view('home.story.index');
+        return $this->index();
     }
     public function comment($story_id,$id = 0){
+        dd(123);
         return view('home.story.comment',compact('story_id','id'));
     }
     public function commentStore(Request $request,Story $story,$id ){

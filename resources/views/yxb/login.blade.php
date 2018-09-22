@@ -36,7 +36,8 @@
 <div class="am-g" style="margin: 50px auto;">
     <!-- LOGO -->
     <div class="am-u-sm-12 am-text-center">
-        <i class="am-icon-twitch myapp-login-logo"></i>
+        {{--<i class="am-icon-twitch myapp-login-logo"></i>--}}
+        <image src="{{asset('images/logo.jpg')}}" style="width: 150px;height: 150px;border-radius: 50%;margin: 50px auto;"></image>
     </div>
     <!-- 登陆框 -->
 
@@ -53,12 +54,12 @@
         <form class="am-form" action="{{route('getlogin')}}" method="get">
             <fieldset class="myapp-login-form am-form-set">
                 <div class="am-form-group am-form-icon">
-                    <i class="am-icon-user"></i>
-                    <input type="text" class="myapp-login-input-text am-form-field" placeholder="请输入您的学号" name="stuid">
+                    {{--<i class="am-icon-user"></i>--}}
+                    <input type="number" class="myapp-login-input-text am-form-field" placeholder="请输入您的学号" name="stuid">
                 </div>
                 <div class="am-form-group am-form-icon">
-                    <i class="am-icon-lock"></i>
-                    <input type="text" class="myapp-login-input-text am-form-field" placeholder="至少6个字符" name="password">
+                    {{--<i class="am-icon-lock"></i>--}}
+                    <input type="password" class="myapp-login-input-text am-form-field" placeholder="至少6个字符" name="password">
                 </div>
             </fieldset>
             {{csrf_field()}}

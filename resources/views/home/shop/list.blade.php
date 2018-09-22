@@ -20,7 +20,7 @@
         <ul class="mui-table-view">
             @foreach($goods as $good)
             <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
-                <img class="mui-media-object mui-pull-left" src="{{$good->img}}" style="width: 117px!important;">
+                <img class="mui-media-object mui-pull-left" src="{{asset('uploads')}}/{{$good->img}}" style="width: 117px!important;">
                 <div class="mui-media-body" style="margin-top: 12px;">
                     {{str_limit($good->name,16,'...')}}
                     <p class='mui-ellipsis'>

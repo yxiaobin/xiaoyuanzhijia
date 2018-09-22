@@ -19,20 +19,16 @@
       <div class="bd">
         <ul>
           <li>
-            <a class="pic" href="#"><img src="images/1b.jpg" /></a>
-            <a class="tit" href="#">墨西哥教师罢工 与警察激烈冲突</a>
+            <a class="pic" href="链接到月饼的商品介绍"><img src="images/slider1.jpg" style="height: 200px;"/></a>
+            <a class="tit" href="#" style="margin-bottom: 15px">理工大自制中秋月饼</a>
           </li>
           <li>
-            <a class="pic" href="#"><img src="images/2b.jpg"/></a>
-            <a class="tit" href="#">日右翼游行纪念钓岛"国有化"周年</a>
+            <a class="pic" href="链接到关于军训的心语"><img src="images/slider2.png"  style="height: 200px;"/></a>
+            <a class="tit" href="#" style="margin-bottom: 15px">光影军训</a>
           </li>
           <li>
-            <a class="pic" href="#"><img src="images/3b.jpg"/></a>
-            <a class="tit" href="#">女兵竞选美国小姐鼓励女性自强</a>
-          </li>
-          <li>
-            <a class="pic" href="#"><img src="images/4b.jpg"/></a>
-            <a class="tit" href="#">济南现“最窄人行道” 仅0.2米宽</a>
+            <a class="pic" href="链接到关于新生的心语"><img src="images/slider3.jpg"  style="height: 200px;"/></a>
+            <a class="tit" href="#" style="margin-bottom: 15px">迎新生</a>
           </li>
         </ul>
       </div>
@@ -47,7 +43,7 @@
   <div data-am-widget="list_news" class="am-list-news am-list-news-default">
     <!--小左侧标题-->
     <div class="am-list-news-hd am-cf">
-      <h2 style="border-left: 5px solid black;padding-left: 5px;">共建家园</h2>
+      <h2 style="border-left: 5px solid #15d4d8; padding-left: 5px;">共建家园</h2>
     </div>
     <div class="am-list-news-bd">
       <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
@@ -76,7 +72,7 @@ am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }"
       </ul>
     </div>
     <div class="am-list-news-hd am-cf">
-      <h2 style="border-left: 5px solid black;padding-left: 5px;">保护家园</h2>
+      <h2 style="border-left: 5px solid #15d4d8;padding-left: 5px;">保护家园</h2>
     </div>
     <div class="am-list-news-bd">
       <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
@@ -91,7 +87,7 @@ am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }"
       </ul>
     </div>
     <div class="am-list-news-hd am-cf">
-      <h2 style="border-left: 5px solid black;padding-left: 5px;">装饰家园</h2>
+      <h2 style="border-left: 5px solid #15d4d8;padding-left: 5px;">装饰家园</h2>
     </div>
     <div class="am-list-news-bd">
       <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2

@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/detail.css')}}">
+    <link href="{{asset('css/mui.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 @endsection
 
 @section('title')

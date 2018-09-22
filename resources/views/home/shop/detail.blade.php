@@ -22,19 +22,9 @@
         <div id="slideBox" class="slideBox">
             <div class="bd">
                 <ul>
-                    <li>
-                        <a class="pic" href="#"><img src="images/1b.jpg" /></a>
-                        <!-- <a class="tit" href="#">墨西哥教师罢工 与警察激烈冲突</a> -->
-                    </li>
-                    <li>
-                        <a class="pic" href="#"><img src="images/2b.jpg"/></a>
-                    </li>
-                    <li>
-                        <a class="pic" href="#"><img src="images/3b.jpg"/></a>
-                    </li>
-                    <li>
-                        <a class="pic" href="#"><img src="images/4b.jpg"/></a>
-                    </li>
+                        <li>
+                            <a class="pic" href="#"><img src="{{asset('uploads')}}/{{$good->img}}" /></a>
+                        </li>
                 </ul>
             </div>
             <div class="hd">
