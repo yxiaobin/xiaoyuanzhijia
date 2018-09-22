@@ -17,7 +17,7 @@
     <form role="form" action="{{route('question.store')}}" method="post">
         <div class="form-group">
             <!-- <label for="name">名称</label> -->
-            <input name="title" type="text" class="form-control" id="name" placeholder="请一句话概括您的问题（最多60字）">
+            <input name="title" type="text" class="form-control" id="name" placeholder="请一句话概括您的问题（最多20字）">
         </div>
         <div class="form-group">
             <label for="inputfile">问题描述</label>
