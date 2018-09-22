@@ -98,22 +98,26 @@
                 </li>
             </ul>
         </div>
+        @php
+            $user_id = session('id');
+        @endphp
         <div id="gmoney" class="mui-popover mui-popover-action mui-popover-bottom">
             <ul class="mui-table-view">
                 <li class="mui-table-view-cell">
-                    <a href="#">10积分</a>
+
+                    <a href="{{url("questiondashang?a=$user_id&b=$comment->user_id&num=10")}}">10积分</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a href="#">20积分</a>
+                    <a href="{{url("questiondashang?a=$user_id&b=$comment->user_id&num=20")}}">20积分</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a href="#">30积分</a>
+                    <a href="{{url("questiondashang?a=$user_id&b=$comment->user_id&num=30")}}">30积分</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a href="#">40积分</a>
+                    <a href="{{url("questiondashang?a=$user_id&b=$comment->user_id&num=40")}}">40积分</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a href="#">50积分</a>
+                    <a href="{{url("questiondashang?a=$user_id&b=$comment->user_id&num=50")}}">50积分</a>
                 </li>
             </ul>
             <ul class="mui-table-view">

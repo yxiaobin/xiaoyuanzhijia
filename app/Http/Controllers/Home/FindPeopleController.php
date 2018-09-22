@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Model\Searching;
+use App\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -58,6 +59,8 @@ class FindPeopleController extends Controller
             $data['item_name'] = '';
             $data['type'] = 3;
             Searching::create($data);
+            $member = Member::find(session('id'));
+            $member->money -= $member->money;
             return redirect()->route('findpeople.index');
         } else {
             return back()->withErrors($va);

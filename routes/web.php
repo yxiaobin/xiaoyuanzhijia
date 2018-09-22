@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix'=>'','namespace'=>'Home'],function (){
+Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],function (){
     Route::get('/', 'IndexController@index'); // 武志祥
     Route::get('shop','IndexController@shop'); //胡华聘
     Route::resource('loosegoods','LooseGoodsController');//武志祥
@@ -23,6 +23,7 @@ Route::group(['prefix'=>'','namespace'=>'Home'],function (){
     Route::resource('findpeople','FindPeopleController');//武志祥
     Route::resource('question','QuestionController');//武志祥
     Route::resource('comment','CommentController');//武志祥
+    Route::get('questiondashang','DaShangController@questionDsShang');//武志祥
 });
 
 //需要登录后操作
