@@ -57,6 +57,8 @@ class LoseGoodsController extends Controller
             $data['user_id'] = session('id');
             $data['type'] = 1;
             Searching::create($data);
+            $member = Member::find(session('id'));
+            $member->money -= $member->money;
             return redirect()->route('findgoods.index');
         } else {
             return back()->withErrors($va);
