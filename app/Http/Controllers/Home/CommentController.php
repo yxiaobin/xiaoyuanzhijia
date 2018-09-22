@@ -48,7 +48,7 @@ class CommentController extends Controller
         ]);
         if ($va->passes()){
             $data = $request->except('_token','comment_id');
-            $data['user_id'] = 1;
+            $data['user_id'] = session('id');
             if ($request->input('comment_id')){
                 $data['father_id'] = $request->input('comment_id');
             }else{

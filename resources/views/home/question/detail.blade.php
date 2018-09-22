@@ -59,7 +59,10 @@
                                 {{\App\Member::find($comment->user_id)->name}}
                                 @if($comment->father_id!=0)
                                     回复
-                                    {{\App\Member::find($comment->father_id)->name}}
+                                @php
+                                    $other = \App\Http\Model\Comment::find($comment->father_id);
+                                @endphp
+                                    {{\App\Member::find($other->user_id)->name}}
                                 @endif
                                 <p class='mui-ellipsis'>
                                     {{$comment->content}}
@@ -89,7 +92,7 @@
                     <a href="{{route('comment.create')}}?question_id={{$question->id}}&comment_id={{$comment->id}}" id="applyBtn">回复</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a href="#gmoney">打赏</a>
+                    <a href="#gmoney{{$comment->id}}">打赏</a>
                 </li>
             </ul>
             <ul class="mui-table-view">
@@ -101,7 +104,7 @@
         @php
             $user_id = session('id');
         @endphp
-        <div id="gmoney" class="mui-popover mui-popover-action mui-popover-bottom">
+        <div id="gmoney{{$comment->id}}" class="mui-popover mui-popover-action mui-popover-bottom">
             <ul class="mui-table-view">
                 <li class="mui-table-view-cell">
 
