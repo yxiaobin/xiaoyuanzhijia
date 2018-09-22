@@ -38,13 +38,13 @@
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="home.html">
+        <a href="{{url('/')}}">
             <span class="am-icon-home"></span>
             <span  class="am-navbar-label"></span>
         </a>
     </div>
     <h1 class="am-header-title">
-        <a href="search.html" class="">
+        <a href="#" class="">
             校园之家
         </a>
     </h1>
@@ -79,7 +79,10 @@
     <div class="list">
         <div class="editinfo">
             <img src="images/person_show.png" alt="" style="width:25px;height:25px;">
-            <a href="{{url("myspace")}}">
+            @php
+            $id = session('id');
+            @endphp
+            <a href="{{url("myspace/$id")}}">
                 个人中心
             </a>
         </div>
@@ -118,7 +121,7 @@
     </div>
     <div class="list">
         <div class="editinfo">
-            <img src="images/news.png" alt="" style="width:25px;height:25px;">
+            <img src="images/defaulticon.png" alt="" style="width:25px;height:25px;">
             <a href="{{url("/logout")}}">
                 退出
             </a>

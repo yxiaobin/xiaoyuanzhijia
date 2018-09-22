@@ -38,10 +38,11 @@
             <h5>关于作者</h5>
             <a>
                 <div class="author_info">
-                    <a href="timeline.html" id="timelinegoTo"> @if($story->user->image)<img src="{{$story->user->image}}" /></a>
+                    <a href="timeline.html" id="timelinegoTo"> @if($story->user->image)<img src="{{$story->user->image}}" />@endif
                     <div class="author_name">
                         菜鸟卡比兽
                     </div>
+                    </a>
                     <a href="timeline.html"><button id="alertBtn" class="mui-pull-right mui-btn-green">看他</button></a>
                 </div>
             </a>
@@ -54,91 +55,67 @@
         <div class="mui-scroll">
             <!--全部评论-->
             <ul class="mui-table-view" style="margin-top: 20px;">
+                @foreach($comments as $comment)
                 <li class="mui-table-view-cell mui-media">
                     <a href="timeline.html">
-                        <img class="mui-media-object mui-pull-left" src="images/slider1.jpg">
+                       @if($comment->user->image) <img class="mui-media-object mui-pull-left" src="{{asset("uploads")}}/{{$comment->user->image}}">@endif
                         <div class="mui-media-body">
-                            网名
+                            {{$comment->user->name}} @if($comment->father_id!=0) 回复 {{$comment->father->name}} @endif
                             <p class='mui-ellipsis'>
-                                评论内容
+                                {{$comment->content}}
                             </p>
                         </div>
-                        <a href="#picture" style="float: right; font-size: 30px;"><strong>···</strong></a>
+                        <a href="#picture{{$comment->id}}" style="float: right; font-size: 30px;"><strong>···</strong></a>
                     </a>
                 </li>
-                <li class="mui-table-view-cell mui-media">
-                    <a href="timeline.html">
-                        <img class="mui-media-object mui-pull-left" src="images/slider1.jpg">
-                        <div class="mui-media-body">
-                            <span>木屋</span> 回复 <span>网名</span>
-                            <p class='mui-ellipsis'>想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
-                        </div>
-                        <a href="#picture" style="float: right; font-size: 30px;"><strong>···</strong></a>
-                    </a>
-                    </a>
-                </li>
-
-                <li class="mui-table-view-cell mui-media">
-                    <a href="timeline.html">
-                        <img class="mui-media-object mui-pull-left" src="images/slider1.jpg">
-                        <div class="mui-media-body">
-                            CBD
-                            <p class='mui-ellipsis'>烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
-                        </div>
-                        <a href="#picture" style="float: right; font-size: 30px;"><strong>···</strong></a>
-                    </a>
-                    </a>
-                </li>
-
+                    <div id="picture{{$comment->id}}" class="mui-popover mui-popover-action mui-popover-bottom">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+                                <a href="{{url('comment')}}/{{$story->id}}/{{$comment->user->id}}">回复</a>
+                            </li>
+                            <li class="mui-table-view-cell">
+                                <a href="#gmoney{{$comment->id}}">打赏</a>
+                            </li>
+                        </ul>
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+                                <a href="#picture{{$comment->id}}"><b>取消</b></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="gmoney{{$comment->id}}" class="mui-popover mui-popover-action mui-popover-bottom">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+                                <a href="{{url("reward")}}/{{$comment->user->id}}/10">10积分</a>
+                            </li>
+                            <li class="mui-table-view-cell">
+                                <a href="{{url("reward")}}/{{$comment->user->id}}/20">20积分</a>
+                            </li>
+                            <li class="mui-table-view-cell">
+                                <a href="{{url("reward")}}/{{$comment->user->id}}/30">30积分</a>
+                            </li>
+                            <li class="mui-table-view-cell">
+                                <a href="{{url("reward")}}/{{$comment->user->id}}/40">40积分</a>
+                            </li><li class="mui-table-view-cell">
+                                <a href="{{url("reward")}}/{{$comment->user->id}}/50">50积分</a>
+                            </li>
+                        </ul>
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+                                <a href="#picture{{$comment->id}}"><b>取消</b></a>
+                            </li>
+                        </ul>
+                    </div>
+                @endforeach
             </ul>
         </div>
     </div>
     <!-- 发布按钮 -->
-    <a href="talk_launch.html">
+    <a href="{{url("comment/$story->id")}}">
         <img src="images/add_talk.png" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
     </a>
 
 
-
-    <div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
-        <ul class="mui-table-view">
-            <li class="mui-table-view-cell">
-                <a href="talk_launch.html">回复</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a href="#gmoney">打赏</a>
-            </li>
-        </ul>
-        <ul class="mui-table-view">
-            <li class="mui-table-view-cell">
-                <a href="#picture"><b>取消</b></a>
-            </li>
-        </ul>
-    </div>
-    <div id="gmoney" class="mui-popover mui-popover-action mui-popover-bottom">
-        <ul class="mui-table-view">
-            <li class="mui-table-view-cell">
-                <a href="#">10积分</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a href="#">20积分</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a href="#">30积分</a>
-            </li>
-            <li class="mui-table-view-cell">
-                <a href="#">40积分</a>
-            </li><li class="mui-table-view-cell">
-                <a href="#">50积分</a>
-            </li>
-
-        </ul>
-        <ul class="mui-table-view">
-            <li class="mui-table-view-cell">
-                <a href="#picture"><b>取消</b></a>
-            </li>
-        </ul>
-    </div>
 @endsection
 <!-- js -->
 @section('js')

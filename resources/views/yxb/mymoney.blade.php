@@ -46,7 +46,7 @@
     <div class="two">
         <span> 积分：{{$member->money}}<img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px"></span>
 
-        <a href="#" style="float:right">山理积分馆 ></a>
+        <a href="{{url("/monyrecord")}}" style="float:right">山理积分馆 ></a>
     </div>
 </div>
 
@@ -54,16 +54,35 @@
 <div class="" style="margin-top:5px;">
     <ul class="mui-table-view">
         @foreach($r1 as $p)
+            @php
+            $key = $p->good();
+            @endphp
         <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
             <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
             <div class="mui-media-body" style="margin-top: 12px;">
-                山理独家T恤
+                {{$key->name}}
                 <p class='mui-ellipsis'>
-                    <span style="font-size:14px;color:#ccc">2018-09-12 0:03</span>
+                    <span style="font-size:14px;color:#ccc">{{date('Y-mk-d h:m:s',$wy->updated_at)}}</span>
                 </p>
             </div>
-            <span style="float:right;margin-top:-38px;">+40</span>
+            <span style="float:right;margin-top:-38px;">+{{$p->price}}</span>
         </li>
+        @endforeach
+        @foreach($r2 as $p)
+                @php
+                    $keymember = \App\Member::find('$p->accept_id');
+                @endphp
+            <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
+                <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
+                <div class="mui-media-body" style="margin-top: 12px;">
+                    发布你问我答支付积分给{{$keymember}}
+                    <p class='mui-ellipsis'>
+                        <span style="font-size:14px;color:#ccc">{{date('Y-mk-d h:m:s',$wy->updated_at)}}</span>
+                    </p>
+                </div>
+
+                <span style="float:right;margin-top:-38px;">-{{$p->num}}</span>
+            </li>
         @endforeach
     </ul>
 </div>

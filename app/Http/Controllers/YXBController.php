@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Model\Searching;
 use App\Member;
-use App\Models\Reword;
+use App\Models\Reward;
 use App\Models\Story;
 use App\Models\UserGood;
 use Illuminate\Http\Request;
@@ -38,6 +38,7 @@ class YXBController extends Controller
         $p->phone = $request->input('phone');
         $p->password = $request->input('password');
         $p->password = encrypt($p->password);
+        $p->image = "uploads/title3.png";
         $p->money = 50;
         $p->save();
         echo "<script>alert('您的账号注册成功，快去登陆吧')</script>";
@@ -103,13 +104,15 @@ class YXBController extends Controller
             $p->image = $request->file('image')->store('uploads');
 
         }
+        if ($request->file('card_image')!=null){
+            $p->card_image = $request->file('card_image')->store('uploads');
+        }
         $p->save();
         return redirect('mine');
     }
 //  个人中心 (心语家园的表还没有)
-    public function myspace(){
-        $id = session('id');
-        $member = Member::find(session('id'));
+    public function myspace($id){
+        $member = Member::find($id);
         $mystorys = Story::where('user_id','=',$id)->get();
         return view('yxb.myspace',compact('member','mystorys'));
     }
@@ -118,7 +121,7 @@ class YXBController extends Controller
         $id=session('id');
         $member = Member::find(session('id'));
         $r1 = UserGood::where('user_id','=',$id)->orderby('id','desc')->get();
-        $r2 = Reword::where('give_id','=',$id)->orderby('id','desc')->get();
+        $r2 = Reward::where('give_id','=',$id)->orderby('id','desc')->get();
         return view('yxb.mymoney',compact('member','r1','r2'));
     }
 //    我的记录
@@ -136,8 +139,10 @@ class YXBController extends Controller
     public  function  moneyrule(){
         return view('yxb.moneyrule');
     }
-//    积分馆
+//    积分馆兑换记录
     public  function  monyrecord(){
-        return view('yxb.moneyrecord');
+        $id = session('id');
+        $ps = UserGood::where('user_id','=',$id)->orderby('id','desc')->get();
+        return view('yxb.moneyrecord',compact('ps'));
     }
 }

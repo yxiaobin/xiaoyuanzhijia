@@ -13,7 +13,7 @@
 Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],function (){
     Route::get('/', 'IndexController@index'); // 武志祥
     Route::get('shop','IndexController@shop'); //胡华聘
-    Route::resource('loosegoods','LooseGoodsController');//武志祥
+    Route::resource('loosegoods','LoseGoodsController');//武志祥
     Route::get('goods','ShopController@goods'); //胡华聘
     Route::get('good/{good}','ShopController@goodDetail'); //胡华聘
     Route::get('rule','ShopController@rule');//胡华聘
@@ -25,6 +25,9 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
     Route::resource('comment','CommentController');//武志祥
     Route::get('questiondashang','DaShangController@questionDsShang');//武志祥
     Route::resource('story','StoryController'); //胡华聘
+    Route::get('comment/{story_id}/{user_id}','StoryController@comment'); //胡华聘
+    Route::post('comment/{story_id}/{user_id}','StoryController@commentStore');  //胡华聘
+    Route::get('reward/{user_id}/{num}','StoryController@reward');//胡华聘
 });
 
 //需要登录后操作
@@ -71,7 +74,7 @@ Route::get('/editinfo',['as'=>"editinfo",'uses'=>"YXBController@editinfo"]);
 Route::post('/editinfo',['as'=>"editinfo",'uses'=>"YXBController@editinfostore"]);
 
 //个人中心
-Route::get('/myspace',['as'=>"mycpace",'uses'=>"YXBController@myspace"]);
+Route::get('/myspace/{id}',['as'=>"mycpace",'uses'=>"YXBController@myspace"]);
 //我的积分
 Route::get('/mymoney',['as'=>"mymoney",'uses'=>"YXBController@mymoney"]);
 //我的记录
@@ -80,7 +83,6 @@ Route::get('/myrecord',['as'=>"myrecord",'uses'=>"YXBController@myrecord"]);
 Route::get('/mynew',['as'=>"mynew",'uses'=>"YXBController@mynew"]);
 //积分规则
 Route::get('/monyrule',['as'=>"monyrule",'uses'=>"YXBController@moneyrule"]);
-//积分馆
+//积分馆兑换记录
 Route::get('/monyrecord',['as'=>"monyrecord",'uses'=>"YXBController@monyrecord"]);
-
 /**********************************************************************************************************************/

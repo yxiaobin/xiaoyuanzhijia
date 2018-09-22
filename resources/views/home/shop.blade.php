@@ -34,7 +34,6 @@
             <div class="bd">
                 <ul>
                     @foreach($good_banners as $good_banner)
-
                     <li>
                         <a class="pic" href="{{url("good/{$good_banner->id}")}}"><img src="{{$good_banner->img}}" /></a>
                     </li>
