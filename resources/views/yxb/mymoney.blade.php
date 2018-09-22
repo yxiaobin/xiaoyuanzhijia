@@ -77,7 +77,7 @@
                 <div class="mui-media-body" style="margin-top: 12px;">
                     发布你问我答支付积分给{{$keymember}}
                     <p class='mui-ellipsis'>
-                        <span style="font-size:14px;color:#ccc">{{date('Y-mk-d h:m:s',$wy->updated_at)}}</span>
+                        <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
                     </p>
                 </div>
 

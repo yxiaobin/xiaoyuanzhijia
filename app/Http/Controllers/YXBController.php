@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Model\Searching;
 use App\Member;
+use App\Models\Message;
 use App\Models\Reward;
 use App\Models\Story;
 use App\Models\UserGood;
@@ -76,7 +77,8 @@ class YXBController extends Controller
 //    登出逻辑
     public function  logout(){
         session(['name'=>'', 'id'=>'']);
-        return back();
+
+        return redirect('/');
     }
     //我的界面
     public  function  mine(){
@@ -133,7 +135,9 @@ class YXBController extends Controller
     }
     //    我的消息
     public function mynew(){
-        return view('yxb.mynew');
+        $id = session("id");
+        $ps = Message::where('user_id','=',$id)->orderby('id','desc')->get();
+        return view('yxb.mynew',compact('ps'));
     }
     //积分规则
     public  function  moneyrule(){
