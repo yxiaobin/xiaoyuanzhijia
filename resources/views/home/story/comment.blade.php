@@ -18,6 +18,7 @@
     <!-- 发布评论区 -->
     <form action="{{url("story/comment")}}/{{$story_id}}/{{$id}}" method="post">
         {{csrf_field()}}
+        @include('home.layouts.message')
         <div class="form-group">
             <label for="exampleInputPassword1">评论内容</label>
             <textarea class="form-control" rows="3" placeholder="" name="content"></textarea>

@@ -45,6 +45,7 @@ class RepairController extends Controller
             'user_id'=>$id,
             'message'=>$msg
         ]);
-        return "<script>alert('报修成功，请等待回复！');history.go(-1)</script>";
+        session()->flash('success', '报修成功，请等待回复！');
+        return back();
     }
 }

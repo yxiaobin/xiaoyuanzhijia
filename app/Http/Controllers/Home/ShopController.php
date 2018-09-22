@@ -30,7 +30,8 @@ class ShopController extends Controller
     {
         $user = Member::find(session('id'));
         if($user->money<$good->price){
-            return "<script>alert('积分不足，无法兑换');history.go(-1)</script>";
+            session()->flash('danger', '您的积分不足，无法兑换！');
+            return back();
         }
         UserGood::create([
             'good_id'=>$good->id,
@@ -39,6 +40,7 @@ class ShopController extends Controller
             'status'=>0,
         ]);
         $user->money -= $good->price;
-        return "<script>alert('兑换成功');history.go(-1)</script>";
+        session()->flash('success', '兑换成功！');
+        return back();
     }
 }

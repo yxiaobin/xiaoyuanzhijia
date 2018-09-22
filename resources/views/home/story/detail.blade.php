@@ -17,6 +17,7 @@
 @section('content')
 
     @include('home.layouts.header',['header'=>'心语家园'])
+    @include('home.layouts.message')
     <!-- 内容 -->
     <!-- 内容 -->
     <div class="mui-content" style="margin-bottom:20px;">

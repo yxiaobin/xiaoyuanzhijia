@@ -16,6 +16,7 @@
 @section('content')
 
     @include('home.layouts.header',['header'=>'心语家园'])
+    @include('home.layouts.message')
     <!-- 内容 -->
     @foreach($stories as $story)
         <div class="mui-card" style="margin-bottom:30px">

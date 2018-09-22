@@ -57,7 +57,9 @@ class FindGoodsController extends Controller
             $data = $request->except('_token');
             $image = $request->file('item_image');
             if ($image){
-                $data['item_image'] = $image->store('image');
+                $data['item_image'] = $image->store('images');
+            }else{
+                $data['item_image'] = 'images/main1.jpg';
             }
             $data['user_id'] = session('id');
             $data['type'] = 2;
