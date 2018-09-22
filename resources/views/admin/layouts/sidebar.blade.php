@@ -8,7 +8,7 @@
     <div class="sidebar-menu">
         <ul class="sidebar-nav">
             <li class="">
-                <a href="{{url('/admin/home')}}">
+                <a href="{{url('/admin/index')}}">
                     <div class="icon">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
                     </div>
@@ -37,7 +37,7 @@
                 </div>
             </li>
             <li class="">
-                <a href="{{url('admin/')}}" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="{{url('admin/repair')}}" class="dropdown-toggle" data-toggle="dropdown">
                     <div class="icon">
                         <i class="fa fa-book"></i>
                     </div>
