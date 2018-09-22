@@ -74,7 +74,7 @@ Route::get('/editinfo',['as'=>"editinfo",'uses'=>"YXBController@editinfo"]);
 Route::post('/editinfo',['as'=>"editinfo",'uses'=>"YXBController@editinfostore"]);
 
 //个人中心
-Route::get('/myspace',['as'=>"mycpace",'uses'=>"YXBController@myspace"]);
+Route::get('/myspace/{id}',['as'=>"mycpace",'uses'=>"YXBController@myspace"]);
 //我的积分
 Route::get('/mymoney',['as'=>"mymoney",'uses'=>"YXBController@mymoney"]);
 //我的记录
@@ -83,7 +83,6 @@ Route::get('/myrecord',['as'=>"myrecord",'uses'=>"YXBController@myrecord"]);
 Route::get('/mynew',['as'=>"mynew",'uses'=>"YXBController@mynew"]);
 //积分规则
 Route::get('/monyrule',['as'=>"monyrule",'uses'=>"YXBController@moneyrule"]);
-//积分馆
+//积分馆兑换记录
 Route::get('/monyrecord',['as'=>"monyrecord",'uses'=>"YXBController@monyrecord"]);
-
 /**********************************************************************************************************************/
