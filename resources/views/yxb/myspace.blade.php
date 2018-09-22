@@ -69,7 +69,7 @@
                     @if($p->img ==null)
                         <img src="{{asset("images/1b.jpg")}}" class="mui-pull-right"/>
                     @else
-                        <img src="{{asset("images/$p->img")}}" class="mui-pull-right"/>
+                        <img src="{{asset("uploads/$p->img")}}" class="mui-pull-right"/>
                     @endif
                 </span>
             </div>
