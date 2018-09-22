@@ -16,7 +16,7 @@
 
     @include('home.layouts.header',['header'=>'发布评论'])
     <!-- 发布评论区 -->
-    <form action="{{url("story/comment")}}/{{$story->id}}/{{$id}}" method="post">
+    <form action="{{url("story/comment")}}/{{$story_id}}/{{$id}}" method="post">
         {{csrf_field()}}
         <div class="form-group">
             <label for="exampleInputPassword1">评论内容</label>

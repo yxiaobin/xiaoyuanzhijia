@@ -36,12 +36,11 @@ class StoryController extends Controller
         return $this->index();
     }
     public function comment($story_id,$id = 0){
-        dd(123);
         return view('home.story.comment',compact('story_id','id'));
     }
     public function commentStore(Request $request,Story $story,$id ){
         Validator::make($request->all(),[
-           'content'=>'required',
+           'content'=>'required|max:191',
         ]);
         StoryComment::create([
             'story_id'=>$story->id,
@@ -49,9 +48,9 @@ class StoryController extends Controller
             'user_id'=>session('id'),
             'content'=>$request->content,
         ]);
-        return $this->show($story);
+        return redirect("story/$story->id");
     }
-    public function reword($user_id,$num){
+    public function reward($user_id,$num){
         $give = Member::find(session('id'));
         $accept = Member::find($user_id);
         if($give->money < $num){
