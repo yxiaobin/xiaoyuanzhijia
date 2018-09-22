@@ -17,6 +17,13 @@
     <!-- 填写保修表单 -->
     <form action="{{url('repair')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
+        @if(count($errors) > 0)
+            <div class="arlert alert-danger" role="alert">
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </div>
+        @endif
         <div class="form-group">
             <label for="exampleInputPassword1">维修地址</label>
             <select class="form-control" name="address">

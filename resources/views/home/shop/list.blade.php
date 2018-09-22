@@ -32,10 +32,6 @@
             @endforeach
         </ul>
     </div>
-
-
-
-    @include('home.layouts.bottom')
 @endsection
 @section('js')
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>

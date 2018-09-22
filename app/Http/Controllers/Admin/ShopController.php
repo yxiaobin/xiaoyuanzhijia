@@ -97,6 +97,7 @@ class ShopController extends Controller
         //
         $validator = Validator::make($request->all(),[
             'name'=>'required|max:40',
+            'img'=>'nullable|image',
             'price'=>'required|numeric',
             'address'=>'required',
             'num'=>'required|numeric',
@@ -108,9 +109,9 @@ class ShopController extends Controller
                 ->back()
                 ->withErrors($validator);
         }
-        $img = $request->file('img')->store('images');
+        $img = $request->file('img');
         if ($img){
-            $good->img = $img;
+            $good->img = $img->store('images');
         }
         $good->name = $request->name;
         $good->price = $request->price;

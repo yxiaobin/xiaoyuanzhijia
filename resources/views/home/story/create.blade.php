@@ -17,6 +17,13 @@
     <!-- 填写表单 -->
     <form action="{{url('story')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
+        @if(count($errors) > 0)
+            <div class="arlert alert-danger" role="alert">
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </div>
+        @endif
         <div class="form-group">
             <label for="exampleInputPassword1">标题</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入标题" name="title">
