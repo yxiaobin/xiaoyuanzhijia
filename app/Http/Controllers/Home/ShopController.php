@@ -16,7 +16,7 @@ class ShopController extends Controller
         return view('home.shop.list')->with(['goods'=>$goods]);
     }
     public function goodDetail(Good $good){
-        return view('home.shop.detail')->with(['good'=>$good]);
+        return view('home.shop.detail')->with(['good'=>$good,]);
     }
     public function exchange_record(){
         $user = Member::find(session('id'));

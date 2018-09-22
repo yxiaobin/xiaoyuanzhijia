@@ -13,34 +13,29 @@
 
 @section('content')
 
-    @include('home.layouts.header',['header'=>'家园心语'])
-    <!-- 内容 -->
-    @foreach($stories as $story)
-        <div class="mui-card" style="margin-bottom:30px">
-            <!--页眉，放置标题-->
-            <div class="mui-card-header mui-card-media">
-                @if($story->user->img)
-                    <img src="{{asset("uploads/$story->user->img")}}" />
-                @endif
-                <div class="mui-media-body">
-                    <h4>{{str_limit($story->title,'30','...')}}</h4>
-                </div>
-            </div>
-            <!--内容区-->
-            <a href="{{url("story/$story->id")}}">
-                <div class="mui-card-content">
-                    <img src="{{asset("uploads/$story->img")}}" alt="" style="width:100%;height:100%;">
-                </div>
-            </a>
-            <div class="mui-card-footer">
-                {{$story->user->name}}
-                <span style="padding-left:20px">{{$story->created_at}}</span>
-            </div>
+    @include('home.layouts.header',['header'=>'心语家园'])
+    <!-- 填写表单 -->
+    <form action="{{url('story')}}" method="POST" enctype="multipart/form-data">
+        {{csrf_field()}}
+        <div class="form-group">
+            <label for="exampleInputPassword1">标题</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入标题" name="title">
         </div>
-    @endforeach
-    <a href="{{url("story/create")}}">
-        <img src="images/add.png" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
-    </a>
+
+        <div class="form-group">
+            <label for="inputfile">正文</label>
+            <textarea class="form-control" rows="3" placeholder="请在此输入正文" name="content"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">上传图片</label>
+            <input type="file" id="exampleInputFile" name="img">
+            <p class="help-block"></p>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg">提交</button>
+        </div>
+
+    </form>
 
 @endsection
 <!-- js -->

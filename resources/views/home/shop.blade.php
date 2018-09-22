@@ -34,9 +34,8 @@
             <div class="bd">
                 <ul>
                     @foreach($good_banners as $good_banner)
-
                     <li>
-                        <a class="pic" href="{{url("good/{$good_banner->id}")}}"><img src="{{$good_banner->img}}" /></a>
+                        <a class="pic" href="{{url("good/{$good_banner->id}")}}"><img src="{{asset('uploads')}}/{{$good_banner->img}}" /></a>
                     </li>
                     @endforeach
                     {{--<li>--}}
@@ -67,7 +66,7 @@
             @foreach($goods as $good)
             <li class="mui-table-view-cell mui-media mui-col-xs-6" id="moviegoTo">
                 <a href="{{url("good/{$good->id}")}}">
-                    <img class="mui-media-object" src="{{$good->img}}">
+                    <img class="mui-media-object" src="{{asset('uploads')}}/{{$good->img}}">
                     <div class="mui-media-body">{{$good->name}}</div>
                     <div class="mui-media-body">
                         积分:{{$good->price}}

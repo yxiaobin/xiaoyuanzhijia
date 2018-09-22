@@ -13,7 +13,7 @@
 Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],function (){
     Route::get('/', 'IndexController@index'); // 武志祥
     Route::get('shop','IndexController@shop'); //胡华聘
-    Route::resource('loosegoods','LooseGoodsController');//武志祥
+    Route::resource('loosegoods','LoseGoodsController');//武志祥
     Route::get('goods','ShopController@goods'); //胡华聘
     Route::get('good/{good}','ShopController@goodDetail'); //胡华聘
     Route::get('rule','ShopController@rule');//胡华聘
@@ -25,6 +25,9 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
     Route::resource('comment','CommentController');//武志祥
     Route::get('questiondashang','DaShangController@questionDsShang');//武志祥
     Route::resource('story','StoryController'); //胡华聘
+    Route::get('comment/{story_id}/{user_id}','StoryController@comment'); //胡华聘
+    Route::post('comment/{story_id}/{user_id}','StoryController@commentStore');  //胡华聘
+    Route::get('reward/{user_id}/{num}','StoryController@reward');//胡华聘
 });
 
 //需要登录后操作
