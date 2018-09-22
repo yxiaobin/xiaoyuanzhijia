@@ -57,9 +57,10 @@ class ShopController extends Controller
                 ->back()
                 ->withErrors($validator);
         }
-        $request->image = $request->file('img')->store('images');  //有bug
-        Good::create($request->except(['_token']));
-        return $this->create();
+        $data = $request->except('_token');
+        $data['img']= $request->file('img')->store('images');  //有bug
+        Good::create($data);
+        return back();
     }
 
     /**

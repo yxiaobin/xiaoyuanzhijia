@@ -39,7 +39,7 @@ class RepairController extends Controller
         if($img){
             $data['img'] = $img->store('images');
         }
-        $data['id'] = $id;
+        $data['user_id'] = $id;
         $repair = Repair::create($data);
         $msg = "亲爱的同学，您在 {$repair->created_at} 报修的 {$repair->address} 的 {$repair->object} 请求我们已经收到！";
         Message::create([
