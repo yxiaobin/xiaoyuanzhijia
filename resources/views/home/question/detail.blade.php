@@ -79,7 +79,7 @@
 
     <!-- 发布按钮 -->
     <a href="{{route('comment.create')}}?question_id={{$question->id}}">
-        <img src="{{asset('images/add_talk.png')}}" alt=""
+        <img src="{{asset('images/launch.png')}}" alt=""
              style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
     </a>
 

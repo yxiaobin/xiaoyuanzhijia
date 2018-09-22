@@ -24,7 +24,7 @@
                     <div class="am-comment-main">
                         <header class="am-comment-hd">
                             <a href="{{route('question.show',$item->id)}}">
-                                <h3 class="am-comment-title" style="color: #000;">{{$item->title}}</h3>
+                                <h3 class="am-comment-title" style="color: #000;padding: 10px;">{{$item->title}}</h3>
                             </a>
                         </header>
 
@@ -33,8 +33,9 @@
                         </div>
                         <span style="padding-left: 160px;">{{date('Y.m.d',strtotime($item->created_at))}}</span>
                         <a href="##" style="margin-left: 10px">
-                            <span class="am-icon-comment"></span>
-                            <a href="{{route('question.show',$item->id)}}">
+                            {{--<span class="am-icon-comment"></span>--}}
+                            <img src="{{asset('images/watch.png')}}" alt="" style="width: 20px;height: 20px;vertical-align: text-top;">
+                            <a href="{{route('question.show',$item->id)}}" style="color: #000">
                                 <span class="am-navbar-label">查看</span>
                             </a>
                         </a>

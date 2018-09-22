@@ -51,15 +51,19 @@ class LoseGoodsController extends Controller
             'phone.required' => '请输入您的联系方式',
         ]);
         if ($va->passes()) {
+            $member = Member::find(session('id'));
+            if ($member->money < 20){
+                $va->errors()->add('errors','您的积分不足20');
+                return back()->withErrors($va);
+            }
+            $member->money = $member->money - 20;
+            $member->update();
             $data = $request->except('_token');
             $data['item_image'] = '';
             $data['find_address'] = '';
             $data['user_id'] = session('id');
             $data['type'] = 1;
             Searching::create($data);
-            $member = Member::find(session('id'));
-            $member->money = $member->money - 20;
-            $member->update();
             return redirect()->route('findgoods.index');
         } else {
             return back()->withErrors($va);

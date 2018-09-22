@@ -42,7 +42,7 @@
         </div>
     @endforeach
         <a href="{{url("story/create")}}">
-            <img src="images/add.png" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
+            <img src="images/launch.png" alt="" style="width:50px;height:50px;border-radius:50%;position:fixed;right:10px;bottom:150px;z-index:999;">
         </a>
 
 @endsection

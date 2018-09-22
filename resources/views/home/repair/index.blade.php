@@ -13,7 +13,7 @@
 
 @section('content')
 
-    @include('home.layouts.header',['header'=>'失物招领'])
+    @include('home.layouts.header',['header'=>'安全卫士'])
     <!-- 填写保修表单 -->
     <form action="{{url('repair')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
@@ -31,12 +31,14 @@
                 <option>3教</option>
                 <option>4教</option>-
                 <option>5教</option>
+                <option>9教</option>
+                <option>图书馆</option>
                 <option>其他</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">详细地址</label>
-            <input type="text" class="form-control" name="address_detail" id="exampleInputPassword1" placeholder="请输入详细地址：楼层，教室等">
+            <input type="text" class="form-control" name="address_detail" id="exampleInputPassword1" placeholder="请输入详细地址，如：9教211教室等">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">维修物品</label>
@@ -49,7 +51,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">具体描述</label>
-            <textarea class="form-control" rows="3" placeholder="尽可能详细的描述给维修师傅带去便利哦~" name="detail"></textarea>
+            <textarea class="form-control" rows="3" placeholder="尽可能详细的描述给维修师傅带去便利哦~，如：进门南边倒数第二个灯" name="detail"></textarea>
         </div>
         <div class="form-group">
             <label for="exampleInputFile">需维修物品的图片上传</label>
