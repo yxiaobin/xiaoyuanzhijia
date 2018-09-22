@@ -23,9 +23,8 @@
         <li><a href="#search" data-toggle="tab">寻物启示</a></li>
     </ul>
     <div id="myTabContent" class="tab-content">
-        @foreach($items['find'] as $item)
             <div class="tab-pane fade in active" id="found">
-
+                @foreach($items['find'] as $item)
                 <div class="col-sm-6 col-md-3">
                     <div class="thumbnail">
                         <img src="{{asset('uploads'.'/'.$item->item_image)}}" alt="通用的占位符缩略图">
