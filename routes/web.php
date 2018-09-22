@@ -76,7 +76,6 @@ Route::get('/mine', ['as' => "mine", 'uses' => "YXBController@mine"]);
 write by 杨小宾
 **************************************************************************************/
 Route::group(['prefix'=>'','middleware'=>'HomeLoginCheck'],function () {
-
 //修改信息
     Route::get('/editinfo', ['as' => "editinfo", 'uses' => "YXBController@editinfo"]);
     Route::post('/editinfo', ['as' => "editinfo", 'uses' => "YXBController@editinfostore"]);
