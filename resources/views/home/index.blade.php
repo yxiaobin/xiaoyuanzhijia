@@ -98,7 +98,7 @@ am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }"
 am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }">
         <li style="text-align:center">
           <div class="am-gallery-item">
-            <a href="launch_story.html"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt="" style="width: 150px;height: 100px;"/>
+            <a href="{{url('story')}}"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt="" style="width: 150px;height: 100px;"/>
               <h3 class="am-gallery-title" style="text-align: center;">家园心语</h3>
             </a>
           </div>

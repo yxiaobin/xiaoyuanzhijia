@@ -24,6 +24,7 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
     Route::resource('question','QuestionController');//武志祥
     Route::resource('comment','CommentController');//武志祥
     Route::get('questiondashang','DaShangController@questionDsShang');//武志祥
+    Route::resource('story','StoryController'); //胡华聘
 });
 
 //需要登录后操作
