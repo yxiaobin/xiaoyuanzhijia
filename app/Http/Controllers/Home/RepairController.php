@@ -24,15 +24,16 @@ class RepairController extends Controller
            'address'=>'required',
             'address_detail'=>'required',
             'object'=>'required',
-            'img'=>'image',
+            'img'=>'required|image',
             'detail'=>'required|max:191',
         ],[
             'address.required'=>'地址必须填写',
             'address_detail.required'=>'详细地址必须填写',
             'object.required'=>'物品必须填写',
+            'img.required'=>'必须上传图片',
             'img.images'=>'上传的文件必须是图片格式',
             'detail.required'=>'详情必须填写',
-        ]);
+        ])->validate();;
         $data = $request->except('_token');
         $img = $request->file('img');
         if($img){

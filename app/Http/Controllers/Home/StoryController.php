@@ -6,7 +6,7 @@ use App\Member;
 use App\Models\Reward;
 use App\Models\Story;
 use App\Models\StoryComment;
-use \Validator;
+use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,21 +24,26 @@ class StoryController extends Controller
         return view('home.story.create');
     }
     public function store(Request $request){
-        Validaor::make($request->all(),[
+         Validator::make($request->all(),[
            'title'=>'required|max:40',
            'content'=>'required',
-            'img'=>'image',
+            'img'=>'required|image',
         ],[
             'title.required'=>'标题必须填写',
             'title.max'=>'标题最大长度为40个字符',
-            'content.required'=>'内容必须填写',
-            'img.image'=>'文件必须是图片格式'
-        ]);
+             'content.required'=>'内容必须填写',
+             'img.required'=>'必须上传图片',
+             'img.image'=>'文件必须是图片格式'
+         ])->validate();;
         $data = $request->except('_token');
-        $data['img'] = $request->file('img')->store('images');
+        $img = $request->file('img');
+        if($img){
+            $data['img'] = $img->store('images');
+        };
         $data['user_id'] = session('id');
         Story::create($data);
-        return $this->index();
+        session()->flash('success','发表成功！');
+        return back();
     }
     public function comment($story_id,$id = 0){
         return view('home.story.comment',compact('story_id','id'));

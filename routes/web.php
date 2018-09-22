@@ -34,7 +34,7 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
 
 Route::get('/', 'Home\IndexController@index'); // 武志祥
 //需要登录后操作
-Route::group(['prefix'=>'','namespace'=>'Home'],function (){
+Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],function (){
 
     Route::get('exchange/record','ShopController@exchange_record');
     Route::get('exchange/{good}','ShopController@exchange');
