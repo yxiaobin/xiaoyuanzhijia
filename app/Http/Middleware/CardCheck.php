@@ -17,7 +17,7 @@ class CardCheck
     public function handle($request, Closure $next)
     {
         $user = Member::find(session('id'));
-        if($user->image){
+        if($user->card_image){
             if ($user->status == 1){
                 return $next($request);
             }else{
@@ -26,7 +26,7 @@ class CardCheck
             }
         }
         else{
-            session()->flash('warning','请先上传学生证再进行操作！');
+            session()->flash('warning','请先在【我的->修改信息】上传学生证再进行操作！');
             return redirect('/editinfo');
         }
     }
