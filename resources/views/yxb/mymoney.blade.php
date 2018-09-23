@@ -65,7 +65,7 @@
                     <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
                 </p>
             </div>
-            <span style="float:right;margin-top:-38px;">+{{$p->price}}</span>
+            <span style="float:right;margin-top:-38px;">-{{$p->price}}</span>
         </li>
         @endforeach
         @foreach($r2 as $p)
