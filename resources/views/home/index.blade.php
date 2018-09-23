@@ -110,7 +110,7 @@ am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }"
       </ul>
     </div>
     <div class="am-list-news-hd am-cf">
-      <h2 style="border-left: 5px solid #15d4d8;padding-left: 5px;">装饰家园</h2>
+      <h2 style="border-left: 5px solid #15d4d8;padding-left: 5px;">温暖港湾</h2>
     </div>
     <div class="am-list-news-bd">
       <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
