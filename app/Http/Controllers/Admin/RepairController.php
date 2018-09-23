@@ -19,7 +19,7 @@ class RepairController extends Controller
         if($status ==1){
            $msg = "亲爱的同学，您在 {$repair->created_at} 报修的 {$repair->address} 的 {$repair->object} 问题已经修好，感谢您的报修，奖励您50积分，特此通知！";
             $user = Member::find($repair->user_id);
-            $user->score += 50;
+            $user->money += 50;
             $user->save();
         }else if($status ==- 1){
             $msg = "对不起，您在 {$repair->created_at} 报修的 {$repair->address} 的 {$repair->object} 未发现问题，再次虚假报修会受到警告，如有问题请联系17853315487杨。";
