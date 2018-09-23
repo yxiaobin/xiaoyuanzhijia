@@ -45,6 +45,7 @@ class YXBController extends Controller
         $message = new Message();
         $message->user_id = $p->id;
         $message->message = "欢迎来到校园之家，快去【我的->修改信息】进行校园卡认证吧，认证后可以使用所有功能。";
+        $message->save();
         session(['name'=>'', 'id'=>'']);
         return  redirect('login');
     }
