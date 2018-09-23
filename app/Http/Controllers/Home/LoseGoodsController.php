@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class LoseGoodsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['HomeLoginCheck','CardCheck'])->only(['index','store']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +22,6 @@ class LoseGoodsController extends Controller
     public function index()
     {
         //
-
         return view('home.searching.lose_goods');
     }
 

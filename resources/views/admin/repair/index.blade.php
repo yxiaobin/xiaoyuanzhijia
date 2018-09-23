@@ -33,7 +33,7 @@
                                 <td>{{$repair->address}}</td>
                                 <td>{{$repair->address_detail}}</td>
                                 <td>{{$repair->object}}</td>
-                                <td><img src="{{asset("uploads/$repair->img")}}" alt="" width="100" height="50"></td>
+                                <td><a href="{{asset("uploads/$repair->img")}}" target="_blank"><img src="{{asset("uploads/$repair->img")}}" alt="" width="100" height="50"></a></td>
                                 <td><a href="{{url("adminmemberdetail")}}/{{$repair->user->id}}">{{$repair->user->name}}</a></td>
                                 <td>{{$repair->detail}}</td>
                                 <td>@if($repair->status==1) 已处理 @elseif($repair->status==0) 待处理 @else 无问题 @endif</td>

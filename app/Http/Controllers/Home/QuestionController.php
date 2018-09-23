@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Validator;
 
 class QuestionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['HomeLoginCheck','CardCheck'])->only(['create','store']);
+    }
     /**
      * Display a listing of the resource.
      *
