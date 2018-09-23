@@ -15,14 +15,14 @@
                     <div class="title">首页</div>
                 </a>
             </li>
-            <li class="">
-                <a href="{{url('/')}}" target="_blank">
-                    <div class="icon">
-                        <i class="fa fa-link"  aria-hidden="true"></i>
-                    </div>
-                    <div class="title">查看网站</div>
-                </a>
-            </li>
+            {{--<li class="">--}}
+                {{--<a href="{{url('/')}}" target="_blank">--}}
+                    {{--<div class="icon">--}}
+                        {{--<i class="fa fa-link"  aria-hidden="true"></i>--}}
+                    {{--</div>--}}
+                    {{--<div class="title">查看网站</div>--}}
+                {{--</a>--}}
+            {{--</li>--}}
             <li class="dropdown  ">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                     <div class="icon">

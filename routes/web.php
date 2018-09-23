@@ -56,16 +56,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'AdminCheck']
     Route::get('logout','IndexController@logout');  //胡华聘
 });
 
-/* ***************************************************************
+/* **************************************************************************************************************
 write by 杨小宾
-******************************************************************/
-
-//后台审核
-Route::get('adminmember', 'YxbAdminController@adminmember'); // 杨小宾
-Route::get('adminmemberdetail/{id}', 'YxbAdminController@adminmemberdetail'); // 杨小宾
-Route::get('/memberyes/{id}', 'YxbAdminController@memberyes'); // 杨小宾
-Route::get('/memberno/{id}', 'YxbAdminController@memberno'); // 杨小宾
-
+*******************/
 //登陆模块
 Route::get('/login',['as'=>"login",'uses'=>"YXBController@login"]);
 Route::get('/getlogin',['as'=>"getlogin",'uses'=>"YXBController@loginstore"]);
@@ -76,10 +69,9 @@ Route::post('/register',['as'=>"register",'uses'=>"YXBController@registerstore"]
 
 //我的
 Route::get('/mine', ['as' => "mine", 'uses' => "YXBController@mine"]);
-/************************************************************************************
-write by 杨小宾
-**************************************************************************************/
+//登陆中间件
 Route::group(['prefix'=>'','middleware'=>'HomeLoginCheck'],function () {
+
 //修改信息
     Route::get('/editinfo', ['as' => "editinfo", 'uses' => "YXBController@editinfo"]);
     Route::post('/editinfo', ['as' => "editinfo", 'uses' => "YXBController@editinfostore"]);
@@ -100,5 +92,13 @@ Route::group(['prefix'=>'','middleware'=>'HomeLoginCheck'],function () {
 //    状态改变
     Route::get('/change/{id}', ['as' => "change", 'uses' => "YXBController@change"]);
 
+});
+
+//后台中间件
+Route::group(['prefix'=>'','middleware'=>'AdminCheck'],function () {
+    Route::get('adminmember', 'YxbAdminController@adminmember'); // 杨小宾
+    Route::get('adminmemberdetail/{id}', 'YxbAdminController@adminmemberdetail'); // 杨小宾
+    Route::get('/memberyes/{id}', 'YxbAdminController@memberyes'); // 杨小宾
+    Route::get('/memberno/{id}', 'YxbAdminController@memberno'); // 杨小宾
 });
 /**********************************************************************************************************************/

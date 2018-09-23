@@ -27,9 +27,9 @@ class YXBController extends Controller
             'name'=>'required',
             'school'=>'required',
             'class'=>'required',
-            'stuid'=>'required',
+            'stuid'=>'required|unique:member|max:11|min:11',
             'phone'=>'required',
-            'password'=>'required'
+            'password'=>'required|max:10'
         ]);
         $p = new Member();
         $p->name = $request->input('name');
