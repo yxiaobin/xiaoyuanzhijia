@@ -55,7 +55,7 @@
     <ul class="mui-table-view">
         @foreach($r1 as $p)
             @php
-            $key = $p->good();
+            $key = $p->good;
             @endphp
         <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
             <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
