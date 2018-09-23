@@ -45,9 +45,7 @@
             <div class="name">
                 {{$member->name}}
             </div>
-            <div class="ins">
-                {{$member->tag}}
-            </div>
+
         </div>
         <div class="other">
             <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：{{$member->money}}</span>

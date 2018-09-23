@@ -55,7 +55,7 @@
     <ul class="mui-table-view">
         @foreach($r1 as $p)
             @php
-            $key = $p->good();
+            $key = $p->good;
             @endphp
         <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
             <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
@@ -65,7 +65,7 @@
                     <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
                 </p>
             </div>
-            <span style="float:right;margin-top:-38px;">+{{$p->price}}</span>
+            <span style="float:right;margin-top:-38px;">-{{$p->price}}</span>
         </li>
         @endforeach
         @foreach($r2 as $p)
