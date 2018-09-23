@@ -42,15 +42,15 @@
       <div class="bd">
         <ul>
           <li>
-            <a class="pic" href="链接到月饼的商品介绍"><img src="images/slider1.jpg" style="height: 200px;"/></a>
+            <a class="pic" href="{{url('good/1')}}"><img src="images/slider1.jpg" style="height: 200px;"/></a>
             <a class="tit" href="#" style="margin-bottom: 15px">理工大自制中秋月饼</a>
           </li>
           <li>
-            <a class="pic" href="链接到关于军训的心语"><img src="images/slider2.png"  style="height: 200px;"/></a>
+            <a class="pic" href="{{url('story/1')}}"><img src="images/slider2.png"  style="height: 200px;"/></a>
             <a class="tit" href="#" style="margin-bottom: 15px">光影军训</a>
           </li>
           <li>
-            <a class="pic" href="链接到关于新生的心语"><img src="images/slider3.jpg"  style="height: 200px;"/></a>
+            <a class="pic" href="{{url('story/2')}}"><img src="images/slider3.jpg"  style="height: 200px;"/></a>
             <a class="tit" href="#" style="margin-bottom: 15px">迎新生</a>
           </li>
         </ul>

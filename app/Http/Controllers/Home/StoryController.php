@@ -19,7 +19,7 @@ class StoryController extends Controller
 
     //
     public function index(){
-        $stories = Story::all();
+        $stories = Story::orderBy('created_at','DESC');
         return view('home.story.index',compact('stories'));
     }
     public function show(Story $story){
