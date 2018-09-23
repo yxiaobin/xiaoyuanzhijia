@@ -9,7 +9,7 @@
                     </button>
                 </li>
                 <li class="logo">
-                    <a class="navbar-brand" href="#"><span class="highlight">和发</span> Admin</a>
+                    <a class="navbar-brand" href="#"><span class="highlight">校园之家</span> Admin</a>
                 </li>
                 <li>
                     <button type="button" class="navbar-toggle">
@@ -18,11 +18,12 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-left">
-                <li class="navbar-title">和发</li>
+                <li class="navbar-title">校园之家</li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown profile">
                     <a href="" class="dropdown-toggle"  data-toggle="dropdown">
+                        <img class="profile-img" src="{{asset('images/defaulticon.png')}}">
                         <div class="title">个人资料</div>
                     </a>
                     <div class="dropdown-menu">
@@ -30,11 +31,6 @@
                             <h4 class="username"></h4>
                         </div>
                         <ul class="action">
-                            <li>
-                                <a href="{{url('/admin/reset')}}">
-                                    修改密码
-                                </a>
-                            </li>
                             <li>
                                 <a href="{{url('/admin/logout')}}">
                                     退出
