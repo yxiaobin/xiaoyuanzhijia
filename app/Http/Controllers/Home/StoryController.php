@@ -12,6 +12,11 @@ use App\Http\Controllers\Controller;
 
 class StoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('HomeLoginCheck')->only(['create','store']);
+    }
+
     //
     public function index(){
         $stories = Story::all();

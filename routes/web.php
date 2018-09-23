@@ -11,34 +11,34 @@
 |
 */
 Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],function (){
-    Route::get('shop','IndexController@shop'); //胡华聘
     Route::resource('loosegoods','LoseGoodsController');//武志祥
-    Route::get('goods','ShopController@goods'); //胡华聘
-    Route::get('good/{good}','ShopController@goodDetail'); //胡华聘
-    Route::get('rule','ShopController@rule');//胡华聘
-    Route::get('repair','RepairController@index');//胡华聘
     Route::resource('findgoods','FindGoodsController');//武志祥
     Route::resource('losegoods','LoseGoodsController');//武志祥
     Route::resource('findpeople','FindPeopleController');//武志祥
     Route::resource('question','QuestionController');//武志祥
     Route::resource('comment','CommentController');//武志祥
     Route::get('questiondashang','DaShangController@questionDsShang');//武志祥
+});
+Route::group(['namespace'=>'Home'],function (){
+    Route::get('/', 'IndexController@index'); // 武志祥
+    Route::get('shop','IndexController@shop'); //胡华聘
+    Route::get('goods','ShopController@goods'); //胡华聘
+    Route::get('good/{good}','ShopController@goodDetail'); //胡华聘
+    Route::get('rule','ShopController@rule');//胡华聘
+    Route::get('repair','RepairController@index');//胡华聘
+    Route::resource('story','StoryController'); //胡华聘
+
+});
+//需要登录后操作  胡华聘
+Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],function (){
+
     Route::get('story/comment/{story_id}','StoryController@comment'); //胡华聘
     Route::get('story/comment/{story_id}/{id}','StoryController@comment'); //胡华聘
     Route::post('story/comment/{story}/{id}','StoryController@commentStore');  //胡华聘
-    Route::resource('story','StoryController'); //胡华聘
     Route::get('reward/{user_id}/{num}','StoryController@reward');//胡华聘
-
-
-});
-
-Route::get('/', 'Home\IndexController@index'); // 武志祥
-//需要登录后操作
-Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],function (){
-
-    Route::get('exchange/record','ShopController@exchange_record');
-    Route::get('exchange/{good}','ShopController@exchange');
-    Route::post('repair','RepairController@store');
+    Route::get('exchange/record','ShopController@exchange_record');  //兑换记录
+    Route::get('exchange/{good}','ShopController@exchange');   //兑换商品
+    Route::post('repair','RepairController@store');         //提交维修
 });
 
 Route::get('admin/login','Admin\IndexController@login');  //胡华聘
