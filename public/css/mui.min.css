@@ -73,7 +73,7 @@ sub {
     bottom: -.25em
 }
 img {
-    border: 0
+    border: 0;
 }
 svg:not(:root) {
     overflow: hidden
@@ -1723,7 +1723,8 @@ h1, h2, h3, h4, h5, h6 {
 .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-object {
     width: 100%;
     max-width: 100%;
-    height: auto
+    /*height: auto*/
+    height: 158px;
 }
 .mui-table-view.mui-grid-view .mui-table-view-cell>a:not(.mui-btn) {
     margin: -10px 0 0 -14px

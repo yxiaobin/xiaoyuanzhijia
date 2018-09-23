@@ -13,6 +13,9 @@
         a:hover{text-decoration:none;}
         a:active{text-decoration:none;} 
 
+        img{
+            width: 100%;
+        }
     </style>
 @endsection
 @section('title')
@@ -49,8 +52,8 @@
                 {{$good->address}}
             </div>
             <div class="third">
-                <h4 style="font-weight:550">商品详情：</h4>
-                <div style="width: 100%">
+                <h4 style="font-weight:550;">商品详情：</h4>
+                <div style="padding: 5px;">
                     {!! $good->content !!}
                 </div>
             </div>

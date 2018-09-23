@@ -12,6 +12,9 @@
         a:visited {text-decoration:none ; }
         a:hover {text-decoration:none ;}
         a:active {text-decoration:none ;}
+        img{
+            width: 100%;
+        }
     </style>
 @endsection
 @section('title')
