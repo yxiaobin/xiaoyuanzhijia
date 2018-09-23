@@ -40,6 +40,7 @@ class ShopController extends Controller
             'status'=>0,
         ]);
         $user->money -= $good->price;
+        $user->save();
         session()->flash('success', '兑换成功！');
         return back();
     }
