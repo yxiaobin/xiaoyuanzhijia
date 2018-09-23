@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="{{asset('css/detail.css')}}">
     <link href="{{asset('css/mui.min.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <style>
+        a:link{text-decoration:none; }  
+                                       a:visited{text-decoration:none; }
+        a:hover{text-decoration:none;}
+        a:active{text-decoration:none;} 
 
+    </style>
 @endsection
 @section('title')
     <title>校园之家</title>

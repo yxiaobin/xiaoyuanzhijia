@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="{{asset('css/detail.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <title>校园之家</title>
+    <style>
+        a:link{text-decoration:none; }  
+                                       a:visited{text-decoration:none; }
+        a:hover{text-decoration:none;}
+        a:active{text-decoration:none;} 
+
+    </style>
 @endsection
 <!-- 顶部 -->
 @section('content')
