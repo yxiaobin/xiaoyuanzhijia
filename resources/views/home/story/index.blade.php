@@ -30,10 +30,10 @@
             <!--页眉，放置标题-->
             <div class="mui-card-header mui-card-media">
                 @if($story->user->image)
-                    <img src="{{asset("uploads")}}/{{$story->user->image}}" />
+                    <img src="{{asset("uploads")}}/{{$story->user->image}}" style="border-radius: 50%;"/>
                 @endif
                 <div class="mui-media-body">
-                    <h4>{{str_limit($story->title,'30','...')}}</h4>
+                    <h4 style="padding-top: 5px;">{{str_limit($story->title,'30','...')}}</h4>
                 </div>
             </div>
             <!--内容区-->
