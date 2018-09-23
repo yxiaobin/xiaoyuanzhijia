@@ -22,7 +22,6 @@
     <div class="am-header-left am-header-nav">
         <a href="{{url('/')}}">
             <span class="am-icon-home"></span>
-            <span  class="am-navbar-label"></span>
         </a>
     </div>
     <h1 class="am-header-title">

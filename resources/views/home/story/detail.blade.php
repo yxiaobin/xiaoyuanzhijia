@@ -32,7 +32,7 @@
             <div class="name">
                 <h2>{{$story->title}}</h2>
             </div>
-            <div class="info">
+            <div class="info" style="text-align: center;">
                 @if($story->user->image)
                     <img src="{{asset('uploads')}}/{{$story->user->image}}" />
                 @else
@@ -69,7 +69,7 @@
             <ul class="mui-table-view" style="margin-top: 20px;">
                 @foreach($story->comments as $comment)
                     <li class="mui-table-view-cell mui-media">
-                            @if($comment->user->image) <img class="mui-media-object mui-pull-left" src="{{asset("uploads")}}/{{$comment->user->image}}">@endif
+                            @if($comment->user->image) <img class="mui-media-object mui-pull-left" src="{{asset("uploads")}}/{{$comment->user->image}}" style="width: 40px;height: 40px;">@endif
                             <div class="mui-media-body">
                                 <a href="{{url('myspace')}}/{{$comment->user->id}}">{{$comment->user->name}}</a> @if($comment->father_id!=0) 回复 <a href="{{url('myspace')}}/{{$comment->user->id}}">{{$comment->father->name}}</a> @endif
                                 <p class='mui-ellipsis'>
