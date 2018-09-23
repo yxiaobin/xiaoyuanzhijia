@@ -13,7 +13,6 @@
                     </div>
                 </div>
             </a>
-
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
             <a class="card card-banner card-yellow-light" href="{{url('admin/goods')}}">
