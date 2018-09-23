@@ -32,10 +32,10 @@ a {
     background-color: transparent
 }
 a:focus {
-    outline: thin dotted
+    /*outline: thin dotted*/
 }
 a:active, a:hover {
-    outline: 0
+        outline: 0
 }
 a, ins {
     text-decoration: none
@@ -184,8 +184,8 @@ a:focus, a:hover {
     color: #095f8a
 }
 a:focus {
-    outline: thin dotted;
-    outline: 1px auto -webkit-focus-ring-color;
+    /*outline: thin dotted;*/
+    /*outline: 1px auto -webkit-focus-ring-color;*/
     outline-offset: -2px
 }
 ins {
@@ -1294,9 +1294,9 @@ pre code {
     transition: background-color .3s ease-out, border-color .3s ease-out
 }
 .am-btn:active:focus, .am-btn:focus {
-    outline: thin dotted;
-    outline: 1px auto -webkit-focus-ring-color;
-    outline-offset: -2px
+    /*outline: thin dotted;*/
+    /*outline: 1px auto -webkit-focus-ring-color;*/
+    /*outline-offset: -2px*/
 }
 .am-btn:focus, .am-btn:hover {
     color: #444;
@@ -1304,8 +1304,8 @@ pre code {
 }
 .am-btn.am-active, .am-btn:active {
     background-image: none;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15);
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15)
+    /*-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15);*/
+    /*box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15)*/
 }
 .am-btn.am-disabled, .am-btn[disabled], fieldset[disabled] .am-btn {
     pointer-events: none;
@@ -1323,15 +1323,15 @@ pre code {
 }
 .am-btn-default {
     color: #444;
-    background-color: #e6e6e6;
-    border-color: #e6e6e6
+    /*background-color: #e6e6e6;*/
+    /*border-color: #e6e6e6*/
 }
 a.am-btn-default:visited {
     color: #444
 }
 .am-btn-default.am-active, .am-btn-default:active, .am-btn-default:focus, .am-btn-default:hover, .am-dropdown.am-active .am-btn-default.am-dropdown-toggle {
     color: #444;
-    border-color: #c7c7c7
+    /*border-color: #c7c7c7*/
 }
 .am-btn-default:focus, .am-btn-default:hover {
     background-color: #d4d4d4
@@ -1677,8 +1677,8 @@ select optgroup {
     font-family: inherit
 }
 input[type=checkbox]:focus, input[type=file]:focus, input[type=radio]:focus {
-    outline: thin dotted;
-    outline: 1px auto -webkit-focus-ring-color;
+    /*outline: thin dotted;*/
+    /*outline: 1px auto -webkit-focus-ring-color;*/
     outline-offset: -2px
 }
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {

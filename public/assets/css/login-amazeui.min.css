@@ -6,7 +6,9 @@
 body, sub, sup {
     position: relative
 }
-
+button:focus{
+    outline: 0;
+}
 abbr[title], dfn[title] {
     border-bottom: 1px dotted
 }
@@ -220,8 +222,8 @@ a:focus, a:hover {
 }
 
 a:focus {
-    outline: dotted thin;
-    outline: -webkit-focus-ring-color auto 1px;
+    /*outline: dotted thin;*/
+    /*outline: -webkit-focus-ring-color auto 1px;*/
     outline-offset: -2px
 }
 
@@ -1602,8 +1604,8 @@ pre code {
 }
 
 .am-btn:active:focus, .am-btn:focus {
-    outline: dotted thin;
-    outline: -webkit-focus-ring-color auto 1px;
+    /*outline: dotted thin;*/
+    /*outline: -webkit-focus-ring-color auto 1px;*/
     outline-offset: -2px
 }
 
@@ -2073,8 +2075,8 @@ select optgroup {
 }
 
 input[type=checkbox]:focus, input[type=file]:focus, input[type=radio]:focus {
-    outline: dotted thin;
-    outline: -webkit-focus-ring-color auto 1px;
+    /*outline: dotted thin;*/
+    /*outline: -webkit-focus-ring-color auto 1px;*/
     outline-offset: -2px
 }
 

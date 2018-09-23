@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js">
 
 <head>
@@ -32,7 +32,7 @@
     </nav>
 </header>
 
-<div class="am-g" style="margin: 50px auto;">
+<div class="am-g" style="margin: 50px auto;min-height: 100px">
     <!-- LOGO -->
     <div class="am-u-sm-12 am-text-center">
         {{--<i class="am-icon-twitch myapp-login-logo"></i>--}}
@@ -62,7 +62,7 @@
                 </div>
             </fieldset>
             {{csrf_field()}}
-            <button class="myapp-login-form-submit am-btn am-btn-success am-btn-block ">登陆</button>
+            <button class="myapp-login-form-submit am-btn-success am-btn-block ">登录</button>
             <a href="{{route('register')}}" class="myapp-login-form-submit am-btn am-btn-success am-btn-block ">注册</a>
 
         </form>

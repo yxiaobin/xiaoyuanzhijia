@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -59,7 +58,7 @@
         @if(session('id')=='')
             <img src="{{asset("images/1b.jpg")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 15px;position: relative;left: 50%;margin-left: -25px">
         <div>
-            <a href="{{route('login')}}" style="text-align: center;margin-top: 5px;color:white;font-size:18px;display: block">登陆</a>
+            <a href="{{route('login')}}" style="text-align: center;margin-top: 5px;color:white;font-size:18px;display: block">登录</a>
         </div>
 
         <div class="add" style="text-align: center;margin-bottom: 10px;font-size: 18px;">

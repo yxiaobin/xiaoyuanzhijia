@@ -42,7 +42,7 @@
         <image src="{{asset('images/logo11.png')}}" style="border-radius: 50%;margin-top: 40px;"></image>
     </div>
     <!-- 登陆框 -->
-    <div class="am-u-sm-11 am-u-sm-centered">
+    <div class="am-u-sm-11 am-u-sm-centered" style="min-height: 100px">
         <form class="am-form" action="{{url("/register")}}"method="post" id="shangyi">
             {{ csrf_field() }}
             @if ($errors->any())
@@ -82,7 +82,7 @@
                 </div>
             </fieldset>
 
-            <button class="myapp-login-form-submit am-btn am-btn-success am-btn-block ">注册</button>
+            <button class="myapp-login-form-submit am-btn-success am-btn-block ">注册</button>
             <br>
             <br>
         </form>
