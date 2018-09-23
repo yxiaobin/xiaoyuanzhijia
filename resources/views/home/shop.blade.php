@@ -18,7 +18,20 @@
     <title>积分商城</title>
 @endsection
 @section('content')
-    @include('home.layouts.header',['header'=>'积分商城'])
+    {{--@include('home.layouts.header',['header'=>'积分商城'])--}}
+    <header data-am-widget="header" class="am-header am-header-default">
+        <div class="am-header-left am-header-nav">
+            {{--<a href="#" onclick="javascript:history.back(-1)">--}}
+                {{--<span class="am-icon-home"></span>--}}
+                {{--<span  class="am-navbar-label"></span>--}}
+                {{--<img src="{{asset('images/back.png')}}" alt="" style="width: 20px;height: 20px;">--}}
+            {{--</a>--}}
+        </div>
+        <h1 class="am-header-title">
+            校园之家
+        </h1>
+        </nav>
+    </header>
 
     <!-- 内容 -->
     <div class="info_header">

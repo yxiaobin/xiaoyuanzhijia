@@ -36,8 +36,8 @@
     border-color: #15d4d8
 }
 .myapp-login-form-submit:hover {
-    background: #ff8e77;
-    border-color: #ff8e77;
+    background: #15d4d8;
+    border-color: #15d4d8
 }
 .myapp-login-form-shortcut {
     position: relative;

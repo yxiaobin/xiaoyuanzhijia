@@ -1,6 +1,6 @@
 <aside class="app-sidebar" id="sidebar">
     <div class="sidebar-header">
-        <a class="sidebar-brand" href="#"><span class="highlight">萌芽</span> 管理系统</a>
+        <a class="sidebar-brand" href="#"><span class="highlight">校园之家</span> 管理系统</a>
         <button type="button" class="sidebar-toggle">
             <i class="fa fa-times"></i>
         </button>

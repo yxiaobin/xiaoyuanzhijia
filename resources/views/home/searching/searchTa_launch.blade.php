@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/detail.css')}}">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        a:link{text-decoration:none; }  
+                                       a:visited{text-decoration:none; }
+        a:hover{text-decoration:none;}
+        a:active{text-decoration:none;} 
+
+    </style>
     <title>校园之家</title>
 @endsection
 @section('content')

@@ -6,12 +6,32 @@
   <link rel="stylesheet" href="{{asset('assets/css/amazeui.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
   <link rel="stylesheet" href="{{asset('css/main.css')}}">
+  <style>
+    a:link{text-decoration:none; }  
+                                   a:visited{text-decoration:none; }
+    a:hover{text-decoration:none;}
+    a:active{text-decoration:none;} 
+
+  </style>
 @endsection
 @section('title')
   <title>校园之家</title>
 @endsection
-@include('home.layouts.header',['header'=>'校园之家'])
+{{--@include('home.layouts.header',['header'=>'校园之家'])--}}
 @section('content')
+  <header data-am-widget="header" class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+      <a href="#">
+        {{--<span class="am-icon-home"></span>--}}
+        {{--<span  class="am-navbar-label"></span>--}}
+        {{--<img src="{{asset('images/back.png')}}" alt="" style="width: 20px;height: 210px;">--}}
+      </a>
+    </div>
+    <h1 class="am-header-title">
+      校园之家
+    </h1>
+    </nav>
+  </header>
   <!-- 幻灯片 -->
   <div id="content">
     <!-- 幻灯片 -->

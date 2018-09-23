@@ -38,10 +38,11 @@
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="{{url('/')}}">
-            <span class="am-icon-home"></span>
-            <span  class="am-navbar-label"></span>
-        </a>
+        {{--<a href="#" onclick="javascript:history.back(-1)">--}}
+            {{--<span class="am-icon-home"></span>--}}
+            {{--<span  class="am-navbar-label"></span>--}}
+            {{--<img src="{{asset('images/back.png')}}" alt="" style="width: 20px;height: 20px;">--}}
+        {{--</a>--}}
     </div>
     <h1 class="am-header-title">
         <a href="#" class="">
@@ -57,21 +58,22 @@
         {{--没有登陆--}}
         @if(session('id')=='')
             <img src="{{asset("images/1b.jpg")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 15px;position: relative;left: 50%;margin-left: -25px">
-        <a href="{{route('login')}}">
-            <div style="text-align: center;margin-top: 5px;color:white;font-size:18px;">登陆</div>
-        </a>
+        <div>
+            <a href="{{route('login')}}" style="text-align: center;margin-top: 5px;color:white;font-size:18px;display: block">登陆</a>
+        </div>
+
         <div class="add" style="text-align: center;margin-bottom: 10px;font-size: 18px;">
             <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：###</span> &nbsp;&nbsp;
-            <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">标签：###</span>
+            <span><img src="{{asset("images/biaoqian.png")}}" alt="" style="width:25px;height:25px">标签：###</span>
         </div>
         @else
             <img src="{{asset("uploads/$member->image")}}" alt="" style="width:50px;height:50px;border-radius:50%;margin-top: 5px;position: relative;left: 50%;margin-left: -25px">
-            <a href="{{route('login')}}">
+            {{--<a href="{{route('login')}}">--}}
                 <div style="text-align: center;margin-top: 5px;color:white;font-size:18px;">{{$member->name}}</div>
-            </a>
+            {{--</a>--}}
             <div class="add" style="text-align: center;margin-bottom: 10px;font-size: 18px;">
                 <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：{{$member->money}}</span> &nbsp;&nbsp;
-                <span><img src="{{asset("images/watch.png")}}" alt="" style="width:25px;height:25px">标签：{{$member->tag}}</span>
+                <span><img src="{{asset("images/biaoqian.png")}}" alt="" style="width:25px;height:25px"><span style="width: 50px;">标签：{{$member->tag}}</span></span>
             </div>
         @endif
 
