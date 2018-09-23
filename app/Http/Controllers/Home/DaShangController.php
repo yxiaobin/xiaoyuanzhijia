@@ -16,7 +16,8 @@ class DaShangController extends Controller
 
         $member = Member::find($a);
         if ($member->money < $num){
-            return "您的积分不足！";
+            session()->flash('danger', '您的积分不足！');
+            return back();
         }
         $member->money = $member->money - $num;
         $member->update();
@@ -25,6 +26,7 @@ class DaShangController extends Controller
         $member->money = $member->money + $num;
         $member->update();
 
-        return "打赏成功！";
+        session()->flash('success', '打赏成功！');
+        return back();
     }
 }
