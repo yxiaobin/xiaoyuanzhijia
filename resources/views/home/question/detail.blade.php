@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{asset('css/mui.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/amazeui.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link href="css/mui.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{{asset('css/detail.css')}}">
     <style>
@@ -44,7 +45,7 @@
 @section('content')
 
     @include('home.layouts.header',['header'=>'你问我答'])
-
+    @include('home.layouts.message')
     <!-- 内容 -->
     <div class="content">
         <h3>{{$question->title}}</h3>
