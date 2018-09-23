@@ -43,7 +43,7 @@
         @foreach($ps as $p)
         <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
             @php
-            $key = $p->good();
+            $key = $p->good;
             @endphp
             <img class="mui-media-object mui-pull-left" src="{{asset("uploads/$key->img")}}" style="width: 117px!important;">
             <div class="mui-media-body" style="margin-top: 12px;">
