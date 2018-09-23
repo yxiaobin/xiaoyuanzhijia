@@ -20,7 +20,6 @@
 @endsection
 @section('content')
     @include('home.layouts.header',['header'=>'积分商城'])
-
     <!-- 内容 -->
     <div class="">
         <ul class="mui-table-view">

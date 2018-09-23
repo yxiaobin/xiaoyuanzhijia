@@ -39,6 +39,7 @@
 <!-- 填写表单 -->
 <form method="post" action="{{url("/editinfo")}}" enctype="multipart/form-data" >
     {{csrf_field()}}
+    @include('home.layouts.message')
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

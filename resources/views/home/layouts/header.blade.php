@@ -8,7 +8,6 @@
         </a>
     </div>
     <h1 class="am-header-title">
-            {{$header}}
+        {{$header}}
     </h1>
-    </nav>
 </header>

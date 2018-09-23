@@ -28,7 +28,7 @@
             {{--{{list}}--}}
         </div>
     </script>
-    <div class="app-container app-full">
+    <div class="app-container">
 
         @include("admin.layouts.header")
         <!-- 主体部分 -->

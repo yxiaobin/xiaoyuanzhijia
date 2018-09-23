@@ -13,7 +13,7 @@
 
 @section('content')
 
-    @include('home.layouts.header',['header'=>'安全卫士'])
+    @include('home.layouts.header',['header'=>'保卫家园'])
     <!-- 填写保修表单 -->
     <form action="{{url('repair')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}

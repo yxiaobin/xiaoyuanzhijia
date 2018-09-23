@@ -5,7 +5,9 @@
   <link rel="stylesheet" href="{{asset('css/reset.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/amazeui.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
+  <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
   <style>
     a:link{text-decoration:none; }  
                                    a:visited{text-decoration:none; }
@@ -32,6 +34,7 @@
     </h1>
     </nav>
   </header>
+  @include('home.layouts.message')
   <!-- 幻灯片 -->
   <div id="content">
     <!-- 幻灯片 -->
