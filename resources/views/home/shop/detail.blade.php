@@ -12,7 +12,9 @@
                                        a:visited{text-decoration:none; }
         a:hover{text-decoration:none;}
         a:active{text-decoration:none;} 
-
+        .many img{
+            width: 100%;
+        }
     </style>
 @endsection
 @section('title')
@@ -43,6 +45,7 @@
                     {{$good->name}}
                 </h3>
                 <span style="color:#999;padding:5px 0px;">兑换积分：{{$good->price}}</span>
+                <span style="color:#999;padding:5px 10px;">库存：{{$good->num}}</span>
             </div>
             <div class="second">
                 <h4 style="font-weight:550">自取的地点：</h4>
@@ -50,7 +53,7 @@
             </div>
             <div class="third">
                 <h4 style="font-weight:550">商品详情：</h4>
-                <div style="width: 100%">
+                <div style="padding: 5px;" class="many">
                     {!! $good->content !!}
                 </div>
             </div>

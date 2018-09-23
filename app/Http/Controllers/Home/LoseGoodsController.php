@@ -46,14 +46,14 @@ class LoseGoodsController extends Controller
             'item_detail' => 'required',
             'phone' => 'required',
         ], [
-            'item_name.required' => '请输入找到物品名称',
-            'item_detail.required' => '请输入找到物品详情',
-            'phone.required' => '请输入您的联系方式',
+            'item_name.required' => '小稷提醒：请输入找到物品名称',
+            'item_detail.required' => '小稷提醒：请输入找到物品详情',
+            'phone.required' => '小稷提醒：请输入您的联系方式',
         ]);
         if ($va->passes()) {
             $member = Member::find(session('id'));
             if ($member->money < 20){
-                $va->errors()->add('errors','您的积分不足20');
+                $va->errors()->add('errors','小稷提醒：您的积分不足20哦！');
                 return back()->withErrors($va);
             }
             $member->money = $member->money - 20;

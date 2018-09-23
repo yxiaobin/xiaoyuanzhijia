@@ -30,7 +30,7 @@ class ShopController extends Controller
     {
         $user = Member::find(session('id'));
         if($user->money<$good->price){
-            session()->flash('danger', '您的积分不足，无法兑换！');
+            session()->flash('danger', '小稷提醒：您的积分不足哦，无法兑换！快去赚取积分吧！');
             return back();
         }
         UserGood::create([
@@ -41,7 +41,7 @@ class ShopController extends Controller
         ]);
         $user->money -= $good->price;
         $user->save();
-        session()->flash('success', '兑换成功！');
+        session()->flash('success', '小稷提醒：兑换成功！请在2天时间内尽快去自取地点取！逾期不候哦！');
         return back();
     }
 }

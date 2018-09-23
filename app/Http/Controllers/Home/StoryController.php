@@ -34,11 +34,11 @@ class StoryController extends Controller
            'content'=>'required',
             'img'=>'required|image',
         ],[
-            'title.required'=>'标题必须填写',
-            'title.max'=>'标题最大长度为40个字符',
-             'content.required'=>'内容必须填写',
-             'img.required'=>'必须上传图片',
-             'img.image'=>'文件必须是图片格式'
+            'title.required'=>'小稷提醒：标题必须填写',
+            'title.max'=>'小稷提醒：标题最大长度为40个字符',
+             'content.required'=>'小稷提醒：内容必须填写',
+             'img.required'=>'小稷提醒：必须上传图片',
+             'img.image'=>'小稷提醒：文件必须是图片格式'
          ])->validate();;
         $data = $request->except('_token');
         $img = $request->file('img');
@@ -47,7 +47,7 @@ class StoryController extends Controller
         };
         $data['user_id'] = session('id');
         Story::create($data);
-        session()->flash('success','发表成功！');
+        session()->flash('success','小稷提醒：发表成功！');
         return redirect('story');
     }
     public function comment($story_id,$id = 0){
@@ -57,8 +57,8 @@ class StoryController extends Controller
         Validator::make($request->all(),[
            'content'=>'required|max:191',
         ],[
-            'content.required'=>'评论必须填写',
-            'content.max'=>'评论过长'
+            'content.required'=>'小稷提醒：评论必须填写哦',
+            'content.max'=>'小稷提醒：您的评论过长哦'
         ]);
         StoryComment::create([
             'story_id'=>$story->id,
@@ -72,7 +72,7 @@ class StoryController extends Controller
         $give = Member::find(session('id'));
         $accept = Member::find($user_id);
         if($give->money < $num){
-            session()->flash('danger', '您的积分不足！');
+            session()->flash('danger', '小稷提醒：您的积分不足！快去赚取积分吧！');
             return back();
         }
         $give->money -= $num;
@@ -83,7 +83,7 @@ class StoryController extends Controller
             'num'=>$num,
             'type'=>2
         ]);
-        session()->flash('success', '打赏成功！');
+        session()->flash('success', '小稷提醒：打赏成功！赠人玫瑰手有余香哦！');
         return back();
     }
 }

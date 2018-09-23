@@ -27,12 +27,12 @@ class RepairController extends Controller
             'img'=>'required|image',
             'detail'=>'required|max:191',
         ],[
-            'address.required'=>'地址必须填写',
-            'address_detail.required'=>'详细地址必须填写',
-            'object.required'=>'物品必须填写',
-            'img.required'=>'必须上传图片',
-            'img.images'=>'上传的文件必须是图片格式',
-            'detail.required'=>'详情必须填写',
+            'address.required'=>'小稷提醒：地址必须填写哦！',
+            'address_detail.required'=>'小稷提醒：详细地址必须填写哦！',
+            'object.required'=>'小稷提醒：物品必须填写哦！',
+            'img.required'=>'小稷提醒：必须上传图片哦!',
+            'img.images'=>'小稷提醒：上传的文件必须是图片格式',
+            'detail.required'=>'小稷提醒：详情必须填写哦！',
         ])->validate();;
         $data = $request->except('_token');
         $img = $request->file('img');
@@ -41,12 +41,12 @@ class RepairController extends Controller
         }
         $data['user_id'] = $id;
         $repair = Repair::create($data);
-        $msg = "亲爱的同学，您在 {$repair->created_at} 报修的 {$repair->address} 的 {$repair->object} 请求我们已经收到！";
+        $msg = "小稷提醒：亲爱的同学，您在 {$repair->created_at} 报修的 {$repair->address} 的 {$repair->object} 请求我们已经收到！";
         Message::create([
             'user_id'=>$id,
             'message'=>$msg
         ]);
-        session()->flash('success', '报修成功，请等待回复！');
+        session()->flash('success', '小稷提醒：感谢您的报修成功，请等待回复！');
         return back();
     }
 }

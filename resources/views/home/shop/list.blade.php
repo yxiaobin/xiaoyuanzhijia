@@ -30,6 +30,7 @@
                     {{str_limit($good->name,16,'...')}}
                     <p class='mui-ellipsis'>
                         <span>积分：{{$good->price}}</span>
+                        <span style="padding-left: 5px;">库存：{{$good->num}}</span>
                     </p>
                 </div>
                 <a href="{{url("good/{$good->id}")}}" style="display: inline"><button type="button" name="button" style="float:right;margin-top:-38px;background-color: #15d4d8;color: white">去兑现</button></a>

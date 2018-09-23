@@ -12,6 +12,9 @@
         a:visited {text-decoration:none ; }
         a:hover {text-decoration:none ;}
         a:active {text-decoration:none ;}
+        img{
+            width: 100%;
+        }
     </style>
 @endsection
 @section('title')
@@ -88,6 +91,7 @@
                     <div class="mui-media-body">{{$good->name}}</div>
                     <div class="mui-media-body">
                         积分:{{$good->price}}
+                        &nbsp;库存：{{$good->num}}
                     </div>
                 </a>
             </li>
