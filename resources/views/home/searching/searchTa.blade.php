@@ -20,12 +20,11 @@
         <div class="am-g">
             <div class="am-u-sm-12">
                 <div class="am-thumbnail" style="padding-top: 10px;">
-                    <img src="{{'uploads/' . \App\Member::find($item->user_id)->image}}" alt="" class="am-comment-avatar" width="48"
-                         height="48"/>
-                    <span>{{\App\Member::find($item->user_id)->name}}</span>
-                    <div class="am-thumbnail-caption">
+                    <img src="{{'uploads/' . \App\Member::find($item->user_id)->image}}" alt="" class="am-comment-avatar" style="border-radius: 50%;width: 40px;height: 40px;"/>
+                    <div style="display: inline-block;padding: 5px;vertical-align: text-top;"><span style="vertical-align: sub;">{{\App\Member::find($item->user_id)->name}}</span></div>
+                    <div class="am-thumbnail-caption"  style="margin-top: 10px;">
 
-                        <p>{{$item->item_name}}</p>
+                        {{--<p>{{$item->item_name}}</p>--}}
                         <p>待寻人描述：{{$item->item_detail}}</p>
                         <p>发布时间：{{date('Y.m.d',strtotime($item->created_at))}}</p>
                         <p>
