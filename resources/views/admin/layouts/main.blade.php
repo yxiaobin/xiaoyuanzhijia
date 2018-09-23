@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>萌芽管理系统</title>
+    <title>校园之家管理系统</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
