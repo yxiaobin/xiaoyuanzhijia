@@ -62,7 +62,7 @@
             <div class="mui-media-body" style="margin-top: 12px;">
                 {{$key->name}}
                 <p class='mui-ellipsis'>
-                    <span style="font-size:14px;color:#ccc">{{date('Y-mk-d h:m:s',$wy->updated_at)}}</span>
+                    <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
                 </p>
             </div>
             <span style="float:right;margin-top:-38px;">+{{$p->price}}</span>
