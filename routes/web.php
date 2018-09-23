@@ -19,6 +19,7 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
     Route::resource('comment','CommentController');//武志祥
     Route::get('questiondashang','DaShangController@questionDsShang');//武志祥
 });
+
 Route::group(['namespace'=>'Home'],function (){
     Route::get('/', 'IndexController@index'); // 武志祥
     Route::get('shop','IndexController@shop'); //胡华聘

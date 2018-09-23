@@ -120,7 +120,8 @@ class ShopController extends Controller
         $good->num = $request->num;
         $good->content = $request->content;
         $good->save();
-        return $this->index();
+        session()->flash('success','修改成功');
+        return redirect('admin/goods');
     }
 
     /**
