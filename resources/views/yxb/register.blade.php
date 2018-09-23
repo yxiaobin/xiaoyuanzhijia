@@ -42,6 +42,15 @@
     <div class="am-u-sm-11 am-u-sm-centered">
         <form class="am-form" action="{{url("/register")}}"method="post" id="shangyi">
             {{ csrf_field() }}
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <fieldset class="myapp-login-form am-form-set">
 
                 <div class="am-form-group am-form-icon">
