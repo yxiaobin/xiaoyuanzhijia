@@ -14,7 +14,7 @@ class StoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('HomeLoginCheck')->only(['create','store']);
+        $this->middleware(['HomeLoginCheck','CardCheck'])->only(['create','store']);
     }
 
     //

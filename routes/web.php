@@ -28,10 +28,9 @@ Route::group(['namespace'=>'Home'],function (){
     Route::get('rule','ShopController@rule');//胡华聘
     Route::get('repair','RepairController@index');//胡华聘
     Route::resource('story','StoryController'); //胡华聘
-
 });
 //需要登录后操作  胡华聘
-Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],function (){
+Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>['HomeLoginCheck','CardCheck']],function (){
 
     Route::get('story/comment/{story_id}','StoryController@comment'); //胡华聘
     Route::get('story/comment/{story_id}/{id}','StoryController@comment'); //胡华聘
@@ -45,7 +44,7 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
 Route::get('admin/login','Admin\IndexController@login');  //胡华聘
 Route::post('admin/login','Admin\IndexController@check');  //胡华聘
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'AdminCheck'],function (){
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['AdminCheck']],function (){
     Route::get('index', 'IndexController@index'); // 武志祥
     Route::resource('goods','ShopController'); //胡华聘
     Route::get('record','ShopController@record');//胡华聘
