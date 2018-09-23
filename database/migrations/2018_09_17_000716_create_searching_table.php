@@ -22,7 +22,6 @@ class CreateSearchingTable extends Migration
             $table->string('find_address')->comment('发现位置');
             $table->string('item_image')->comment('物品图片');
             $table->integer('type')->comment('1,丢失物品。2，捡到物品。3，找人');
-            $table->integer('status')->default(0)->comment('0 未找到，1已找到');
             $table->timestamps();
         });
     }
