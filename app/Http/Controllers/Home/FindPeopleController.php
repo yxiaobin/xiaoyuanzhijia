@@ -46,9 +46,9 @@ class FindPeopleController extends Controller
             'item_detail' => 'required',
             'phone' => 'required',
         ], [
-            'item_name.required' => '请输入寻人特征',
-            'item_detail.required' => '请输入寻人详细描述',
-            'phone.required' => '请输入您的联系方式',
+            'item_name.required' => '小稷提醒：请输入寻人特征',
+            'item_detail.required' => '小稷提醒：请输入寻人详细描述',
+            'phone.required' => '小稷提醒：请输入您的联系方式',
         ]);
         if ($va->passes()) {
             $data = $request->except('_token');

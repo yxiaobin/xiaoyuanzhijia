@@ -48,13 +48,13 @@ class QuestionController extends Controller
             'title'=>'required',
             'detail'=>'required',
         ],[
-            'title.required'=>'请输入问题详细描述',
-            'detail.required'=>'请输入一句话概括'
+            'title.required'=>'小稷提醒：请输入问题详细描述',
+            'detail.required'=>'小稷提醒：请输入一句话概括'
         ]);
         if ($va->passes()){
             $member = Member::find(\session('id'));
             if ($member->money < 20){
-                $va->errors()->add('errors','您的积分不足20');
+                $va->errors()->add('errors','小稷提醒：您的积分不足20哦！');
                 return back()->withErrors($va);
             }
             $member->money = $member->money - 20;

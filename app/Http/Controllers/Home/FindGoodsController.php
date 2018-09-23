@@ -48,10 +48,10 @@ class FindGoodsController extends Controller
             'item_detail'=>'required',
             'phone'=>'required',
         ],[
-            'find_address.required'=>'请输入找到物品的地址',
-            'item_name.required'=>'请输入找到物品名称',
-            'item_detail.required'=>'请输入找到物品详情',
-            'phone.required'=>'请输入您的联系方式',
+            'find_address.required'=>'小稷提醒：请输入找到物品的地址',
+            'item_name.required'=>'小稷提醒：请输入找到物品名称',
+            'item_detail.required'=>'小稷提醒：请输入找到物品详情',
+            'phone.required'=>'小稷提醒：请输入您的联系方式',
         ]);
         if ($va->passes()){
             $data = $request->except('_token');

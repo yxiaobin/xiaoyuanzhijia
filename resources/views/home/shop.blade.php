@@ -91,6 +91,7 @@
                     <div class="mui-media-body">{{$good->name}}</div>
                     <div class="mui-media-body">
                         积分:{{$good->price}}
+                        &nbsp;库存：{{$good->num}}
                     </div>
                 </a>
             </li>

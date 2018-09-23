@@ -44,7 +44,7 @@ class CommentController extends Controller
         $va = Validator::make($request->input(),[
             'content'=>'required',
         ],[
-            'content.required'=>'请输入回复的内容！'
+            'content.required'=>'小稷提醒：请输入回复的内容！'
         ]);
         if ($va->passes()){
             $data = $request->except('_token','comment_id');
