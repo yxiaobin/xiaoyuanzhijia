@@ -41,7 +41,10 @@ Route::group(['prefix'=>'','namespace'=>'Home','middleware'=>'HomeLoginCheck'],f
     Route::post('repair','RepairController@store');
 });
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
+Route::get('admin/login','Admin\IndexController@login');  //胡华聘
+Route::post('admin/login','Admin\IndexController@check');  //胡华聘
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'AdminCheck'],function (){
     Route::get('index', 'IndexController@index'); // 武志祥
     Route::resource('goods','ShopController'); //胡华聘
     Route::get('record','ShopController@record');//胡华聘
@@ -49,7 +52,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::get('record/{record}/change','ShopController@recordChange');//胡华聘
     Route::get('repair','RepairController@index');//胡华聘
     Route::get('repair/{repair}/{status}','RepairController@status');  //胡华聘
-
+    Route::get('logout','IndexController@logout');  //胡华聘
 });
 
 /* ***************************************************************

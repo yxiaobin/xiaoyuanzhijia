@@ -12,6 +12,7 @@ class ShopController extends Controller
 {
     //
     public function goods(){
+        dd(config('xyzj.username'));
         $goods = Good::all();
         return view('home.shop.list')->with(['goods'=>$goods]);
     }
