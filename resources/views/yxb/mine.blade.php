@@ -73,7 +73,7 @@
             {{--</a>--}}
             <div class="add" style="text-align: center;margin-bottom: 10px;font-size: 18px;">
                 <span><img src="{{asset("images/jifen.png")}}" alt="" style="width:25px;height:25px">积分：{{$member->money}}</span> &nbsp;&nbsp;
-                <span><img src="{{asset("images/biaoqian.png")}}" alt="" style="width:25px;height:25px">标签：{{$member->tag}}</span>
+                <span><img src="{{asset("images/biaoqian.png")}}" alt="" style="width:25px;height:25px"><span style="width: 50px;">标签：{{$member->tag}}</span></span>
             </div>
         @endif
 

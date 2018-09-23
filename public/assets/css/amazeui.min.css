@@ -1471,11 +1471,11 @@ a.am-btn-success:visited {
     background-color: #15d4d8;
 }
 .am-btn-success.am-disabled, .am-btn-success.am-disabled.am-active, .am-btn-success.am-disabled:active, .am-btn-success.am-disabled:focus, .am-btn-success.am-disabled:hover, .am-btn-success[disabled], .am-btn-success[disabled].am-active, .am-btn-success[disabled]:active, .am-btn-success[disabled]:focus, .am-btn-success[disabled]:hover, fieldset[disabled] .am-btn-success, fieldset[disabled] .am-btn-success.am-active, fieldset[disabled] .am-btn-success:active, fieldset[disabled] .am-btn-success:focus, fieldset[disabled] .am-btn-success:hover {
-    background-color: #5eb95e;
-    border-color: #5eb95e
+    background-color: #15d4d8;
+    border-color: #15d4d8;
 }
 .am-btn-group .am-btn-success, .am-btn-group-stacked .am-btn-success {
-    border-color: #4db14d
+    border-color:#15d4d8;
 }
 .am-btn-link {
     color: #0e90d2;
@@ -5675,7 +5675,7 @@ a.am-close:hover {
     color: #fff
 }
 .am-input-group-danger .am-input-group-btn>.am-btn, .am-input-group-danger .am-input-group-label, .am-input-group-danger.am-input-group .am-form-field {
-    border-color: #dd514c
+    border-color: #15d4d8；
 }
 .am-list {
     margin-bottom: 1.6rem;

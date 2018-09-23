@@ -44,7 +44,9 @@
             </div>
             <div class="third">
                 <h4 style="font-weight:550">商品详情：</h4>
-                {!! $good->content !!}
+                <div style="width: 100%">
+                    {!! $good->content !!}
+                </div>
             </div>
             <!-- <span style="padding:20px;color:#ccc;">技术支持：烦skr人</span> -->
         </div>

@@ -22,9 +22,10 @@
 <!-- 顶部 -->
 <header data-am-widget="header" class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
-        <a href="{{url("/")}}">
-            <span class="am-icon-home"></span>
-            <span  class="am-navbar-label"></span>
+        <a href="#" onclick="javascript:history.back(-1)">
+            {{--<span class="am-icon-home"></span>--}}
+            {{--<span  class="am-navbar-label"></span>--}}
+            <img src="{{asset('images/back.png')}}" alt="" style="width: 20px;height: 20px;">
         </a>
     </div>
     <h1 class="am-header-title">
@@ -61,7 +62,7 @@
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">描述自己的标签</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="如：考研、考公、爱篮球等" name="tag" value="{{$member->tag}}">
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="如：考研、考公、爱篮球等，最多两个关键词" name="tag" value="{{$member->tag}}">
     </div>
 
     <div class="form-group">
