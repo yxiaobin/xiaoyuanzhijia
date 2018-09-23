@@ -49,7 +49,7 @@
                                 <label class="col-md-2">校园卡信息</label>
                                 <div class="col-md-8 col-sm-12">
                                     @if($page->card_image != null)
-                                    <img src="{{asset("uploads/$page->card_image")}}" style="width: 100px; height: 50px;">
+                                    <img src="{{asset("uploads/$page->card_image")}}" style="width: 650px; height: 400px;">
                                     @else
                                     该用户还未上传学生证信息，无法通过审核
                                     @endif
