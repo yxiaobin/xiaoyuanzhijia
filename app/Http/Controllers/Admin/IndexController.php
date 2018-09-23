@@ -20,7 +20,7 @@ class IndexController extends Controller
             'password'=>'required',
         ]);
         if ($request->username == config('xyzj.username') && $request->password == config('xyzj.password')){
-            session(['admiun'=>1]);
+            session(['admin'=>1]);
             return redirect('admin/index');
         }else{
             session()->flash('danger','用户名密码错误！');
@@ -30,6 +30,6 @@ class IndexController extends Controller
     public function logout(){
         session(['admin'=>'']);
         session()->flash('success','注销成功！');
-        return redirect('admin/index');
+        return redirect('admin/login');
     }
 }
