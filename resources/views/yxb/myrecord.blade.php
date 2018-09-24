@@ -67,7 +67,7 @@
                     </div>
                  </div>
             </div>
-        @else
+        @else 
             <div class="am-g">
         <div class="am-u-sm-12">
             <div class="am-thumbnail">
@@ -78,9 +78,12 @@
                     <p>{{$new->updated_at}}</p>
 
                     <p>
-                        <a href="#" class="btn btn-success" role="button">
-                            查看详情
-                        </a>
+                    	@if($new->type == 1)
+                        <a href="{{url("findgoods/$new->id")}}" class="btn btn-success" role="button">查看详情</a>
+                        @elseif($new->type ==3)
+                        <a href="{{url("findpeople/$new->id")}}" class="btn btn-success" role="button">查看详情</a>
+                        @endif
+
                         <a href="{{url("change/$new->id")}}" class="btn btn-default" role="button" style="float: right;">
                             @if($new->status == 0)
                                 正在解决
