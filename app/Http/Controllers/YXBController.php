@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Model\Question;
 use App\Http\Model\Searching;
 use App\Member;
 use App\Models\Message;
@@ -129,7 +130,11 @@ class YXBController extends Controller
         $member = Member::find(session('id'));
         $r1 = UserGood::where('user_id','=',$id)->orderby('id','desc')->get();
         $r2 = Reward::where('give_id','=',$id)->orderby('id','desc')->get();
-        return view('yxb.mymoney',compact('member','r1','r2'));
+        $r3 = Reward::where('accept_id','=',$id)->orderby('id','desc')->get();
+        $r4 = Searching::where('type','=','2')->where('user_id','=',$id)->orderby('id','desc')->get();
+        $r5 = Searching::where('type','=','3')->where('user_id','=',$id)->orderby('id','desc')->get();
+        $r6 = Question::where('user_id','=',$id)->orderby('id','desc')->get();
+        return view('yxb.mymoney',compact('member','r1','r2','r3','r4','r5','r6'));
     }
 //    我的记录
     public function myrecord(){

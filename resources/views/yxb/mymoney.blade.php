@@ -57,6 +57,11 @@
 <!-- 内容 -->
 <div class="" style="margin-top:5px;">
     <ul class="mui-table-view">
+        <br>
+        <h3>商品兑换:</h3>
+        @if(count($r1)==0)
+            <h6 style="margin-left: 50px;">暂无记录</h6>
+        @endif
         @foreach($r1 as $p)
             @php
             $key = $p->good;
@@ -72,6 +77,11 @@
             <span style="float:right;margin-top:-38px;">-{{$p->price}}</span>
         </li>
         @endforeach
+        <br>
+        <h3>打赏他人:</h3>
+        @if(count($r2)==0)
+            <h6 style="margin-left: 50px;">暂无记录</h6>
+        @endif
         @foreach($r2 as $p)
                 @php
                     $keymember = \App\Member::find($p->accept_id);
@@ -86,6 +96,78 @@
                 </div>
 
                 <span style="float:right;margin-top:-38px;">-{{$p->num}}</span>
+            </li>
+        @endforeach
+        <br>
+        <h3>他人打赏:</h3>
+        @if(count($r3)==0)
+            <h6 style="margin-left: 50px;">暂无记录</h6>
+        @endif
+        @foreach($r3 as $p)
+            @php
+                $keymember = \App\Member::find($p->give_id);
+            @endphp
+            <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
+                <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
+                <div class="mui-media-body" style="margin-top: 12px;">
+                    回答你问我答得到{{$keymember->name}}发布的积分
+                    <p class='mui-ellipsis'>
+                        <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
+                    </p>
+                </div>
+
+                <span style="float:right;margin-top:-38px;">+{{$p->num}}</span>
+            </li>
+        @endforeach
+        <br>
+        <h3>寻物消费:</h3>
+        @if(count($r4)==0)
+            <h6 style="margin-left: 50px;">暂无记录</h6>
+        @endif
+        @foreach($r4 as $p)
+            <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
+                <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
+                <div class="mui-media-body" style="margin-top: 12px;">
+                    寻找物品{{$p->item_name}}
+                    <p class='mui-ellipsis'>
+                        <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
+                    </p>
+                </div>
+                <span style="float:right;margin-top:-38px;">-20</span>
+            </li>
+        @endforeach
+        <br>
+        <h3>寻人消费:</h3>
+        @if(count($r5)==0)
+            <h6 style="margin-left: 50px;">暂无记录</h6>
+        @endif
+        @foreach($r5 as $p)
+            <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
+                <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
+                <div class="mui-media-body" style="margin-top: 12px;">
+                    寻人去做{{$p->item_detail}}
+                    <p class='mui-ellipsis'>
+                        <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
+                    </p>
+                </div>
+                <span style="float:right;margin-top:-38px;">-20</span>
+            </li>
+        @endforeach
+        <br>
+        <h3>询问消费:</h3>
+        @if(count($r6)==0)
+            <h6 style="margin-left: 50px;">暂无记录</h6>
+        @endif
+        @foreach($r6 as $p)
+            <li class="mui-table-view-cell mui-media" id="articlegoTo" style="height: 87px;">
+                <!-- <img class="mui-media-object mui-pull-left" src="images/1b.jpg" style="width: 117px!important;"> -->
+                <div class="mui-media-body" style="margin-top: 12px;">
+                    发布问题{{$p->title}}
+                    <p class='mui-ellipsis'>
+                        <span style="font-size:14px;color:#ccc">{{$p->updated_at}}</span>
+                    </p>
+                </div>
+                <span style="float:right;margin-top:-38px;">-20</span>
             </li>
         @endforeach
     </ul>
